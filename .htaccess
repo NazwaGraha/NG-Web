@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Keamanan: Blokir akses publik langsung ke file sensitif
+    <FilesMatch "^\.(env|git|editorconfig|yml|lock|json)">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+    # Keamanan: Blokir akses langsung ke folder internal Laravel
+    RewriteRule ^(app|bootstrap|config|database|resources|routes|storage|tests|vendor) - [F,L,NC]
+
+    # Teruskan seluruh request publik ke folder public/
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
