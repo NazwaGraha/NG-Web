@@ -49,6 +49,19 @@ Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('seo.sitemap
 Route::get('/robots.txt', [SeoController::class, 'robots'])->name('seo.robots');
 Route::get('/llms.txt', [SeoController::class, 'llms'])->name('seo.llms');
 
+// 301 Permanent Redirects for Legacy URLs (SEO Juice Transfer & 404 Elimination)
+Route::redirect('/produk', '/layanan/pengadaan-hardware-it', 301);
+Route::redirect('/produk/{any}', '/layanan/pengadaan-hardware-it', 301)->where('any', '.*');
+Route::redirect('/kategori-produk', '/layanan/pengadaan-hardware-it', 301);
+Route::redirect('/kategori-produk/{any}', '/layanan/pengadaan-hardware-it', 301)->where('any', '.*');
+Route::redirect('/katalog', '/galeri', 301);
+Route::redirect('/katalog/{any}', '/galeri', 301)->where('any', '.*');
+Route::redirect('/cart', '/kontak', 301);
+Route::redirect('/checkout', '/kontak', 301);
+Route::redirect('/keranjang', '/kontak', 301);
+Route::redirect('/store', '/', 301);
+Route::redirect('/store/{any}', '/', 301)->where('any', '.*');
+
 Route::redirect('/login', '/admin/login')->name('login');
 
 /*
