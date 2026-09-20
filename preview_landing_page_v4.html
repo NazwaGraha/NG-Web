@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NazwaGraha Pratama - Jasa Pembuatan Website, SEO & Solusi IT Kantor Terpercaya</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    .orange-gradient {
+      background: linear-gradient(135deg, #FF6A00 0%, #EA580C 100%);
+    }
+    .orange-soft-gradient {
+      background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+    }
+    .glow-orange-soft {
+      box-shadow: 0 10px 30px -5px rgba(249, 115, 22, 0.25);
+    }
+    .card-shadow {
+      box-shadow: 0 10px 35px -5px rgba(15, 23, 42, 0.08), 0 0 2px rgba(15, 23, 42, 0.05);
+    }
+    .card-shadow:hover {
+      box-shadow: 0 20px 45px -10px rgba(249, 115, 22, 0.2), 0 0 2px rgba(249, 115, 22, 0.3);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-orange-500 selection:text-white pb-28 md:pb-16 font-sans">
+
+  <!-- TOP PROMO STRIP (URGENSI & PENAWARAN MENJUAL) -->
+  <div class="orange-gradient text-white text-xs py-2 px-4 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="bg-black/20 px-2.5 py-0.5 rounded-full font-bold uppercase text-[10px] tracking-wider">Promo Khusus</span>
+        <span class="font-medium hidden sm:inline">🎁 Paket Pembuatan Website Lengkap: Gratis Domain .COM + Hosting Cloud + Garansi 1 Tahun!</span>
+        <span class="font-medium sm:hidden">🎁 Promo Website: Free Domain + Hosting Cloud!</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha%20Pratama,%20saya%20mau%20klaim%20promo%20website" target="_blank" class="bg-white text-orange-600 font-extrabold px-3 py-1 rounded-full text-[11px] hover:bg-orange-50 transition shadow-sm">
+          Klaim Promo WA →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER (CLEAN, WHITE, PRESTIGIOUS) -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-[33px] z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="h-12 w-28 sm:w-32 flex items-center justify-center p-1 rounded-xl bg-slate-50 border border-slate-200 group-hover:border-orange-400 transition">
+          <img src="images/ngp-logo.webp" alt="Logo NazwaGraha Pratama" class="max-h-full max-w-full object-contain">
+        </div>
+        <div class="hidden sm:block border-l border-slate-200 pl-3">
+          <span class="block text-base font-black tracking-tight text-slate-900 leading-none">NAZWAGRAHA</span>
+          <span class="block text-[11px] font-bold tracking-wider text-orange-600 uppercase mt-1">Pratama IT Solutions</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-700">
+        <a href="#layanan" class="hover:text-orange-600 transition">Semua Layanan</a>
+        <a href="#portofolio" class="hover:text-orange-600 transition flex items-center gap-1.5">
+          <span>Portofolio Web</span>
+          <span class="bg-orange-100 text-orange-600 text-[10px] font-bold px-2 py-0.5 rounded-full">Hasil Nyata</span>
+        </a>
+        <a href="#harga" class="hover:text-orange-600 transition">Paket & Harga</a>
+        <a href="#jaringan-lan" class="hover:text-orange-600 transition">Jaringan & Hardware</a>
+        <a href="#testimoni" class="hover:text-orange-600 transition">Testimoni Klien</a>
+        <a href="#faq" class="hover:text-orange-600 transition">FAQ</a>
+      </nav>
+
+      <!-- Contact CTA -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="px-5 py-3 rounded-xl orange-gradient text-white text-xs sm:text-sm font-extrabold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition transform hover:-translate-y-0.5 flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289l-.26.309c-.087.094-.179.196-.077.371.101.174.45 1.743 1.95 2.072.193.042.361.026.495-.038.159-.076.694-.808.88-1.084.188-.276.375-.231.625-.138.25.092 1.587.748 1.86.885.274.137.456.205.522.319.066.114.066.662-.078 1.067z"/></svg>
+          <span>Konsultasi Cepat (Gratis)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (BRIGHT, HUMAN, COMMERCIAL & CONVERTING) -->
+  <section class="pt-10 pb-16 md:pt-16 md:pb-24 bg-gradient-to-b from-orange-50/50 via-white to-[#F8FAFC]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Super Strong Value Proposition -->
+        <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-700 text-xs font-bold">
+            <span class="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse"></span>
+            <span>Jasa Website & IT Solution No. 1 di Indonesia</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.12]">
+            Banjir Orderan dengan <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">Website Cepat & Ranking 1</span>, Bereskan Semua Masalah IT Kantor Anda!
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            Tingkatkan kredibilitas dan omset bisnis Anda bersama <strong>NazwaGraha Pratama</strong>. Mulai dari pembuatan website bisnis kilat (loading di bawah 1 detik), optimasi SEO & AI Search agar ranking #1, pasang jaringan LAN kantor stabil, hingga pengadaan dan servis komputer siap pakai.
+          </p>
+
+          <!-- Key Benefit Checkmarks -->
+          <div class="grid grid-cols-2 gap-3 pt-2 text-left max-w-lg mx-auto lg:mx-0">
+            <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <span>Skor PageSpeed 90+ Google</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <span>Bisa Bayar Bertahap (Aman)</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <span>Garansi Maintenance 1 Tahun</span>
+            </div>
+            <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+              <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
+              <span>Teknisi On-Site Siap Datang</span>
+            </div>
+          </div>
+
+          <!-- Dual CTA -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20pesan%20layanan%20website/IT" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl orange-gradient text-white font-black text-base shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+              <span>Pesan Layanan Sekarang</span>
+              <span class="bg-white/20 px-2 py-0.5 rounded text-xs">Fast Respon</span>
+            </a>
+            
+            <a href="#harga" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-bold text-base transition flex items-center justify-center gap-2 shadow-sm">
+              <span>Lihat Paket & Harga</span>
+              <span class="text-orange-500">↓</span>
+            </a>
+          </div>
+
+          <!-- Rating & Trust Badges -->
+          <div class="pt-4 flex items-center justify-center lg:justify-start gap-4 text-xs text-slate-500 border-t border-slate-200">
+            <div class="flex items-center gap-1 text-amber-500 text-sm">
+              ★★★★★
+            </div>
+            <span class="font-bold text-slate-800">4.9 / 5.0</span>
+            <span class="text-slate-400">•</span>
+            <span>Dipercaya 250+ Bisnis & Instansi</span>
+          </div>
+
+        </div>
+
+        <!-- Right: Real Professional Office & Team Image (Warm, Prestigious) -->
+        <div class="lg:col-span-6 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+            <img src="images/commercial_hero_workspace.jpg" alt="Tim Profesional NazwaGraha Pratama" class="w-full h-auto object-cover transform group-hover:scale-102 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+            
+            <!-- Real Floating Trust Pill -->
+            <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-slate-100 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center font-black text-lg">
+                  🏆
+                </div>
+                <div>
+                  <h4 class="text-sm font-extrabold text-slate-900">Tim Web & Teknisi Resmi</h4>
+                  <p class="text-xs text-slate-500">Pengerjaan Cepat, Rapi, & Berstandar Korporat</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="inline-block bg-emerald-100 text-emerald-700 text-[11px] font-black px-2.5 py-1 rounded-full">
+                  100% Bergaransi
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO SOCIAL PROOF BAR (MEMBANGUN KEPERCAYAAN SEKETIKA) -->
+  <div class="border-y border-slate-200 bg-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-5">
+        TELAH DIPERCAYA OLEH RATUSAN PERUSAHAAN, BISNIS RETAIL, & INSTANSI DI SELURUH INDONESIA
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-14 opacity-70 grayscale hover:grayscale-0 transition duration-300 font-bold text-slate-500 text-sm sm:text-base">
+        <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Corporate Holdings</span>
+        <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Retail & Fashion Brand</span>
+        <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Firma Konsultan Hukum</span>
+        <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Distributor & Logistik</span>
+        <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Klinik & Rumah Sakit</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUKTI PORTOFOLIO WEBSITE NYATA (VISUAL YANG PALING MENJUAL) -->
+  <section class="py-16 bg-[#F8FAFC]" id="portofolio">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-orange-600 font-bold text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">Portofolio & Bukti Karya</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Desain Mewah, Elegan, dan Langsung Siap Jualan</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">
+          Setiap website dirancang eksklusif sesuai identitas bisnis Anda—bukan template pasaran murahan. Dijamin nyaman diakses dari smartphone dan memikat calon pembeli.
+        </p>
+      </div>
+
+      <!-- Portfolio Image Showcase Banner -->
+      <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-white mb-12 group">
+        <img src="images/portfolio_web_collection.jpg" alt="Portofolio Website NazwaGraha Pratama" class="w-full h-auto object-cover transform group-hover:scale-102 transition duration-700">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent p-6 sm:p-8 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <span class="bg-orange-500 text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Showcase Desain</span>
+            <h3 class="text-xl sm:text-2xl font-bold mt-2">Toko Online Modern, Company Profile Korporat, & Katalog Digital</h3>
+            <p class="text-xs sm:text-sm text-slate-200 mt-1">Loading instan, sistem checkout otomatis, SEO Google, dan integrasi WhatsApp.</p>
+          </div>
+          <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha,%20saya%20ingin%20dibuatkan%20website%20seperti%20di%20portofolio" target="_blank" class="px-6 py-3 rounded-xl orange-gradient text-white text-xs sm:text-sm font-bold shadow-lg hover:shadow-orange-500/40 shrink-0 transition">
+            Mau Website Seperti Ini →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TABEL PAKET & HARGA TRANSPARAN (KUNCI BANJIR ORDERAN!) -->
+  <section class="py-16 bg-white border-t border-slate-200" id="harga">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-orange-600 font-bold text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">Paket Harga Transparan</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Pilihan Paket Hemat untuk Mengembangkan Bisnis Anda</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">
+          Tanpa biaya tersembunyi. Semua paket sudah termasuk domain .COM, Cloud Hosting cepat, dan garansi pemeliharaan penuh.
+        </p>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Paket 1: Starter / Company Profile -->
+        <div class="rounded-3xl p-8 bg-slate-50 border border-slate-200 card-shadow relative flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Paling Hemat</span>
+            <h3 class="text-2xl font-black text-slate-900 mt-1">Company Profile Pro</h3>
+            <p class="text-xs text-slate-500 mt-1">Cocok untuk UMKM, Kantor Jasa, & Bisnis Baru</p>
+
+            <div class="my-6">
+              <span class="text-xs text-slate-400 line-through">Rp 3.500.000</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span class="text-sm font-bold text-slate-700">Mulai</span>
+                <span class="text-3xl sm:text-4xl font-black text-slate-900">Rp 1.950.000</span>
+              </div>
+              <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">Hemat 45% Bulan Ini</span>
+            </div>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Desain Eksklusif (1-5 Halaman)</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span><strong>Gratis Domain .COM</strong> 1 Tahun</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span><strong>Gratis Cloud Hosting Cepat</strong></span></li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Tombol WhatsApp Otomatis</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Lolos Skor Google 90+</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Garansi Maintenance 1 Tahun</span></li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha,%20saya%20mau%20order%20Paket%20Company%20Profile%20Pro" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition">
+            Pilih Paket Company Profile →
+          </a>
+        </div>
+
+        <!-- Paket 2: E-Commerce / Katalog (BEST SELLER) -->
+        <div class="rounded-3xl p-8 bg-white border-2 border-orange-500 card-shadow relative flex flex-col justify-between glow-orange-soft transform md:-translate-y-2">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-[11px] font-black uppercase px-4 py-1.5 rounded-full shadow-md tracking-wider">
+            ★ PALING POPULER & BEST SELLER
+          </div>
+
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600">Solusi Penjualan</span>
+            <h3 class="text-2xl font-black text-slate-900 mt-1">E-Commerce & Katalog</h3>
+            <p class="text-xs text-slate-500 mt-1">Untuk Toko Online, Distributor, & Brand Produk</p>
+
+            <div class="my-6">
+              <span class="text-xs text-slate-400 line-through">Rp 6.500.000</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span class="text-sm font-bold text-slate-700">Mulai</span>
+                <span class="text-3xl sm:text-4xl font-black text-orange-600">Rp 3.850.000</span>
+              </div>
+              <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">Paket Lengkap Siap Jualan</span>
+            </div>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
+              <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span><strong>Semua Fitur Company Profile</strong></span></li>
+              <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Manajemen Produk & Kategori Tanpa Batas</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Keranjang Belanja & Checkout WhatsApp</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Integrasi Hitung Ongkir Otomatis</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Optimasi SEO Google & GEO AI Search</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Panduan Video Penggunaan Sistem</span></li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha,%20saya%20mau%20order%20Paket%20E-Commerce%20dan%20Katalog" target="_blank" class="w-full py-4 rounded-xl orange-gradient text-white font-black text-xs sm:text-sm text-center shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition">
+            Pesan Paket E-Commerce Sekarang →
+          </a>
+        </div>
+
+        <!-- Paket 3: Custom Web App / Corporate IT -->
+        <div class="rounded-3xl p-8 bg-slate-50 border border-slate-200 card-shadow relative flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Skala Perusahaan</span>
+            <h3 class="text-2xl font-black text-slate-900 mt-1">Custom Web & IT Kantor</h3>
+            <p class="text-xs text-slate-500 mt-1">Untuk Korporat, Sistem Custom & Kontrak IT</p>
+
+            <div class="my-6">
+              <span class="text-xs text-slate-400">Investasi Fleksibel Sesuai Kebutuhan</span>
+              <div class="flex items-baseline gap-1 mt-1">
+                <span class="text-2xl sm:text-3xl font-black text-slate-900">Custom / Nego</span>
+              </div>
+              <span class="inline-block mt-1 text-[11px] font-bold text-blue-600 bg-blue-100 px-2.5 py-0.5 rounded-full">Survey & Proposal Gratis</span>
+            </div>
+
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Sistem Web App Kustom (ERP/Dashboard)</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Instalasi & Setting Jaringan LAN Kantor</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Pengadaan PC & Hardware Bergaransi</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Kontrak Maintenance Bulanan (SLA)</span></li>
+              <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Dedicated Senior IT Engineer</span></li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha,%20saya%20ingin%20konsultasi%20Sistem%20Custom%20atau%20IT%20Kantor" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition">
+            Konsultasikan Kebutuhan Kantor →
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOLUSI JARINGAN LAN & PENGADAAN HARDWARE KANTOR -->
+  <section class="py-16 bg-[#F8FAFC] border-t border-slate-200" id="jaringan-lan">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-orange-600 font-bold text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">Infrastruktur & Hardware</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">
+            Kabel LAN Semrawut & Wi-Fi Kantor Sering Putus? <span class="text-orange-600">Kami Rapikan Total!</span>
+          </h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Jangan biarkan koneksi internet lambat mengganggu meeting direksi dan produktivitas karyawan. Tim teknisi NazwaGraha Pratama siap datang langsung ke kantor Anda untuk instalasi kabel Cat6 rapi, setting router Mikrotik anti-lag, setup server lokal, dan pengadaan perangkat komputer baru.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <div class="text-orange-600 font-black text-lg mb-1">🔌 Instalasi LAN Rapi</div>
+              <p class="text-xs text-slate-500">Penataan kabel terstruktur di patch panel & server rack.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <div class="text-orange-600 font-black text-lg mb-1">💻 Pengadaan Hardware</div>
+              <p class="text-xs text-slate-500">PC, Laptop, Printer, UPS kantor bergaransi resmi.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <div class="text-orange-600 font-black text-lg mb-1">⚡ Service Troubleshooting</div>
+              <p class="text-xs text-slate-500">Solusi cepat PC lemot, virus, & recovery data.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+              <div class="text-orange-600 font-black text-lg mb-1">📋 Kontrak Servis (SLA)</div>
+              <p class="text-xs text-slate-500">Pemeliharaan rutin bulanan tanpa perlu gaji IT in-house.</p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha,%20saya%20butuh%20survey%20jaringan%20LAN%20atau%20pengadaan%20hardware" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl orange-gradient text-white text-xs sm:text-sm font-bold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition">
+              <span>Undang Teknisi Survey Lokasi Kantor</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+            <img src="images/lan_server_infrastructure.jpg" alt="Teknisi Jaringan NazwaGraha" class="w-full h-auto object-cover">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONI ASLI (SOCIAL PROOF YANG MENUTUP KERAGUAN) -->
+  <section class="py-16 bg-white border-t border-slate-200" id="testimoni">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-orange-600 font-bold text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">Testimoni Klien</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Kata Mereka yang Telah Bekerja Sama dengan NazwaGraha</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-shadow space-y-3">
+          <div class="text-amber-500 text-sm">★★★★★</div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
+            "Website company profile kami selesai hanya dalam 4 hari! Loadingnya luar biasa cepat, dan dalam 2 minggu sudah mulai masuk leads dari Google. Timnya sangat komunikatif."
+          </p>
+          <div class="pt-2 border-t border-slate-200">
+            <strong class="block text-xs font-bold text-slate-900">Bpk. Hendra Gunawan</strong>
+            <span class="text-[11px] text-slate-500">Direktur PT. Samudera Logistik Prima</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-shadow space-y-3">
+          <div class="text-amber-500 text-sm">★★★★★</div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
+            "Kantor kami pindah gedung dan butuh instalasi 35 titik LAN mendesak. NazwaGraha mengirim teknisi dalam 2 jam, kabel server sangat rapi, dan internet kantor stabil tanpa kendala."
+          </p>
+          <div class="pt-2 border-t border-slate-200">
+            <strong class="block text-xs font-bold text-slate-900">Ibu Maya Anggraini</strong>
+            <span class="text-[11px] text-slate-500">General Affair & HR Manager</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 card-shadow space-y-3">
+          <div class="text-amber-500 text-sm">★★★★★</div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed italic">
+            "Jasa SEO & GEO mereka terbukti ampuh. Saat calon pembeli mencari produk kami di Google dan ChatGPT, nama toko online kami langsung muncul di rekomendasi teratas!"
+          </p>
+          <div class="pt-2 border-t border-slate-200">
+            <strong class="block text-xs font-bold text-slate-900">Rian Pratama</strong>
+            <span class="text-[11px] text-slate-500">Founder & Owner Brand Fashion Lokal</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GARANSI BEBAS RESIKO & CTA AKHIR -->
+  <section class="py-16 orange-gradient text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <span class="bg-black/20 text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider">Garansi Kepuasan 100%</span>
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+        Siap Melejitkan Bisnis Anda Hari Ini?
+      </h2>
+      <p class="text-sm sm:text-base text-orange-100 max-w-2xl mx-auto leading-relaxed">
+        Konsultasikan kebutuhan website dan IT kantor Anda secara gratis. Tim NazwaGraha Pratama siap memberikan analisis dan solusi terbaik yang langsung bisa Anda terapkan.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20sekarang" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-orange-600 hover:bg-orange-50 font-black text-base shadow-2xl transition transform hover:scale-105 flex items-center justify-center gap-2">
+          <span>Hubungi Kami via WhatsApp Sekarang</span>
+          <span>→</span>
+        </a>
+      </div>
+      <p class="text-xs text-orange-200">⚡ Tim kami aktif merespon dalam hitungan menit.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-12 text-xs border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-slate-300">
+        
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="font-black text-lg text-white">NAZWAGRAHA</span>
+            <span class="text-xs font-bold text-orange-500 uppercase">PRATAMA</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Pusat Solusi Rekayasa Website Cepat, Optimasi SEO & GEO, Pengadaan Hardware Komputer, dan Instalasi Jaringan LAN Kantor Terpercaya.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Layanan Website</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li>Jasa Pembuatan Website Bisnis</li>
+            <li>Website Toko Online & Katalog</li>
+            <li>Optimasi SEO & GEO Ranking 1</li>
+            <li>Maintenance Website 1 Tahun</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Layanan IT Kantor</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li>Instalasi Jaringan LAN & Server</li>
+            <li>Pengadaan Komputer & Laptop</li>
+            <li>Computer Troubleshooting Cepat</li>
+            <li>Kontrak Servis Berkala (SLA)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Kontak Resmi</h4>
+          <p class="mb-2">📞 WhatsApp: +62 812-3456-7890</p>
+          <p class="mb-2">✉️ Email: info@nazwagraha.com</p>
+          <p>🌐 Website: nazwagraha.com</p>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-slate-500">
+        <p>© 2026 NazwaGraha Pratama. Seluruh Hak Cipta Dilindungi.</p>
+        <p class="mt-2 sm:mt-0">Dioptimalkan untuk Google PageSpeed Insights & Generative Engine Optimization (GEO).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY THUMB ACTION BAR -->
+  <div class="md:hidden fixed bottom-2.5 left-2.5 right-2.5 z-50">
+    <div class="bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl p-2 flex items-center gap-2 shadow-2xl">
+      <a href="#harga" class="flex-1 py-3 text-center rounded-xl bg-slate-100 border border-slate-300 text-slate-800 text-xs font-bold active:scale-95 transition">
+        Cek Harga
+      </a>
+      <a href="https://wa.me/6281234567890?text=Halo%20NazwaGraha%20Pratama,%20saya%20mau%20order%20layanan" target="_blank" class="flex-[1.6] py-3 text-center rounded-xl orange-gradient text-white text-xs font-black shadow-lg shadow-orange-500/30 flex items-center justify-center gap-1.5 active:scale-95 transition">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289l-.26.309c-.087.094-.179.196-.077.371.101.174.45 1.743 1.95 2.072.193.042.361.026.495-.038.159-.076.694-.808.88-1.084.188-.276.375-.231.625-.138.25.092 1.587.748 1.86.885.274.137.456.205.522.319.066.114.066.662-.078 1.067z"/></svg>
+        <span>Chat WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
