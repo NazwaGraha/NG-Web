@@ -188,4 +188,66 @@
     </div>
 </section>
 
+<!-- GOOGLE MAPS EMBED & LOCAL SEO VERIFICATION -->
+<section class="pb-16 sm:pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 card-shadow space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-orange-600">Lokasi Fisik Kantor Kami</span>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 mt-1">Peta Lokasi Kantor NazwaGraha Pratama</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+                        {{ $contactInfo['address'] }}
+                    </p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="https://maps.google.com/?q={{ urlencode($contactInfo['company'] . ' ' . $contactInfo['address']) }}" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl orange-gradient text-white text-xs font-extrabold shadow-md hover:shadow-orange-500/30 transition flex items-center gap-2">
+                        <span>🗺️ Buka di Aplikasi Google Maps</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Responsive Google Maps Iframe -->
+            <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-inner h-[380px] sm:h-[450px] w-full bg-slate-100">
+                <iframe 
+                    title="Peta Lokasi Kantor PT Nazwa Graha Pratama"
+                    src="https://maps.google.com/maps?q=-6.6578,106.8524&hl=id&z=15&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full h-full">
+                </iframe>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-xs">
+                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <span class="text-xl">📍</span>
+                    <div>
+                        <strong class="text-slate-900 block font-bold">Wilayah Ciawi &amp; Bogor</strong>
+                        <span class="text-slate-500 text-[11px]">Teknisi on-site siap datang survei</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <span class="text-xl">🚗</span>
+                    <div>
+                        <strong class="text-slate-900 block font-bold">Akses Tol Jagorawi</strong>
+                        <span class="text-slate-500 text-[11px]">Sangat strategis dekat Pintu Tol Ciawi</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <span class="text-xl">🏢</span>
+                    <div>
+                        <strong class="text-slate-900 block font-bold">Layanan Jabodetabek</strong>
+                        <span class="text-slate-500 text-[11px]">Melayani proyek perusahaan &amp; instansi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection

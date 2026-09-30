@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <meta name="google-site-verification" content="uHDngeaGQvCWK_LPHY9BChUoJ4W5Frj7unpi0SJOmUs" />
+    <meta name="msvalidate.01" content="0BEF9D5BD1E3BAB2B08A85DFD9D47F85" />
+    <meta name="yandex-verification" content="9081680e1da867cc" />
     <!-- Resource Hints & Preload for Peak PageSpeed -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
@@ -19,9 +21,9 @@
     <meta name="country" content="Indonesia">
 
     <!-- Primary SEO Meta Tags -->
-    <title>@yield('title', 'NazwaGraha Pratama - Jasa Pembuatan Website, SEO & Solusi IT Kantor')</title>
-    <meta name="description" content="@yield('meta_description', 'Pusat solusi pembuatan website cepat bergaransi, optimasi SEO & GEO Google, instalasi jaringan LAN kantor, dan pengadaan hardware IT terpercaya di Indonesia.')">
-    <meta name="keywords" content="@yield('meta_keywords', 'jasa pembuatan website, jasa seo, jasa pasang lan kantor, pengadaan hardware it, service komputer kantor, nazwagraha pratama, web developer bogor, jasa it ciawi bogor')">
+    <title>@yield('title', 'Jasa Pembuatan Website Bogor & Solusi IT Kantor - NazwaGraha Pratama')</title>
+    <meta name="description" content="@yield('meta_description', 'Jasa pembuatan website murah, cepat & bergaransi di Bogor: Desain mewah profesional, gratis domain .COM & cloud server SSD, optimasi SEO & GEO Google #1, pasang jaringan LAN kantor.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'jasa pembuatan website bogor, jasa pembuatan website ciawi, jasa buat web perusahaan, jasa web bogor, web developer bogor, jasa seo bogor, pasang lan kantor bogor, vendor it kantor, nazwa graha pratama')">
     <meta name="author" content="NazwaGraha Pratama">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="{{ url()->current() }}">
@@ -29,8 +31,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('title', 'NazwaGraha Pratama - Jasa Pembuatan Website & Solusi IT Terpercaya')">
-    <meta property="og:description" content="@yield('meta_description', 'Solusi pembuatan website bisnis performa tinggi, ranking 1 Google, instalasi jaringan LAN kantor, dan pengadaan hardware IT.')">
+    <meta property="og:title" content="@yield('title', 'Jasa Pembuatan Website Bogor & Solusi IT Kantor - NazwaGraha Pratama')">
+    <meta property="og:description" content="@yield('meta_description', 'Jasa pembuatan website murah, cepat & bergaransi di Bogor: Desain mewah profesional, gratis domain .COM & cloud server SSD, optimasi SEO & GEO Google #1, pasang jaringan LAN kantor.')">
     <meta property="og:image" content="@yield('og_image', asset('images/commercial_hero_workspace.webp'))">
     <meta property="og:locale" content="id_ID">
     <meta property="og:site_name" content="NazwaGraha Pratama">
@@ -38,8 +40,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ url()->current() }}">
-    <meta name="twitter:title" content="@yield('title', 'NazwaGraha Pratama - Jasa Pembuatan Website & Solusi IT Terpercaya')">
-    <meta name="twitter:description" content="@yield('meta_description', 'Solusi pembuatan website bisnis performa tinggi, ranking 1 Google, instalasi jaringan LAN kantor, dan pengadaan hardware IT.')">
+    <meta name="twitter:title" content="@yield('title', 'Jasa Pembuatan Website Bogor & Solusi IT Kantor - NazwaGraha Pratama')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Jasa pembuatan website murah, cepat & bergaransi di Bogor: Desain mewah profesional, gratis domain .COM & cloud server SSD, optimasi SEO & GEO Google #1, pasang jaringan LAN kantor.')">
     <meta name="twitter:image" content="@yield('og_image', asset('images/commercial_hero_workspace.webp'))">
 
     <!-- Favicon -->

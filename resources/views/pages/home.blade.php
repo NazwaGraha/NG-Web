@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'NazwaGraha Pratama - Jasa Pembuatan Website, SEO & Solusi IT Kantor')
-@section('meta_description', 'Pusat solusi IT terpercaya di Indonesia: Jasa pembuatan website bisnis kilat, optimasi SEO & GEO Google ranking 1, instalasi jaringan LAN kantor, dan pengadaan hardware komputer.')
+@section('title', 'Jasa Pembuatan Website Bogor & Solusi IT Kantor Terpercaya - NazwaGraha Pratama')
+@section('meta_description', 'Jasa pembuatan website murah, cepat & bergaransi di Bogor & Jabodetabek: Desain mewah profesional, gratis domain .COM & cloud hosting SSD, optimasi SEO & GEO Google ranking 1, instalasi jaringan LAN kantor.')
+@section('meta_keywords', 'jasa pembuatan website bogor, jasa pembuatan website ciawi, jasa buat web perusahaan, jasa web bogor, web developer bogor, jasa pasang lan bogor, vendor it kantor, nazwa graha pratama')
 
 @section('preload')
 <link rel="preload" as="image" href="{{ asset('images/commercial_hero_workspace_mobile.webp') }}" media="(max-width: 768px)" type="image/webp" fetchpriority="high">
