@@ -257,8 +257,8 @@
                 <img src="{{ asset('images/ngp-logo.webp') }}" alt="Logo NazwaGraha Pratama" width="211" height="80" class="sr-only">
             </a>
 
-            <!-- Desktop Navigation Menu (Persis Mockup V2 & V3) -->
-            <nav class="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 text-xs sm:text-sm font-bold text-slate-600">
+            <!-- Desktop Navigation Menu (Persis Mockup V2 & V3 - Centered & Spacious) -->
+            <nav class="hidden md:flex items-center gap-4 lg:gap-5 xl:gap-7 text-xs lg:text-[13px] xl:text-sm font-bold text-slate-600 mx-auto px-4">
                 <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-orange-600 font-extrabold border-b-2 border-orange-600 pb-1' : 'hover:text-orange-600' }} transition whitespace-nowrap">
                     Beranda
                 </a>
@@ -281,8 +281,8 @@
 
             <!-- CTA Actions (Persis Mockup V2/V3) -->
             <div class="flex items-center gap-3 shrink-0">
-                <div class="text-right hidden xl:block">
-                    <span class="text-[10px] text-slate-400 block font-bold uppercase tracking-wider leading-none">Konsultasi Cepat (Fast Respon)</span>
+                <div class="text-right hidden xl:block leading-tight pr-1">
+                    <span class="text-[9px] text-slate-400 block font-bold uppercase tracking-wider">Konsultasi Cepat (Fast Respon)</span>
                     <a href="tel:081298506111" class="text-xs font-black text-slate-800 hover:text-orange-600 transition tracking-tight mt-0.5 block">0812-9850-6111</a>
                 </div>
                 <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="hidden sm:inline-flex px-4 sm:px-5 py-2.5 rounded-xl orange-gradient text-white text-xs sm:text-sm font-extrabold shadow-md shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 items-center gap-2 whitespace-nowrap">
