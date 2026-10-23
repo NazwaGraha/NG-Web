@@ -1,66 +1,69 @@
 @extends('layouts.app')
 
-@section('title', 'Jasa Pembuatan Website Bogor & Solusi IT Kantor Terpercaya - NazwaGraha Pratama')
-@section('meta_description', 'Jasa pembuatan website murah, cepat & bergaransi di Bogor & Jabodetabek: Desain mewah profesional, gratis domain .COM & cloud hosting SSD, optimasi SEO & GEO Google ranking 1, instalasi jaringan LAN kantor.')
+@section('title', 'Jasa Pembuatan Website di Bogor: Desain Mewah, Cepat & Banjir Orderan - NazwaGraha Pratama')
+@section('meta_description', 'Jasa pembuatan website murah, cepat & bergaransi di Bogor & Jabodetabek: Desain mewah profesional, gratis domain .COM & cloud server SSD, optimasi SEO & GEO Google ranking 1, instalasi jaringan LAN kantor.')
 @section('meta_keywords', 'jasa pembuatan website bogor, jasa pembuatan website ciawi, jasa buat web perusahaan, jasa web bogor, web developer bogor, jasa pasang lan bogor, vendor it kantor, nazwa graha pratama')
 
 @section('preload')
 <link rel="preload" as="image" href="{{ asset('images/commercial_hero_workspace_mobile.webp') }}" media="(max-width: 768px)" type="image/webp" fetchpriority="high">
 <link rel="preload" as="image" href="{{ asset('images/commercial_hero_workspace.webp') }}" media="(min-width: 769px)" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="{{ asset('images/hero_device_showcase_3d.webp') }}" type="image/webp">
 @endsection
 
 @section('content')
 
-<!-- HERO SECTION: HIGH TRUST, BRIGHT & COMMERCIAL -->
-<section class="pt-8 pb-16 md:pt-16 md:pb-24 bg-gradient-to-b from-orange-50/50 via-white to-[#F8FAFC]">
+<!-- HERO SECTION: VISUAL DEVICE SHOWCASE V2 & HIGH CONVERSION -->
+<section class="pt-8 pb-14 md:pt-14 md:pb-20 bg-gradient-to-b from-orange-50/50 via-white to-[#F8FAFC]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <!-- Left Column: High Conversion Headline & CTA -->
             <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
                 
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-700 text-xs font-bold">
-                    <span class="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse"></span>
-                    <span>Jasa Website & Solusi IT Kantor No. 1 di Indonesia</span>
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-extrabold">
+                    <span class="w-2.5 h-2.5 rounded-full bg-orange-600 animate-pulse"></span>
+                    <span>Jasa Pembuatan Website Bogor No. 1 &amp; Solusi IT</span>
+                    <span class="bg-white/80 px-2 py-0.5 rounded text-[10px] text-slate-700 font-black">⭐ Rating 4.9/5</span>
                 </div>
 
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.12]">
-                    Banjir Orderan dengan <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">Website Cepat & Ranking 1</span>, Bereskan Masalah IT Kantor Anda!
+                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.14]">
+                    Jasa Pembuatan Website di Bogor <br class="hidden sm:inline">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">Desain Mewah, Cepat &amp; Banjir Orderan</span>
                 </h1>
 
                 <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                    Tingkatkan omset bisnis Anda bersama <strong>NazwaGraha Pratama</strong>. Solusi terpadu pembuatan website bisnis cepat (skor 90+ Google), optimasi SEO & AI Search (GEO), instalasi jaringan LAN kantor tanpa kabel semrawut, hingga pengadaan dan servis komputer siap pakai.
+                    Tingkatkan omset bisnis Anda bersama <strong>NazwaGraha Pratama</strong>. Solusi terpadu pembuatan website bisnis bergaransi resmi, loading kilat di bawah 1 detik, siap ranking 1 Google &amp; AI Search (ChatGPT), plus dukungan teknisi jaringan IT kantor langsung ke lokasi Anda.
                 </p>
 
                 <!-- Value Props Checks -->
                 <div class="grid grid-cols-2 gap-3 pt-1 text-left max-w-lg mx-auto lg:mx-0">
-                    <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                    <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-800">
                         <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-                        <span>Skor Google PageSpeed 90+</span>
+                        <span>Gratis Domain .COM &amp; Cloud Server SSD</span>
                     </div>
-                    <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                    <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-800">
                         <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-                        <span>Bisa Bayar Bertahap (Aman)</span>
+                        <span>Aman: Bisa Bayar Bertahap (DP 50%)</span>
                     </div>
-                    <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                    <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-800">
                         <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-                        <span>Garansi Maintenance 1 Tahun</span>
+                        <span>Optimasi SEO Google &amp; GEO AI Search</span>
                     </div>
-                    <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                    <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-800">
                         <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-                        <span>Teknisi On-Site Siap Datang</span>
+                        <span>Garansi Penuh Maintenance 1 Tahun</span>
                     </div>
                 </div>
 
                 <!-- Dual CTA Buttons -->
-                <div class="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20pesan%20layanan%20website/IT" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl orange-gradient text-white font-black text-base shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl orange-gradient text-white font-black text-base shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
                         <span>Pesan Layanan Sekarang</span>
                         <span class="bg-white/20 px-2 py-0.5 rounded text-xs">Fast Respon</span>
                     </a>
                     
-                    <a href="#harga" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-bold text-base transition flex items-center justify-center gap-2 shadow-sm">
-                        <span>Lihat Paket & Harga</span>
+                    <a href="#harga" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-bold text-base transition flex items-center justify-center gap-2 shadow-xs">
+                        <span>Lihat Paket &amp; Harga</span>
                         <span class="text-orange-500">↓</span>
                     </a>
                 </div>
@@ -72,45 +75,66 @@
                     </div>
                     <span class="font-bold text-slate-800">4.9 / 5.0 Rating Kepuasan</span>
                     <span class="text-slate-400">•</span>
-                    <span>Dipercaya 250+ Bisnis di Indonesia</span>
+                    <span>Dipercaya <strong>250+ Bisnis</strong> di Bogor &amp; Jabodetabek</span>
                 </div>
 
             </div>
 
-            <!-- Right Column: Real Team & Office Photography -->
+            <!-- Right Column: 3D Visual Device Showcase (MacBook Pro + Smartphone + Floating Trust Badges) -->
             <div class="lg:col-span-6 relative">
-                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
-                    <picture>
-                        <source media="(max-width: 768px)" srcset="{{ asset('images/commercial_hero_workspace_mobile.webp') }}" type="image/webp">
-                        <source srcset="{{ asset('images/commercial_hero_workspace.webp') }}" type="image/webp">
-                        <img src="{{ asset('images/commercial_hero_workspace.jpg') }}" 
-                             alt="Tim IT & Web Engineer NazwaGraha Pratama" 
-                             width="1376" 
-                             height="768" 
-                             fetchpriority="high" 
-                             loading="eager" 
-                             decoding="async" 
-                             class="w-full h-auto object-cover transform group-hover:scale-102 transition duration-700">
-                    </picture>
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                <div class="relative bg-slate-900 rounded-3xl p-3 sm:p-5 shadow-2xl border-4 border-white glow-orange overflow-hidden">
                     
-                    <!-- Floating Trust Badge -->
-                    <div class="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-slate-100 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-11 h-11 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center font-black text-lg">
-                                🏆
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-extrabold text-slate-900">Tim Web Engineer & Teknisi Resmi</h4>
-                                <p class="text-xs text-slate-500">Pengerjaan Cepat, Rapi, & Berstandar Korporat</p>
-                            </div>
+                    <!-- Mac Window Top Bar -->
+                    <div class="flex items-center justify-between pb-3 px-1 border-b border-slate-800 text-slate-400 text-xs">
+                        <div class="flex gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                        </div>
+                        <div class="bg-slate-800 px-3.5 py-1 rounded-md text-[10px] sm:text-[11px] text-slate-300 font-mono flex items-center gap-1.5">
+                            <span>🔒</span>
+                            <span>https://perusahaan-klien.com</span>
+                        </div>
+                        <span class="text-[10px] text-emerald-400 font-bold hidden sm:inline">● LIVE DEMO</span>
+                    </div>
+
+                    <!-- 3D Showcase Image -->
+                    <div class="relative rounded-2xl overflow-hidden mt-3 bg-slate-950">
+                        <picture>
+                            <source srcset="{{ asset('images/hero_device_showcase_3d.webp') }}" type="image/webp">
+                            <img src="{{ asset('images/hero_device_showcase_3d.png') }}" 
+                                 alt="Visual Showcase Website &amp; Mobile E-Commerce NazwaGraha Pratama" 
+                                 width="1376" 
+                                 height="768" 
+                                 fetchpriority="high" 
+                                 loading="eager" 
+                                 decoding="async" 
+                                 class="w-full h-auto object-cover transform hover:scale-102 transition duration-700">
+                        </picture>
+                    </div>
+
+                    <!-- Floating Badge 1: PageSpeed 99 -->
+                    <div class="absolute top-14 left-6 sm:left-8 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-2xl border border-slate-100 flex items-center gap-2.5 sm:gap-3">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-black text-sm sm:text-base">
+                            99
                         </div>
                         <div>
-                            <span class="inline-block bg-emerald-100 text-emerald-700 text-[11px] font-black px-2.5 py-1 rounded-full">
-                                100% Bergaransi
-                            </span>
+                            <span class="text-[9px] sm:text-[10px] font-black text-slate-400 block uppercase tracking-wider">Google PageSpeed</span>
+                            <strong class="text-xs sm:text-xs font-black text-slate-900">Loading Kilat &lt; 1 Detik</strong>
                         </div>
                     </div>
+
+                    <!-- Floating Badge 2: Notifikasi Orderan WhatsApp -->
+                    <div class="absolute bottom-6 right-6 sm:right-8 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-2xl border border-slate-100 flex items-center gap-2.5 sm:gap-3">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center text-base sm:text-lg">
+                            📈
+                        </div>
+                        <div>
+                            <span class="text-[9px] sm:text-[10px] font-black text-emerald-600 block uppercase tracking-wider">Notifikasi Penjualan</span>
+                            <strong class="text-xs font-black text-slate-900">Orderan Masuk via Google</strong>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -118,21 +142,63 @@
     </div>
 </section>
 
+<!-- QUICK ESTIMATION BAR (INTERAKTIF & RINGKAS DI BAWAH HERO) -->
+<section class="bg-white py-6 px-4 sm:px-6 lg:px-8 border-b border-slate-200" id="estimasi-cepat">
+    <div class="max-w-7xl mx-auto bg-slate-50 rounded-3xl p-5 sm:p-6 border-2 border-orange-200 card-shadow flex flex-col lg:flex-row items-center justify-between gap-5">
+        <div class="space-y-1 text-center lg:text-left">
+            <span class="text-[10px] font-black uppercase text-orange-600 bg-orange-100 px-2.5 py-0.5 rounded-full">Hitung Estimasi Cepat 1 Menit</span>
+            <h3 class="text-base sm:text-lg font-black text-slate-900">Ingin Tahu Biaya Pembuatan Website untuk Bisnis Anda?</h3>
+            <p class="text-xs text-slate-500">Pilih kebutuhan Anda dan dapatkan proposal penawaran resmi gratis langsung via WhatsApp:</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+            <select id="quick-calc-select" class="text-xs px-4 py-3 rounded-xl border border-slate-300 bg-white font-bold text-slate-700 focus:outline-none w-full sm:w-auto">
+                <option value="Paket Company Profile Pro (Mulai Rp 1,95 Juta)">🌐 Company Profile Pro (Mulai Rp 1,95 Jt)</option>
+                <option value="Paket Website Toko Online / E-Commerce (Mulai Rp 3,85 Juta)">🛒 Toko Online / E-Commerce (Mulai Rp 3,85 Jt)</option>
+                <option value="Instalasi & Rapikan Kabel Jaringan LAN Kantor">🔌 Pasang / Rapikan Kabel LAN Kantor</option>
+                <option value="Pengadaan Komputer Kantor & Maintenance Rutin (SLA)">💻 Pengadaan PC &amp; IT Support Kantor</option>
+            </select>
+
+            <button type="button" onclick="kirimQuickCalcWA()" class="w-full sm:w-auto px-6 py-3 rounded-xl orange-gradient text-white font-black text-xs uppercase tracking-wider shadow-md shadow-orange-500/30 flex items-center justify-center gap-2 whitespace-nowrap hover:shadow-orange-500/50 transition">
+                <span>Dapatkan Estimasi via WhatsApp →</span>
+            </button>
+        </div>
+    </div>
+</section>
+
 <!-- SOCIAL PROOF / CLIENT TRUST BAR -->
-<div class="border-y border-slate-200 bg-white py-8">
+<div class="border-b border-slate-200 bg-white py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-5">
-            TELAH DIPERCAYA PERUSAHAAN TERNAMA, BISNIS RETAIL, UMKM & INSTANSI DI INDONESIA
+        <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-5">
+            TELAH DIPERCAYA 250+ PERUSAHAAN TERNAMA, BISNIS RETAIL, UMKM &amp; INSTANSI DI INDONESIA
         </p>
-        <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-14 opacity-70 grayscale hover:grayscale-0 transition duration-300 font-bold text-slate-500 text-sm sm:text-base">
-            <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Perusahaan Logistik</span>
-            <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Fashion & Retail Brand</span>
-            <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Kantor Advokat & Hukum</span>
-            <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Distributor & Suplier</span>
-            <span class="flex items-center gap-1.5"><span class="text-orange-500 font-black">●</span> Klinik & Lembaga Pendidikan</span>
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-5xl mx-auto font-bold text-slate-700 text-xs">
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center gap-2">
+                <span class="text-base text-orange-500">🚚</span> <span>Logistik &amp; Kargo</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center gap-2">
+                <span class="text-base text-orange-500">👗</span> <span>Fashion &amp; Skincare</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center gap-2">
+                <span class="text-base text-orange-500">⚖️</span> <span>Advokat &amp; Notaris</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center gap-2">
+                <span class="text-base text-orange-500">🏭</span> <span>Distributor &amp; Pabrik</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center gap-2 col-span-2 sm:col-span-1">
+                <span class="text-base text-orange-500">🏥</span> <span>Klinik &amp; Yayasan</span>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+function kirimQuickCalcWA() {
+    const pilihan = document.getElementById('quick-calc-select').value;
+    const pesan = `Halo Tim NazwaGraha Pratama,%0A%0ASaya ingin konsultasi dan mendapatkan estimasi biaya penawaran resmi dari website:%0A• Layanan: ${encodeURIComponent(pilihan)}%0A%0AMohon informasi ketersediaan slot dan proses pengerjaannya. Terima kasih!`;
+    window.open(`https://wa.me/6281298506111?text=${pesan}`, '_blank');
+}
+</script>
 
 <!-- SECTION: DUA PILAR LAYANAN LENGKAP -->
 <section class="py-16 bg-white" id="layanan">
@@ -310,6 +376,20 @@
             </p>
         </div>
 
+        <!-- Custom Inspiration CTA Box (Pemicu Orderan Kustom) -->
+        <div class="max-w-5xl mx-auto mt-10 bg-white rounded-3xl p-6 sm:p-7 border-2 border-orange-200 flex flex-col sm:flex-row items-center justify-between gap-5 card-shadow">
+            <div class="flex items-center gap-4 text-center sm:text-left">
+                <span class="text-3xl sm:text-4xl">💡</span>
+                <div>
+                    <h4 class="text-sm sm:text-base font-black text-slate-900">Punya Referensi Desain Website Sendiri?</h4>
+                    <p class="text-xs text-slate-500 mt-0.5">Kirimkan link contoh website impian Anda ke WhatsApp kami, tim NazwaGraha siap membuatkan persis sesuai kebutuhan bisnis Anda!</p>
+                </div>
+            </div>
+            <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20punya%20referensi%20desain%20website%20sendiri%20dan%20ingin%20konsultasi" target="_blank" class="px-6 py-3.5 rounded-xl orange-gradient text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-orange-500/30 transition whitespace-nowrap">
+                Kirim Referensi Desain →
+            </a>
+        </div>
+
     </div>
 </section>
 
@@ -392,15 +472,15 @@
             </div>
 
             <!-- Paket 2: E-Commerce (BEST SELLER) -->
-            <div class="rounded-3xl p-8 bg-white border-2 border-orange-500 card-shadow flex flex-col justify-between relative transform md:-translate-y-2">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-[11px] font-black uppercase px-4 py-1.5 rounded-full shadow-md tracking-wider">
-                    ★ BEST SELLER & REKOMENDASI
+            <div class="rounded-3xl p-8 bg-white border-2 border-orange-500 card-shadow flex flex-col justify-between relative transform md:-translate-y-2 shadow-xl glow-orange">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-[11px] font-black uppercase px-4 py-1.5 rounded-full shadow-md tracking-wider whitespace-nowrap">
+                    ★ BEST SELLER &amp; REKOMENDASI UTAMA
                 </div>
 
                 <div>
                     <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600">Solusi Penjualan</span>
-                    <h3 class="text-2xl font-black text-slate-900 mt-1">E-Commerce & Katalog</h3>
-                    <p class="text-xs text-slate-500 mt-1">Untuk Toko Online, Distributor, & Brand Produk</p>
+                    <h3 class="text-2xl font-black text-slate-900 mt-1">E-Commerce &amp; Katalog</h3>
+                    <p class="text-xs text-slate-500 mt-1">Untuk Toko Online, Distributor, &amp; Brand Produk</p>
 
                     <div class="my-6">
                         <span class="text-xs text-slate-400 line-through">Rp 6.500.000</span>
@@ -412,12 +492,12 @@
                     </div>
 
                     <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span><strong>Semua Fitur Company Profile</strong></span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Manajemen Produk & Kategori Tanpa Batas</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Keranjang Belanja & Checkout WhatsApp</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Integrasi Hitung Ongkir Otomatis</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Optimasi SEO Google & GEO AI Search</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Panduan Video Penggunaan Sistem</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span><strong>Semua Fitur Company Profile Pro</strong></span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Manajemen Produk &amp; Kategori Tanpa Batas</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Keranjang Belanja &amp; Checkout WhatsApp</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Integrasi Hitung Ongkir Otomatis (JNE/J&amp;T)</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Optimasi SEO Google &amp; GEO AI Search</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span><strong>BONUS: Setup Google Bisnisku (Maps)</strong></span></li>
                     </ul>
                 </div>
 

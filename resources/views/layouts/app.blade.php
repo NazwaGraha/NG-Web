@@ -105,10 +105,10 @@
         "@type": ["LocalBusiness", "ProfessionalService", "ITService"],
         "@id": "{{ url('/') }}#business",
         "name": "NazwaGraha Pratama",
-        "alternateName": "NGP IT Solutions",
-        "legalName": "NazwaGraha Pratama",
-        "description": "Pusat penyedia jasa pembuatan website kilat (skor 90+ Google PageSpeed), optimasi SEO & GEO ranking 1 Google, instalasi jaringan LAN dan server kantor, pengadaan hardware IT dan servis komputer bergaransi di Bogor dan seluruh Indonesia.",
-        "image": "{{ asset('images/commercial_hero_workspace.webp') }}",
+        "alternateName": "PT Nazwa Graha Pratama",
+        "legalName": "PT Nazwa Graha Pratama",
+        "description": "Jasa pembuatan website murah, cepat & bergaransi di Bogor (skor 90+ Google PageSpeed), optimasi SEO & GEO ranking 1 Google, instalasi jaringan LAN dan server kantor, pengadaan hardware IT dan servis komputer di Ciawi, Bogor dan seluruh Jabodetabek.",
+        "image": "{{ asset('images/hero_device_showcase_3d.webp') }}",
         "logo": "{{ asset('images/ngp-logo.webp') }}",
         "url": "{{ url('/') }}",
         "telephone": "+6281298506111",
@@ -216,17 +216,22 @@
     <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-2 sm:gap-3">
-                <span class="bg-orange-500 text-white px-2.5 py-0.5 rounded-full font-black uppercase text-[10px] tracking-wider shadow-sm">Promo 2026</span>
-                <span class="hidden md:inline text-slate-200">🎁 Paket Website Komplit: Gratis Domain .COM + Cloud Server + Garansi 1 Tahun Penuh!</span>
-                <span class="md:hidden text-slate-200">🎁 Promo: Free Domain .COM + Cloud Hosting!</span>
+                <span class="bg-orange-600 text-white px-2.5 py-0.5 rounded-full font-black uppercase text-[10px] tracking-wider shadow-sm">Promo 2026</span>
+                <span class="hidden md:inline text-slate-200 font-semibold">🎁 Paket Website Komplit: Gratis Domain .COM + Cloud Server SSD + Garansi Penuh 1 Tahun!</span>
+                <span class="md:hidden text-slate-200 font-semibold">🎁 Promo: Free Domain .COM + Cloud Hosting SSD!</span>
             </div>
-            <div class="flex items-center gap-4 text-[11px]">
+            <div class="flex items-center gap-4 text-[11px] font-semibold">
+                <span class="hidden md:inline-flex items-center gap-1 text-slate-300">
+                    <span class="text-orange-400">📍</span>
+                    <span>Ciawi, Bogor</span>
+                </span>
+                <span class="hidden md:inline text-slate-700">|</span>
                 <a href="tel:081298506111" class="hidden sm:inline-flex items-center gap-1.5 text-slate-300 hover:text-orange-400 transition">
                     <span class="text-orange-400 font-bold">📞</span>
-                    <span>081298506111</span>
+                    <span>0812-9850-6111</span>
                 </a>
-                <span class="hidden sm:inline text-slate-600">|</span>
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20tertarik%20dengan%20layanan%20Anda" target="_blank" class="text-orange-400 hover:text-orange-300 font-extrabold flex items-center gap-1 transition">
+                <span class="hidden sm:inline text-slate-700">|</span>
+                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20tertarik%20dengan%20layanan%20Anda" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-black flex items-center gap-1 transition">
                     <span>Chat WhatsApp Admin</span>
                     <span>→</span>
                 </a>
@@ -249,11 +254,11 @@
                         <span class="text-base sm:text-lg font-black tracking-tight text-slate-900 leading-none group-hover:text-orange-600 transition">NAZWAGRAHA</span>
                         <span class="text-[9px] font-black px-1.5 py-0.5 rounded bg-orange-100 text-orange-700 uppercase leading-none tracking-wider">PRATAMA</span>
                     </div>
-                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mt-1">IT Solutions &amp; Web Services</span>
+                    <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mt-1">IT Solutions &amp; Web Services Bogor</span>
                 </div>
             </a>
 
-            <!-- Desktop Navigation Menu (Beranda, Layanan IT, Info [Tentang Kami, Artikel IT, Portofolio], Kontak) -->
+            <!-- Desktop Navigation Menu (Beranda, Layanan IT, Harga Paket, Portofolio, Artikel IT, Kontak) -->
             <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-semibold text-slate-700">
                 
                 <!-- 1. Beranda -->
@@ -303,42 +308,24 @@
                     </div>
                 </div>
 
-                <!-- 3. Info (Sub Menu: Tentang Kami, Artikel IT, Portofolio) -->
-                <div class="relative group" id="infoDropdown">
-                    <button type="button" class="px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 text-slate-700 hover:text-orange-600 hover:bg-slate-50 group-hover:text-orange-600 group-hover:bg-slate-50 {{ (request()->routeIs('about') || request()->routeIs('articles.*') || request()->routeIs('gallery.*')) ? 'bg-orange-50 text-orange-600 font-bold' : '' }}">
-                        <span>Info</span>
-                        <svg class="w-4 h-4 text-slate-400 group-hover:text-orange-600 group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
+                <!-- 3. Direct Menu: Harga Paket (Kunci Konversi Cepat) -->
+                <a href="{{ route('home') }}#harga" class="px-3 py-2 rounded-xl text-slate-800 hover:text-orange-600 hover:bg-orange-50 font-bold transition flex items-center gap-1.5">
+                    <span class="text-orange-600">🏷️</span>
+                    <span>Harga Paket</span>
+                </a>
 
-                    <!-- Dropdown Box Info -->
-                    <div class="absolute top-full left-0 pt-2 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform group-hover:translate-y-0 translate-y-1">
-                        <div class="bg-white rounded-2xl shadow-xl border border-slate-200/90 p-2 space-y-1">
-                            
-                            <!-- Sub Menu 1: Tentang Kami -->
-                            <a href="{{ route('about') }}" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-bold {{ request()->routeIs('about') ? 'text-orange-600 bg-orange-50' : 'text-slate-700 hover:text-orange-600 hover:bg-orange-50' }} transition">
-                                <span class="text-base">🏢</span>
-                                <span>Tentang Kami</span>
-                            </a>
+                <!-- 4. Direct Menu: Portofolio (Bukti Nyata Kualitas) -->
+                <a href="{{ route('gallery.index') }}" class="px-3 py-2 rounded-xl transition {{ request()->routeIs('gallery.*') ? 'bg-orange-50 text-orange-600 font-bold' : 'hover:text-orange-600 hover:bg-slate-50' }} font-bold flex items-center gap-1.5">
+                    <span>🖼️</span>
+                    <span>Portofolio</span>
+                </a>
 
-                            <!-- Sub Menu 2: Artikel IT -->
-                            <a href="{{ route('articles.index') }}" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-bold {{ request()->routeIs('articles.*') ? 'text-orange-600 bg-orange-50' : 'text-slate-700 hover:text-orange-600 hover:bg-orange-50' }} transition">
-                                <span class="text-base">📰</span>
-                                <span>Artikel IT</span>
-                            </a>
+                <!-- 5. Artikel IT -->
+                <a href="{{ route('articles.index') }}" class="px-3 py-2 rounded-xl transition {{ request()->routeIs('articles.*') ? 'bg-orange-50 text-orange-600 font-bold' : 'hover:text-orange-600 hover:bg-slate-50' }}">
+                    Artikel IT
+                </a>
 
-                            <!-- Sub Menu 3: Portofolio -->
-                            <a href="{{ route('gallery.index') }}" class="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-bold {{ request()->routeIs('gallery.*') ? 'text-orange-600 bg-orange-50' : 'text-slate-700 hover:text-orange-600 hover:bg-orange-50' }} transition">
-                                <span class="text-base">🖼️</span>
-                                <span>Portofolio</span>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Kontak -->
+                <!-- 6. Kontak -->
                 <a href="{{ route('contact.index') }}" class="px-3.5 py-2 rounded-xl transition {{ request()->routeIs('contact.*') ? 'bg-orange-50 text-orange-600 font-bold' : 'hover:text-orange-600 hover:bg-slate-50' }}">
                     Kontak
                 </a>
@@ -350,6 +337,9 @@
                 
                 <!-- Direct WhatsApp Button (Desktop / Tablet) -->
                 <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="hidden sm:flex px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl orange-gradient text-white text-xs sm:text-sm font-black shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition transform hover:-translate-y-0.5 items-center gap-2 shrink-0">
+                    <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289l-.26.309c-.087.094-.179.196-.077.371.101.174.45 1.743 1.95 2.072.193.042.361.026.495-.038.159-.076.694-.808.88-1.084.188-.276.375-.231.625-.138.25.092 1.587.748 1.86.885.274.137.456.205.522.319.066.114.066.662-.078 1.067z"/></svg>
+                    <span>Konsultasi Gratis</span>
+                </a>
                     <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289l-.26.309c-.087.094-.179.196-.077.371.101.174.45 1.743 1.95 2.072.193.042.361.026.495-.038.159-.076.694-.808.88-1.084.188-.276.375-.231.625-.138.25.092 1.587.748 1.86.885.274.137.456.205.522.319.066.114.066.662-.078 1.067z"/></svg>
                     <span>Konsultasi Gratis</span>
                 </a>
@@ -384,7 +374,25 @@
                     <span class="text-xs text-slate-400">→</span>
                 </a>
 
-                <!-- 2. Layanan IT Group -->
+                <!-- 2. Harga Paket Langsung -->
+                <a href="{{ route('home') }}#harga" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 transition">
+                    <span class="flex items-center gap-2.5">
+                        <span class="text-base">🏷️</span>
+                        <span>Harga Paket Website &amp; IT</span>
+                    </span>
+                    <span class="text-xs text-orange-500 font-black">PROMO</span>
+                </a>
+
+                <!-- 3. Portofolio Langsung -->
+                <a href="{{ route('gallery.index') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('gallery.*') ? 'bg-orange-50 text-orange-600' : 'text-slate-800 hover:bg-slate-50' }} transition">
+                    <span class="flex items-center gap-2.5">
+                        <span class="text-base">🖼️</span>
+                        <span>Portofolio Hasil Proyek</span>
+                    </span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+
+                <!-- 4. Layanan IT Group -->
                 <div class="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-3 space-y-2">
                     <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block px-1">Layanan Solusi IT:</span>
                     
@@ -414,9 +422,9 @@
                     </a>
                 </div>
 
-                <!-- 3. Info (Sub Menu: Tentang Kami, Artikel IT, Portofolio) -->
+                <!-- 5. Info Lainnya -->
                 <div class="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-3 space-y-2">
-                    <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block px-1">Info:</span>
+                    <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block px-1">Edukasi &amp; Profil:</span>
                     
                     <a href="{{ route('about') }}" class="flex items-center gap-2.5 p-2 rounded-lg text-xs font-bold {{ request()->routeIs('about') ? 'text-orange-600 bg-white shadow-xs' : 'text-slate-700 hover:text-orange-600 hover:bg-white' }} transition">
                         <span>🏢</span>
@@ -427,18 +435,13 @@
                         <span>📰</span>
                         <span>Artikel IT</span>
                     </a>
-
-                    <a href="{{ route('gallery.index') }}" class="flex items-center gap-2.5 p-2 rounded-lg text-xs font-bold {{ request()->routeIs('gallery.*') ? 'text-orange-600 bg-white shadow-xs' : 'text-slate-700 hover:text-orange-600 hover:bg-white' }} transition">
-                        <span>🖼️</span>
-                        <span>Portofolio</span>
-                    </a>
                 </div>
 
-                <!-- 4. Kontak -->
+                <!-- 6. Kontak -->
                 <a href="{{ route('contact.index') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('contact.*') ? 'bg-orange-50 text-orange-600' : 'text-slate-800 hover:bg-slate-50' }} transition">
                     <span class="flex items-center gap-2.5">
                         <span class="text-base">📍</span>
-                        <span>Kontak</span>
+                        <span>Kontak &amp; Lokasi Kantor</span>
                     </span>
                     <span class="text-xs text-slate-400">→</span>
                 </a>
@@ -537,8 +540,12 @@
 
             <!-- Bottom Legal Footprint -->
             <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-2">
-                <p>© {{ date('Y') }} NazwaGraha Pratama. Seluruh Hak Cipta Dilindungi.</p>
+                <p>© {{ date('Y') }} PT Nazwa Graha Pratama. Seluruh Hak Cipta Dilindungi.</p>
                 <div class="flex items-center gap-4">
+                    <a href="https://maps.google.com/?q=NazwaGraha+Pratama+Ciawi+Bogor" target="_blank" rel="noopener noreferrer" class="hover:text-orange-400 transition flex items-center gap-1">
+                        <span>📍 Lokasi Google Maps</span>
+                    </a>
+                    <span>•</span>
                     <a href="{{ route('seo.sitemap') }}" class="hover:text-slate-400 transition">Sitemap XML</a>
                     <span>•</span>
                     <a href="{{ route('seo.robots') }}" class="hover:text-slate-400 transition">Robots.txt</a>
