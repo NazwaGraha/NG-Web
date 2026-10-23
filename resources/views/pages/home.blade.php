@@ -22,7 +22,7 @@
                 
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-extrabold">
                     <span class="w-2.5 h-2.5 rounded-full bg-orange-600 animate-pulse"></span>
-                    <span>Jasa Pembuatan Website Bogor No. 1 &amp; Solusi IT</span>
+                    <span>Jasa Website Bogor No. 1 &amp; Solusi IT Kantor</span>
                     <span class="bg-white/80 px-2 py-0.5 rounded text-[10px] text-slate-700 font-black">⭐ Rating 4.9/5</span>
                 </div>
 
@@ -32,7 +32,7 @@
                 </h1>
 
                 <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                    Tingkatkan omset bisnis Anda bersama <strong>NazwaGraha Pratama</strong>. Solusi terpadu pembuatan website bisnis bergaransi resmi, loading kilat di bawah 1 detik, siap ranking 1 Google &amp; AI Search (ChatGPT), plus dukungan teknisi jaringan IT kantor langsung ke lokasi Anda.
+                    Ubah pengunjung Google menjadi pembeli setia! Kami rancang website bisnis eksklusif yang loading di bawah 1 detik, siap rangking 1 Google &amp; AI Search (ChatGPT), plus dukungan teknisi jaringan IT kantor langsung ke lokasi Anda.
                 </p>
 
                 <!-- Value Props Checks -->
@@ -55,27 +55,31 @@
                     </div>
                 </div>
 
-                <!-- Dual CTA Buttons -->
+                <!-- Dual CTA Buttons (Matching Mockup V2) -->
                 <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                     <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl orange-gradient text-white font-black text-base shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
-                        <span>Pesan Layanan Sekarang</span>
-                        <span class="bg-white/20 px-2 py-0.5 rounded text-xs">Fast Respon</span>
+                        <span>💬 Konsultasi Gratis via WhatsApp</span>
+                        <span class="bg-white/20 px-2 py-0.5 rounded text-xs font-bold">Fast Respon</span>
                     </a>
                     
-                    <a href="#harga" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-bold text-base transition flex items-center justify-center gap-2 shadow-xs">
-                        <span>Lihat Paket &amp; Harga</span>
+                    <a href="#portofolio" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-bold text-base transition flex items-center justify-center gap-2 shadow-xs">
+                        <span>Lihat Hasil Desain</span>
                         <span class="text-orange-500">↓</span>
                     </a>
                 </div>
 
-                <!-- Rating Proof -->
+                <!-- Micro Social Proof (Avatars PT, CV, UD & Rating Kepuasan - Persis Mockup V2) -->
                 <div class="pt-3 flex items-center justify-center lg:justify-start gap-4 text-xs text-slate-500 border-t border-slate-200">
-                    <div class="flex items-center gap-1 text-amber-500 text-sm">
-                        ★★★★★
+                    <div class="flex -space-x-2 shrink-0">
+                        <div class="w-7 h-7 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-800">PT</div>
+                        <div class="w-7 h-7 rounded-full bg-orange-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-800">CV</div>
+                        <div class="w-7 h-7 rounded-full bg-amber-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-800">UD</div>
                     </div>
-                    <span class="font-bold text-slate-800">4.9 / 5.0 Rating Kepuasan</span>
-                    <span class="text-slate-400">•</span>
-                    <span>Dipercaya <strong>250+ Bisnis</strong> di Bogor &amp; Jabodetabek</span>
+                    <div class="flex items-center gap-2">
+                        <div class="flex text-amber-500 text-xs">★★★★★</div>
+                        <span class="text-slate-400">•</span>
+                        <span><strong class="text-slate-900 font-extrabold">250+ Klien Terdaftar</strong> di Bogor, Ciawi &amp; Jabodetabek</span>
+                    </div>
                 </div>
 
             </div>
