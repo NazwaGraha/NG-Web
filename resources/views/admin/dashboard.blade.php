@@ -86,6 +86,20 @@
 <!-- Stat Metrics Cards -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-8">
     
+    <!-- Packages Website Card (GAMBAR 1) -->
+    <a href="{{ route('admin.packages.index') }}" class="bg-gradient-to-br from-white to-orange-50/50 rounded-3xl p-5 border border-orange-200/80 shadow-xs hover:border-[#F58220] hover:shadow-md transition flex items-center justify-between group">
+        <div>
+            <span class="text-xs font-bold text-orange-700 uppercase tracking-wider">Paket Website</span>
+            <div class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">{{ $totalPackages ?? 3 }}</div>
+            <span class="text-[11px] text-[#F58220] font-extrabold flex items-center gap-1">
+                <span>⭐</span> Pilihan Paket (Gbr 1)
+            </span>
+        </div>
+        <div class="w-12 h-12 rounded-2xl bg-orange-100 text-[#F58220] flex items-center justify-center font-bold text-xl group-hover:scale-110 transition">
+            💼
+        </div>
+    </a>
+
     <!-- Hot Leads / Incoming Messages Card -->
     <a href="{{ route('admin.contact-messages.index') }}" class="bg-gradient-to-br from-white to-amber-50/50 rounded-3xl p-5 border border-amber-200/80 shadow-xs hover:border-amber-400 hover:shadow-md transition flex items-center justify-between group">
         <div>
@@ -100,39 +114,31 @@
         </div>
     </a>
 
-    <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-xs flex items-center justify-between">
+    <!-- Total Articles Card -->
+    <a href="{{ route('admin.articles.index') }}" class="bg-white rounded-3xl p-5 border border-slate-200 shadow-xs hover:border-slate-300 transition flex items-center justify-between group">
         <div>
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Artikel</span>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Posting Artikel</span>
             <div class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">{{ $totalArticles }}</div>
             <span class="text-[11px] text-emerald-600 font-semibold">{{ $publishedArticles }} Diterbitkan</span>
         </div>
-        <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-xl">
+        <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition">
             📝
         </div>
-    </div>
+    </a>
 
-    <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-xs flex items-center justify-between">
+    <!-- Portofolio Card (GAMBAR 2) -->
+    <a href="{{ route('admin.galleries.index') }}" class="bg-white rounded-3xl p-5 border border-slate-200 shadow-xs hover:border-slate-300 transition flex items-center justify-between group">
         <div>
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Kategori Artikel</span>
-            <div class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">{{ $totalCategories }}</div>
-            <span class="text-[11px] text-slate-500 font-semibold">Struktur Topik SEO</span>
-        </div>
-        <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xl">
-            🏷️
-        </div>
-    </div>
-
-    <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-xs flex items-center justify-between">
-        <div>
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Foto Portofolio</span>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Portofolio</span>
             <div class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">{{ $totalGalleries }}</div>
-            <span class="text-[11px] text-orange-600 font-semibold">Bukti Pekerjaan</span>
+            <span class="text-[11px] text-orange-600 font-semibold">Bukti Karya (Gbr 2)</span>
         </div>
-        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-xl">
+        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition">
             🖼️
         </div>
-    </div>
+    </a>
 
+    <!-- Total Views Card -->
     <div class="bg-white rounded-3xl p-5 border border-slate-200 shadow-xs flex items-center justify-between">
         <div>
             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Pembaca</span>
@@ -148,19 +154,25 @@
 
 <!-- Quick Actions -->
 <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm mb-8">
-    <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-4">Aksi Cepat Manajemen</h2>
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Pintasan Menu Cepat</h2>
+        <span class="text-[11px] text-slate-400">Akses cepat menu utama backoffice</span>
+    </div>
     <div class="flex flex-wrap gap-3 sm:gap-4">
-        <a href="{{ route('admin.contact-messages.index') }}" class="px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs transition flex items-center gap-2 shadow-xs">
-            <span>📩 Cek Pesan Masuk ({{ $unreadMessages }} Baru)</span>
+        <a href="{{ route('admin.packages.index') }}" class="px-5 py-3 rounded-2xl orange-gradient text-white font-extrabold text-xs transition flex items-center gap-2 shadow-md shadow-orange-500/25">
+            <span>⭐ Atur Pilihan Paket Website</span>
         </a>
-        <a href="{{ route('admin.articles.create') }}" class="px-5 py-3 rounded-2xl orange-gradient text-white text-xs font-bold shadow-md hover:shadow-orange-500/30 transition flex items-center gap-2">
-            <span>+ Buat Artikel SEO Baru</span>
-        </a>
-        <a href="{{ route('admin.galleries.create') }}" class="px-5 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition flex items-center gap-2">
-            <span>+ Upload Foto Galeri Baru</span>
+        <a href="{{ route('admin.articles.create') }}" class="px-5 py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition flex items-center gap-2 shadow-xs">
+            <span>📝 + Posting Artikel Baru</span>
         </a>
         <a href="{{ route('admin.categories.index') }}" class="px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition flex items-center gap-2">
-            <span>+ Kelola Kategori Artikel</span>
+            <span>🏷️ Kategori Artikel</span>
+        </a>
+        <a href="{{ route('admin.galleries.index') }}" class="px-5 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition flex items-center gap-2">
+            <span>🖼️ Kelola Portofolio Website</span>
+        </a>
+        <a href="{{ route('admin.contact-messages.index') }}" class="px-5 py-3 rounded-2xl bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-xs transition flex items-center gap-2">
+            <span>📩 Pesan Masuk ({{ $unreadMessages }} Baru)</span>
         </a>
     </div>
 </div>

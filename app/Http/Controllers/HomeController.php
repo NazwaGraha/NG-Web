@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Gallery;
 use App\Models\Category;
+use App\Models\Package;
 
 class HomeController extends Controller
 {
@@ -16,6 +17,10 @@ class HomeController extends Controller
             ->published()
             ->latest('published_at')
             ->take(3)
+            ->get();
+
+        $packages = Package::where('is_active', true)
+            ->orderBy('sort_order', 'asc')
             ->get();
 
         $galleries = Gallery::where('is_featured', true)
@@ -37,7 +42,7 @@ class HomeController extends Controller
 
         $categories = Category::withCount('articles')->get();
 
-        return view('pages.home', compact('articles', 'galleries', 'categories', 'galleryCategories'));
+        return view('pages.home', compact('articles', 'galleries', 'categories', 'galleryCategories', 'packages'));
     }
 
     public function about()

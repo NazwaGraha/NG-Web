@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Article;
 use App\Models\Gallery;
+use App\Models\Package;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -195,6 +196,85 @@ class DatabaseSeeder extends Seeder
 
         foreach ($galleries as $gal) {
             Gallery::updateOrCreate(['title' => $gal['title']], $gal);
+        }
+
+        // 5. Packages (Pilihan Paket Pembuatan Website - Sesuai Gambar 1)
+        $packages = [
+            [
+                'name' => 'Company Profile Pro',
+                'slug' => 'company-profile-pro',
+                'target_badge' => 'UMKM & BISNIS BARU',
+                'tagline' => 'Untuk Profil Usaha, Kantor Jasa, & Lembaga',
+                'original_price' => 'Rp 3.500.000',
+                'price_prefix' => null,
+                'price' => 'Rp 1.950.000',
+                'discount_tag' => 'Hemat 45% Bulan Ini',
+                'features' => [
+                    'Desain Eksklusif (1–5 Halaman)',
+                    'Gratis Domain .COM 1 Tahun',
+                    'Gratis Cloud Hosting SSD Cepat',
+                    'Integrasi Tombol WhatsApp',
+                    'Lolos Skor Google 90+',
+                    'Garansi Maintenance 1 Tahun',
+                ],
+                'cta_text' => 'Pilih Paket Company Profile →',
+                'cta_whatsapp_text' => 'Halo NazwaGraha Pratama, saya ingin memesan Paket Company Profile Pro (Rp 1.950.000).',
+                'is_popular' => false,
+                'popular_badge_text' => '★ BEST SELLER & REKOMENDASI',
+                'is_active' => true,
+                'sort_order' => 1,
+            ],
+            [
+                'name' => 'E-Commerce & Katalog',
+                'slug' => 'e-commerce-katalog',
+                'target_badge' => 'SOLUSI PENJUALAN',
+                'tagline' => 'Untuk Toko Online, Distributor & Brand',
+                'original_price' => 'Rp 6.500.000',
+                'price_prefix' => 'Mulai',
+                'price' => 'Rp 3.850.000',
+                'discount_tag' => 'Paket Komplit Siap Jualan',
+                'features' => [
+                    'Semua Fitur Company Profile',
+                    'Manajemen Produk & Kategori Tanpa Batas',
+                    'Keranjang Belanja & Checkout WhatsApp',
+                    'Integrasi Hitung Ongkir Otomatis',
+                    'Optimasi SEO Google & GEO AI Search',
+                    'Panduan Video Penggunaan Sistem',
+                ],
+                'cta_text' => 'Pesan Paket E-Commerce Sekarang →',
+                'cta_whatsapp_text' => 'Halo NazwaGraha Pratama, saya ingin memesan Paket E-Commerce & Katalog (Rp 3.850.000).',
+                'is_popular' => true,
+                'popular_badge_text' => '★ BEST SELLER & REKOMENDASI',
+                'is_active' => true,
+                'sort_order' => 2,
+            ],
+            [
+                'name' => 'Custom Web & App',
+                'slug' => 'custom-web-app',
+                'target_badge' => 'SKALA PERUSAHAAN',
+                'tagline' => 'Sistem Informasi, Portal Berita, & Web Khusus',
+                'original_price' => 'Investasi Fleksibel Sesuai Kebutuhan',
+                'price_prefix' => null,
+                'price' => 'Custom / Nego',
+                'discount_tag' => 'Proposal & Demo Gratis',
+                'features' => [
+                    'Aplikasi Web Kustom Framework Laravel',
+                    'Multi User & Role Permission Admin',
+                    'Integrasi RESTful API & Payment Gateway',
+                    'Skalabilitas Cloud Server Dedicated',
+                    'Dedicated Senior Fullstack Engineer',
+                ],
+                'cta_text' => 'Konsultasikan Sistem Kustom →',
+                'cta_whatsapp_text' => 'Halo NazwaGraha Pratama, saya ingin konsultasi Paket Custom Web & App (Custom / Nego).',
+                'is_popular' => false,
+                'popular_badge_text' => '★ BEST SELLER & REKOMENDASI',
+                'is_active' => true,
+                'sort_order' => 3,
+            ],
+        ];
+
+        foreach ($packages as $pkg) {
+            Package::updateOrCreate(['slug' => $pkg['slug']], $pkg);
         }
     }
 }

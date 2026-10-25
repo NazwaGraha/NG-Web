@@ -9,6 +9,7 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\ContactMessage;
 use App\Models\Gallery;
+use App\Models\Package;
 
 class DashboardController extends Controller
 {
@@ -18,6 +19,7 @@ class DashboardController extends Controller
         $publishedArticles = Article::where('is_published', true)->count();
         $totalCategories = Category::count();
         $totalGalleries = Gallery::count();
+        $totalPackages = Package::count();
         $totalViews = Article::sum('views');
 
         $totalMessages = ContactMessage::count();
@@ -32,6 +34,7 @@ class DashboardController extends Controller
             'publishedArticles',
             'totalCategories',
             'totalGalleries',
+            'totalPackages',
             'totalViews',
             'totalMessages',
             'unreadMessages',

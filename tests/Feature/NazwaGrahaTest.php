@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\ContactMessage;
 use App\Models\Gallery;
+use App\Models\Package;
 use App\Models\User;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -588,5 +589,124 @@ class NazwaGrahaTest extends TestCase
         $deleteSpv = $this->delete('/admin/contact-messages/' . $msg->id);
         $deleteSpv->assertRedirect('/admin/contact-messages');
         $this->assertDatabaseMissing('contact_messages', ['id' => $msg->id]);
+    }
+
+    public function test_admin_can_manage_packages_and_view_live_preview(): void
+    {
+        $admin = User::first();
+        $this->actingAs($admin);
+
+        // 1. Visit packages index
+        $indexRes = $this->get('/admin/packages');
+        $indexRes->assertStatus(200);
+        $indexRes->assertSee('Pilihan Paket Pembuatan Website');
+        $indexRes->assertSee('Company Profile Pro');
+        $indexRes->assertSee('E-Commerce & Katalog');
+        $indexRes->assertSee('Custom Web & App');
+
+        // 2. Visit create page
+        $createRes = $this->get('/admin/packages/create');
+        $createRes->assertStatus(200);
+        $createRes->assertSee('Tambah Paket Pembuatan Website Baru');
+
+        // 3. Store new package
+        $storeRes = $this->post('/admin/packages', [
+            'name' => 'Landing Page Kilat Express',
+            'target_badge' => 'PROMO SPESIAL',
+            'tagline' => 'Untuk Peluncuran Produk & Event Kilat',
+            'price_prefix' => 'Hanya',
+            'original_price' => 'Rp 1.500.000',
+            'price' => 'Rp 999.000',
+            'discount_tag' => 'Hemat 35%',
+            'features' => "1 Halaman High Conversion\nGratis Domain & Hosting\nForm WhatsApp Otomatis",
+            'cta_text' => 'Ambil Promo Sekarang →',
+            'cta_whatsapp_text' => 'Halo NazwaGraha, saya mau promo Landing Page Kilat',
+            'is_popular' => 0,
+            'is_active' => 1,
+            'sort_order' => 4,
+        ]);
+        $storeRes->assertRedirect('/admin/packages');
+        $storeRes->assertSessionHas('success');
+
+        $created = Package::where('name', 'Landing Page Kilat Express')->first();
+        $this->assertNotNull($created);
+        $this->assertEquals('Rp 999.000', $created->price);
+        $this->assertCount(3, $created->features);
+
+        // 4. Edit page
+        $editRes = $this->get('/admin/packages/' . $created->id . '/edit');
+        $editRes->assertStatus(200);
+        $editRes->assertSee('Edit Paket: Landing Page Kilat Express');
+
+        // 5. Update package
+        $updateRes = $this->put('/admin/packages/' . $created->id, [
+            'name' => 'Landing Page Kilat Express VIP',
+            'target_badge' => 'PROMO SPESIAL VIP',
+            'tagline' => 'Untuk Peluncuran Produk & Event Kilat',
+            'price_prefix' => 'Hanya',
+            'original_price' => 'Rp 1.500.000',
+            'price' => 'Rp 899.000',
+            'discount_tag' => 'Hemat 40%',
+            'features' => "1 Halaman High Conversion\nGratis Domain & Hosting\nForm WhatsApp Otomatis\nBonus Copywriting",
+            'cta_text' => 'Ambil Promo VIP Sekarang →',
+            'cta_whatsapp_text' => 'Halo NazwaGraha, saya mau promo VIP',
+            'is_popular' => 1,
+            'popular_badge_text' => '★ FLASH SALE 24 JAM',
+            'is_active' => 1,
+            'sort_order' => 4,
+        ]);
+        $updateRes->assertRedirect('/admin/packages');
+        $created->refresh();
+        $this->assertEquals('Landing Page Kilat Express VIP', $created->name);
+        $this->assertTrue($created->is_popular);
+        $this->assertEquals('★ FLASH SALE 24 JAM', $created->popular_badge_text);
+    }
+
+    public function test_admin_cannot_delete_package_but_supervisor_can(): void
+    {
+        $pkg = Package::create([
+            'name' => 'Paket To Delete',
+            'slug' => 'paket-to-delete',
+            'price' => 'Rp 500.000',
+            'features' => ['Fitur 1', 'Fitur 2'],
+            'is_active' => true,
+            'sort_order' => 99,
+        ]);
+
+        // 1. Admin CANNOT delete -> 403
+        $admin = User::where('role', 'admin')->first();
+        $this->actingAs($admin);
+        $deleteAdmin = $this->delete('/admin/packages/' . $pkg->id);
+        $deleteAdmin->assertStatus(403);
+        $this->assertDatabaseHas('packages', ['id' => $pkg->id]);
+
+        // 2. Supervisor CAN delete -> 302
+        $supervisor = User::where('role', 'supervisor')->first();
+        $this->actingAs($supervisor);
+        $deleteSpv = $this->delete('/admin/packages/' . $pkg->id);
+        $deleteSpv->assertRedirect('/admin/packages');
+        $this->assertDatabaseMissing('packages', ['id' => $pkg->id]);
+    }
+
+    public function test_homepage_displays_dynamic_packages_and_portfolio_matching_reference(): void
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
+
+        // 1. Check Dynamic Packages Section matching Image 1
+        $response->assertSee('TRANSPARAN &amp; RESMI', false);
+        $response->assertSee('Pilihan Paket');
+        $response->assertSee('Company Profile Pro');
+        $response->assertSee('Rp 1.950.000');
+        $response->assertSee('E-Commerce &amp; Katalog', false);
+        $response->assertSee('BEST SELLER', false);
+        $response->assertSee('Custom Web &amp; App', false);
+
+        // 2. Check Portfolio Section matching Image 2
+        $response->assertSee('HASIL KARYA RIIL');
+        $response->assertSee('Portofolio Website Terbaru');
+        $response->assertSee('Lihat Semua Portofolio Website');
+        $response->assertSee('WEBSITE');
+        $response->assertSee('Pesan Proyek Serupa via WA');
     }
 }

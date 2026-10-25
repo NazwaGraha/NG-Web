@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
 use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\ContactMessageController as AdminContactMessageController;
+use App\Http\Controllers\Admin\PackageController as AdminPackageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // Categories Management
         Route::resource('categories', AdminCategoryController::class)->except(['create', 'show', 'destroy']);
 
+        // Packages Management (Pilihan Paket Pembuatan Website)
+        Route::resource('packages', AdminPackageController::class)->except(['show', 'destroy']);
+
         // Articles Management
         Route::post('articles/upload-image', [AdminArticleController::class, 'uploadImage'])->name('articles.upload-image');
         Route::resource('articles', AdminArticleController::class)->except(['destroy']);
@@ -97,6 +101,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Data Deletion Protection: Only Super User & Supervisor are allowed to delete data
         Route::middleware(['can.delete'])->group(function () {
+            Route::delete('packages/{package}', [AdminPackageController::class, 'destroy'])->name('packages.destroy');
             Route::delete('categories/{category}', [AdminCategoryController::class, 'destroy'])->name('categories.destroy');
             Route::delete('articles/{article}', [AdminArticleController::class, 'destroy'])->name('articles.destroy');
             Route::delete('galleries/{gallery}', [AdminGalleryController::class, 'destroy'])->name('galleries.destroy');

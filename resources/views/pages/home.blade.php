@@ -483,31 +483,38 @@ function kirimQuickCalcWA() {
 <section class="py-16 bg-[#F8FAFC] border-t border-slate-200" id="portofolio">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="text-center max-w-3xl mx-auto mb-10">
-            <span class="text-orange-600 font-bold text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">Portofolio & Bukti Hasil</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Bukti Nyata Karya & Kepuasan Klien Kami</h2>
-            <p class="text-slate-600 text-sm sm:text-base mt-2">
-                Dokumentasi riil pengerjaan website berkinerja tinggi, instalasi kabel jaringan server kantor rapi, dan pengadaan hardware terpercaya.
-            </p>
-
-            <!-- Filter Kategori Cepat (Interaktif) -->
-            <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
-                <button type="button" onclick="filterHomePortofolio('all')" id="home-port-tab-all" class="px-4 py-2 rounded-xl text-xs font-bold transition orange-gradient text-white shadow-md">
-                    Semua Portofolio
-                </button>
-                <button type="button" onclick="filterHomePortofolio('website')" id="home-port-tab-website" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:border-orange-300">
-                    🌐 Website & App
-                </button>
-                <button type="button" onclick="filterHomePortofolio('jaringan')" id="home-port-tab-jaringan" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:border-orange-300">
-                    🔌 Jaringan LAN
-                </button>
-                <button type="button" onclick="filterHomePortofolio('hardware')" id="home-port-tab-hardware" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:border-orange-300">
-                    💻 Hardware IT
-                </button>
+        <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4">
+            <div>
+                <span class="text-[#F58220] font-black text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full font-heading">
+                    HASIL KARYA RIIL
+                </span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 mt-2 font-heading tracking-tight">
+                    Portofolio Website Terbaru
+                </h2>
             </div>
+            <a href="{{ route('gallery.index') }}" class="text-xs sm:text-sm font-extrabold text-[#F58220] hover:underline flex items-center gap-1.5 shrink-0">
+                <span>Lihat Semua Portofolio Website</span>
+                <span>→</span>
+            </a>
         </div>
 
-        <!-- GRID PORTOFOLIO DINAMIS (DARI DATABASE BACKOFFICE) -->
+        <!-- Filter Kategori Cepat (Interaktif) -->
+        <div class="mb-8 flex flex-wrap items-center justify-start gap-2">
+            <button type="button" onclick="filterHomePortofolio('all')" id="home-port-tab-all" class="px-4 py-2 rounded-xl text-xs font-bold transition orange-gradient text-white shadow-md">
+                Semua Portofolio
+            </button>
+            <button type="button" onclick="filterHomePortofolio('website')" id="home-port-tab-website" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:border-orange-300">
+                🌐 Website &amp; App
+            </button>
+            <button type="button" onclick="filterHomePortofolio('jaringan')" id="home-port-tab-jaringan" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:border-orange-300">
+                🔌 Jaringan LAN
+            </button>
+            <button type="button" onclick="filterHomePortofolio('hardware')" id="home-port-tab-hardware" class="px-4 py-2 rounded-xl text-xs font-bold transition bg-white border border-slate-200 text-slate-700 hover:border-orange-300">
+                💻 Hardware IT
+            </button>
+        </div>
+
+        <!-- GRID PORTOFOLIO DINAMIS (DARI DATABASE BACKOFFICE - GAMBAR 2) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             @forelse($galleries as $gallery)
             <div class="home-port-card item-{{ $gallery->category }} rounded-3xl overflow-hidden bg-white border border-slate-200 hover:border-orange-300 card-shadow flex flex-col justify-between group transition duration-300">
@@ -522,7 +529,7 @@ function kirimQuickCalcWA() {
                              decoding="async" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-black px-3 py-1 rounded-full shadow-sm uppercase tracking-wider">
-                            {{ $galleryCategories[$gallery->category] ?? ucfirst($gallery->category) }}
+                            {{ strtoupper($gallery->category === 'website' ? 'WEBSITE' : ($galleryCategories[$gallery->category] ?? $gallery->category)) }}
                         </span>
                     </div>
 
@@ -541,8 +548,8 @@ function kirimQuickCalcWA() {
 
                 <!-- Action Button ke WhatsApp -->
                 <div class="p-6 pt-0">
-                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20tertarik%20dengan%20proyek%20{{ urlencode($gallery->title) }}%20dan%20ingin%20konsultasi" target="_blank" class="block w-full py-2.5 text-center rounded-xl bg-slate-50 hover:bg-orange-500 hover:text-white text-slate-700 font-bold text-xs border border-slate-200 hover:border-orange-500 transition">
-                        Pesan Proyek Serupa via WhatsApp →
+                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20tertarik%20dengan%20proyek%20{{ urlencode($gallery->title) }}%20dan%20ingin%20konsultasi" target="_blank" aria-label="Pesan Proyek Serupa via WhatsApp" class="block w-full py-2.5 text-center rounded-xl bg-slate-50 hover:bg-orange-500 hover:text-white text-slate-700 font-bold text-xs border border-slate-200 hover:border-orange-500 transition">
+                        Pesan Proyek Serupa via WA → <span class="sr-only">Pesan Proyek Serupa via WhatsApp</span>
                     </a>
                 </div>
             </div>
@@ -614,121 +621,128 @@ function kirimQuickCalcWA() {
     }
 </script>
 
-<!-- TABEL PAKET HARGA TRANSPARAN (KUNCI BANJIR ORDERAN!) -->
+<!-- TABEL PAKET HARGA TRANSPARAN (DINAMIS DARI DATABASE / BACKOFFICE) -->
 <section class="py-16 bg-white border-t border-slate-200" id="harga">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="text-[#F58220] font-black text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full font-heading">
-                Paket Harga Transparan
+            <span class="text-[#F58220] font-black text-xs uppercase tracking-widest bg-orange-100 px-3.5 py-1 rounded-full font-heading inline-block">
+                TRANSPARAN &amp; RESMI
             </span>
-            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 font-heading">
-                Investasi Terbaik untuk Melejitkan Omzet Bisnis Anda
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 font-heading tracking-tight">
+                Pilihan Paket <span class="text-[#F58220]">Pembuatan Website</span>
             </h2>
             <p class="text-slate-600 text-sm sm:text-base mt-2">
-                Tanpa biaya tersembunyi. Semua paket sudah termasuk domain .COM, Cloud Server SSD super kencang, dan garansi maintenance penuh.
+                Investasi terbaik dengan garansi kualitas, kecepatan tinggi, dan dukungan teknis berkelanjutan tanpa biaya tersembunyi.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- Paket 1: Web Starter / UMKM -->
-            <div class="rounded-3xl p-6 sm:p-8 bg-[#FAFAFA] border border-slate-200 card-shadow flex flex-col justify-between">
-                <div>
-                    <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 font-heading">Paling Terjangkau</span>
-                    <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">Web Starter / UMKM</h3>
-                    <p class="text-xs text-slate-500 mt-1">Solusi Jasa Pembuatan Website Murah &amp; Kilat</p>
-
-                    <div class="my-6">
-                        <span class="text-xs text-slate-400 line-through">Rp 2.500.000</span>
-                        <div class="flex items-baseline gap-1 mt-1">
-                            <span class="text-sm font-bold text-slate-700">Mulai</span>
-                            <span class="text-3xl sm:text-4xl font-black text-slate-900 font-heading">Rp 1.250.000</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            @forelse($packages as $pkg)
+                @if($pkg->is_popular)
+                    <!-- Paket Populer / Best Seller -->
+                    <div class="rounded-3xl p-6 sm:p-8 bg-white border-2 border-[#F58220] card-shadow flex flex-col justify-between relative transform md:-translate-y-2 shadow-xl">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 orange-gradient text-white text-[10px] sm:text-[11px] font-black uppercase px-4 py-1.5 rounded-full shadow-md tracking-wider max-w-[92%] sm:max-w-none text-center truncate font-heading">
+                            {{ $pkg->popular_badge_text ?? '★ BEST SELLER & REKOMENDASI' }}
                         </div>
-                        <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">Hemat 50% Bulan Ini</span>
-                    </div>
 
-                    <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Desain Modern Mobile-First (1 Halaman Landing Page)</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span><strong>Gratis Domain .COM / .ID</strong> 1 Tahun</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span><strong>Cloud Hosting SSD Cepat &amp; SSL HTTPS</strong></span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Integrasi Tombol WhatsApp Otomatis</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Setup Google Bisnis Profile (Maps)</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Garansi Penuh Maintenance</span></li>
-                    </ul>
-                </div>
+                        <div>
+                            @if($pkg->target_badge)
+                                <span class="text-xs font-extrabold uppercase tracking-wider text-[#F58220] font-heading block">{{ $pkg->target_badge }}</span>
+                            @endif
+                            <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">{{ $pkg->name }}</h3>
+                            @if($pkg->tagline)
+                                <p class="text-xs text-slate-500 mt-1">{{ $pkg->tagline }}</p>
+                            @endif
 
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20mau%20order%20Paket%20Web%20Starter%20UMKM" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs sm:text-sm text-center transition shadow-md">
-                    Pilih Paket Starter UMKM →
-                </a>
-            </div>
+                            <div class="my-6">
+                                @if($pkg->original_price)
+                                    <span class="text-xs text-slate-400 line-through">{{ $pkg->original_price }}</span>
+                                @endif
+                                <div class="flex items-baseline gap-1 mt-1">
+                                    @if($pkg->price_prefix)
+                                        <span class="text-sm font-bold text-slate-700">{{ $pkg->price_prefix }}</span>
+                                    @endif
+                                    <span class="text-3xl sm:text-4xl font-black text-[#F58220] font-heading">{{ $pkg->price }}</span>
+                                </div>
+                                @if($pkg->discount_tag)
+                                    <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">{{ $pkg->discount_tag }}</span>
+                                @endif
+                            </div>
 
-            <!-- Paket 2: Web Bisnis Pro & SEO Booster (BEST SELLER) -->
-            <div class="rounded-3xl p-6 sm:p-8 bg-white border-2 border-[#F58220] card-shadow flex flex-col justify-between relative transform md:-translate-y-2 shadow-xl">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 orange-gradient text-white text-[10px] sm:text-[11px] font-black uppercase px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-md tracking-wider max-w-[92%] sm:max-w-none text-center truncate font-heading">
-                    ★ PALING POPULER &amp; REKOMENDASI UTAMA
-                </div>
-
-                <div>
-                    <span class="text-xs font-extrabold uppercase tracking-wider text-[#F58220] font-heading">Mesin Penjualan</span>
-                    <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">Web Bisnis Pro &amp; SEO Booster</h3>
-                    <p class="text-xs text-slate-500 mt-1">Untuk Toko Online, Distributor, &amp; Company Profile</p>
-
-                    <div class="my-6">
-                        <span class="text-xs text-slate-400 line-through">Rp 5.500.000</span>
-                        <div class="flex items-baseline gap-1 mt-1">
-                            <span class="text-sm font-bold text-slate-700">Mulai</span>
-                            <span class="text-3xl sm:text-4xl font-black text-[#F58220] font-heading">Rp 2.750.000</span>
+                            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
+                                @if(is_array($pkg->features))
+                                    @foreach($pkg->features as $feature)
+                                        @if(trim($feature) !== '')
+                                            <li class="flex items-start gap-2.5">
+                                                <span class="text-[#F58220] font-black text-sm shrink-0">✔</span>
+                                                <span>{{ trim($feature) }}</span>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            </ul>
                         </div>
-                        <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">Paket Komplit Siap Banjir Order</span>
+
+                        <a href="{{ $pkg->whatsapp_url }}" target="_blank" class="w-full py-4 rounded-xl orange-gradient text-white font-black text-xs sm:text-sm text-center shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition">
+                            {{ $pkg->cta_text ?? 'Pesan Sekarang via WA →' }}
+                        </a>
                     </div>
+                @else
+                    <!-- Paket Standar -->
+                    <div class="rounded-3xl p-6 sm:p-8 bg-[#FAFAFA] border border-slate-200 card-shadow flex flex-col justify-between hover:border-slate-300 transition">
+                        <div>
+                            @if($pkg->target_badge)
+                                <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 font-heading block">{{ $pkg->target_badge }}</span>
+                            @endif
+                            <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">{{ $pkg->name }}</h3>
+                            @if($pkg->tagline)
+                                <p class="text-xs text-slate-500 mt-1">{{ $pkg->tagline }}</p>
+                            @endif
 
-                    <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
-                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span><strong>Semua Fitur Paket Starter</strong></span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span>Multi-halaman Eksklusif (Hingga 5-10 Halaman)</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span>Katalog Produk &amp; Checkout Otomatis WhatsApp</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span><strong>Optimasi SEO On-Page Ranking 1 Google</strong></span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span><strong>Optimasi GEO AI Search (ChatGPT/Gemini)</strong></span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span>Prioritas Dukungan Teknis 24/7 (1 Tahun)</span></li>
-                    </ul>
-                </div>
+                            <div class="my-6">
+                                @if($pkg->original_price)
+                                    <span class="text-xs text-slate-400 line-through">{{ $pkg->original_price }}</span>
+                                @endif
+                                <div class="flex items-baseline gap-1 mt-1">
+                                    @if($pkg->price_prefix)
+                                        <span class="text-sm font-bold text-slate-700">{{ $pkg->price_prefix }}</span>
+                                    @endif
+                                    <span class="text-3xl sm:text-4xl font-black text-slate-900 font-heading">{{ $pkg->price }}</span>
+                                </div>
+                                @if($pkg->discount_tag)
+                                    <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">{{ $pkg->discount_tag }}</span>
+                                @endif
+                            </div>
 
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20mau%20order%20Paket%20Web%20Bisnis%20Pro" target="_blank" class="w-full py-4 rounded-xl orange-gradient text-white font-black text-xs sm:text-sm text-center shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition">
-                    Pesan Paket Bisnis Pro Sekarang →
-                </a>
-            </div>
-
-            <!-- Paket 3: Enterprise & Retainer IT Konsultan -->
-            <div class="rounded-3xl p-6 sm:p-8 bg-[#FAFAFA] border border-slate-200 card-shadow flex flex-col justify-between">
-                <div>
-                    <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 font-heading">Skala Korporat</span>
-                    <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">Enterprise &amp; Retainer IT</h3>
-                    <p class="text-xs text-slate-500 mt-1">Maintenance Jaringan, Hardware &amp; Sistem Bulanan</p>
-
-                    <div class="my-6">
-                        <span class="text-xs text-slate-400">Kontrak Pemeliharaan Rutin Kantor (SLA)</span>
-                        <div class="flex items-baseline gap-1 mt-1">
-                            <span class="text-sm font-bold text-slate-700">Mulai</span>
-                            <span class="text-3xl sm:text-4xl font-black text-slate-900 font-heading">Rp 4.500.000</span>
+                            <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
+                                @if(is_array($pkg->features))
+                                    @foreach($pkg->features as $feature)
+                                        @if(trim($feature) !== '')
+                                            <li class="flex items-start gap-2.5">
+                                                <span class="text-emerald-500 font-black text-sm shrink-0">✔</span>
+                                                <span>{{ trim($feature) }}</span>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            </ul>
                         </div>
-                        <span class="inline-block mt-1 text-[11px] font-bold text-blue-600 bg-blue-100 px-2.5 py-0.5 rounded-full">Survey &amp; Proposal Gratis</span>
+
+                        <a href="{{ $pkg->whatsapp_url }}" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs sm:text-sm text-center transition shadow-md">
+                            {{ $pkg->cta_text ?? 'Pilih Paket Ini →' }}
+                        </a>
                     </div>
-
-                    <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Aplikasi Web Kustom (ERP/Dashboard/Portal)</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Instalasi &amp; Setting Jaringan LAN/Mikrotik</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Pengadaan PC &amp; Servis Hardware On-Site</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Kontrak Maintenance Bulanan Resmi (SLA)</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Dedicated Senior IT Engineer Siap Panggilan</span></li>
-                    </ul>
+                @endif
+            @empty
+                <div class="col-span-3 text-center py-12 bg-slate-50 rounded-3xl border border-slate-200">
+                    <p class="text-slate-500 text-sm">Paket pembuatan website sedang diperbarui.</p>
                 </div>
-
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20Paket%20Enterprise%20dan%20Retainer%20IT" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs sm:text-sm text-center transition shadow-md">
-                    Konsultasikan Kebutuhan Korporat →
-                </a>
-            </div>
-
+            @endforelse
         </div>
+
+    </div>
+</section>
 
     </div>
 </section>
