@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id" class="scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -238,17 +238,17 @@
     @stack('schema')
     @stack('styles')
 </head>
-<body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-orange-500 selection:text-white pb-8 sm:pb-0">
+<body class="bg-[#F8FAFC] text-slate-800 antialiased selection:bg-orange-500 selection:text-white pb-8 sm:pb-0 overflow-x-hidden w-full">
 
     <!-- Top Announcement Strip (Neat, Authoritative, High Contrast) -->
-    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-2 sm:gap-3">
-                <span class="bg-orange-600 text-white px-2.5 py-0.5 rounded-full font-black uppercase text-[10px] tracking-wider shadow-sm">Promo 2026</span>
-                <span class="hidden md:inline text-slate-200 font-semibold">🎁 Paket Website Komplit: Gratis Domain .COM + Cloud Server SSD + Garansi Penuh 1 Tahun!</span>
-                <span class="md:hidden text-slate-200 font-semibold">🎁 Promo: Free Domain .COM + Cloud Hosting SSD!</span>
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-3 sm:px-4 border-b border-slate-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 sm:gap-3 min-w-0">
+                <span class="bg-orange-600 text-white px-2 py-0.5 rounded-full font-black uppercase text-[9px] sm:text-[10px] tracking-wider shrink-0 shadow-sm">Promo 2026</span>
+                <span class="hidden md:inline text-slate-200 font-semibold truncate">🎁 Paket Website Komplit: Gratis Domain .COM + Cloud Server SSD + Garansi Penuh 1 Tahun!</span>
+                <span class="md:hidden text-slate-200 font-semibold text-[11px] truncate">🎁 Free Domain .COM + Cloud SSD!</span>
             </div>
-            <div class="flex items-center gap-4 text-[11px] font-semibold">
+            <div class="flex items-center gap-4 text-[11px] font-semibold shrink-0">
                 <span class="hidden md:inline-flex items-center gap-1 text-slate-300">
                     <span class="text-orange-400">📍</span>
                     <span>Ciawi, Bogor</span>
@@ -264,7 +264,7 @@
 
     <!-- Main Navigation Header (Clean, Modern, Organized - Header Ringkas & Mega Dropdown) -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
             
             <!-- Official NGP Brand Logo (Matching Image 1) -->
             <a href="{{ route('home') }}" class="flex items-center shrink-0 group py-1" aria-label="Beranda NazwaGraha Pratama">
@@ -272,7 +272,7 @@
                      alt="NazwaGraha Pratama" 
                      width="211" 
                      height="80" 
-                     class="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200">
+                     class="h-8 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200">
             </a>
 
             <!-- Desktop Navigation Menu (Concise 5 Items with 2-Column Mega Dropdown) -->
@@ -391,8 +391,8 @@
             </nav>
 
             <!-- CTA Actions (Clean & Focused) -->
-            <div class="flex items-center gap-3 shrink-0">
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="hidden sm:inline-flex px-4 sm:px-5 py-2.5 rounded-xl orange-gradient text-white text-xs sm:text-sm font-extrabold shadow-md shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 items-center gap-2 whitespace-nowrap">
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="inline-flex px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl orange-gradient text-white text-xs sm:text-sm font-extrabold shadow-md shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 items-center gap-1.5 sm:gap-2 whitespace-nowrap">
                     <span>💬 Hubungi Kami</span>
                 </a>
                 <!-- Mobile Hamburger Button -->
@@ -472,7 +472,7 @@
             <div class="pt-3 border-t border-slate-200 space-y-2.5 text-xs">
                 <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi" target="_blank" class="w-full py-3 rounded-xl orange-gradient text-white font-extrabold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition">
                     <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289l-.26.309c-.087.094-.179.196-.077.371.101.174.45 1.743 1.95 2.072.193.042.361.026.495-.038.159-.076.694-.808.88-1.084.188-.276.375-.231.625-.138.25.092 1.587.748 1.86.885.274.137.456.205.522.319.066.114.066.662-.078 1.067z"/></svg>
-                    <span>Chat WhatsApp (081298506111)</span>
+                    <span>Hubungi Kami (0812-9850-6111)</span>
                 </a>
                 <div class="p-3 rounded-xl bg-slate-100/80 border border-slate-200/70 text-slate-600 space-y-1">
                     <p class="font-bold text-slate-800">📍 Alamat Kantor Operasional</p>

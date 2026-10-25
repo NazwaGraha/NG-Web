@@ -20,23 +20,25 @@
             <!-- Left Column: High Conversion Headline & CTA -->
             <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
                 
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-extrabold">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#F58220] animate-pulse"></span>
-                    <span>Jasa Website Bogor No. 1 &amp; Solusi IT Kantor</span>
-                    <span class="bg-white/90 px-2 py-0.5 rounded text-[10px] text-slate-800 font-black">⭐ Rating 5.0 (250+ Ulasan)</span>
+                <div class="inline-flex flex-wrap sm:flex-nowrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-[11px] sm:text-xs font-extrabold max-w-full">
+                    <div class="flex items-center gap-1.5">
+                        <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#F58220] animate-pulse shrink-0"></span>
+                        <span>Jasa Website Bogor No. 1 &amp; IT Kantor</span>
+                    </div>
+                    <span class="bg-white/90 px-2 py-0.5 rounded text-[10px] text-slate-800 font-black shrink-0">⭐ Rating 5.0 (250+ Ulasan)</span>
                 </div>
 
-                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.14] font-heading">
+                <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.2] sm:leading-[1.14] font-heading">
                     Jasa Pembuatan Website Murah, Profesional &amp; <br class="hidden sm:inline">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F58220] to-amber-600">IT Konsultan Terpercaya di Bogor</span>
                 </h1>
 
-                <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                <p class="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-normal">
                     Tingkatkan omzet bisnis Anda dengan website berkecepatan tinggi, ranking 1 Google, dan infrastruktur IT jaringan kantor yang stabil tanpa kendala bersama PT Nazwa Graha Pratama.
                 </p>
 
                 <!-- Value Props Checks -->
-                <div class="grid grid-cols-2 gap-3 pt-1 text-left max-w-lg mx-auto lg:mx-0">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 pt-1 text-left max-w-lg mx-auto lg:mx-0">
                     <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-800">
                         <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
                         <span>Gratis Domain .COM &amp; Cloud Server SSD</span>
@@ -56,25 +58,25 @@
                 </div>
 
                 <!-- Dual CTA Buttons (Matching Mockup V4) -->
-                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl orange-gradient text-white font-black text-base shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 max-w-md mx-auto lg:mx-0">
+                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="w-full sm:w-auto px-5 sm:px-8 py-3.5 sm:py-4 rounded-xl orange-gradient text-white font-black text-sm sm:text-base shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 sm:gap-3 text-center">
                         <span>💬 Mulai Konsultasi Projek (Fast Response)</span>
                     </a>
                     
-                    <a href="#harga" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-base transition flex items-center justify-center gap-2 shadow-md">
+                    <a href="#harga" class="w-full sm:w-auto px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm sm:text-base transition flex items-center justify-center gap-2 shadow-md text-center">
                         <span>Lihat Portofolio &amp; Harga Paket</span>
                         <span class="text-[#F58220]">↓</span>
                     </a>
                 </div>
 
                 <!-- Trust Badges & Social Proof -->
-                <div class="pt-3 flex items-center justify-center lg:justify-start gap-4 text-xs text-slate-500 border-t border-slate-200">
+                <div class="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-4 text-xs text-slate-500 border-t border-slate-200">
                     <div class="flex -space-x-2 shrink-0">
                         <div class="w-7 h-7 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-800">PT</div>
                         <div class="w-7 h-7 rounded-full bg-orange-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-800">CV</div>
                         <div class="w-7 h-7 rounded-full bg-amber-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-800">UD</div>
                     </div>
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-1.5 sm:gap-2">
                         <div class="flex text-amber-500 text-xs">★★★★★</div>
                         <span class="text-slate-400">•</span>
                         <span><strong class="text-slate-900 font-extrabold">250+ Klien Terbantu</strong> di Bogor, Ciawi &amp; Jabodetabek</span>
@@ -116,8 +118,8 @@
                         </picture>
                     </div>
 
-                    <!-- Floating Badge 1: PageSpeed 99 -->
-                    <div class="absolute top-14 left-6 sm:left-8 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-2xl border border-slate-100 flex items-center gap-2.5 sm:gap-3">
+                    <!-- Floating Badge 1: PageSpeed 99 (Desktop Floating) -->
+                    <div class="hidden sm:flex absolute top-14 left-6 sm:left-8 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-2xl border border-slate-100 items-center gap-2.5 sm:gap-3">
                         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-black text-sm sm:text-base">
                             99
                         </div>
@@ -127,8 +129,8 @@
                         </div>
                     </div>
 
-                    <!-- Floating Badge 2: Notifikasi Orderan WhatsApp -->
-                    <div class="absolute bottom-6 right-6 sm:right-8 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-2xl border border-slate-100 flex items-center gap-2.5 sm:gap-3">
+                    <!-- Floating Badge 2: Notifikasi Orderan WhatsApp (Desktop Floating) -->
+                    <div class="hidden sm:flex absolute bottom-6 right-6 sm:right-8 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-2xl border border-slate-100 items-center gap-2.5 sm:gap-3">
                         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center text-base sm:text-lg">
                             📈
                         </div>
@@ -138,6 +140,28 @@
                         </div>
                     </div>
 
+                </div>
+
+                <!-- Mobile Badges Row (Clean 2-Col Underneath Device Graphic) -->
+                <div class="grid grid-cols-2 gap-2 mt-3 sm:hidden">
+                    <div class="bg-white rounded-xl p-2.5 shadow-sm border border-slate-200 flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-xs shrink-0">
+                            99
+                        </div>
+                        <div class="leading-tight">
+                            <span class="text-[9px] font-bold text-slate-400 block uppercase">PageSpeed</span>
+                            <strong class="text-[11px] font-black text-slate-900">&lt; 1 Detik</strong>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-2.5 shadow-sm border border-slate-200 flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center text-sm shrink-0">
+                            📈
+                        </div>
+                        <div class="leading-tight">
+                            <span class="text-[9px] font-bold text-emerald-600 block uppercase">Penjualan</span>
+                            <strong class="text-[11px] font-black text-slate-900">Lead Google #1</strong>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -162,7 +186,7 @@
                 <option value="Pengadaan Komputer Kantor & Maintenance Rutin (SLA)">💻 Pengadaan PC &amp; IT Support Kantor</option>
             </select>
 
-            <button type="button" onclick="kirimQuickCalcWA()" class="w-full sm:w-auto px-6 py-3 rounded-xl orange-gradient text-white font-black text-xs uppercase tracking-wider shadow-md shadow-orange-500/30 flex items-center justify-center gap-2 whitespace-nowrap hover:shadow-orange-500/50 transition">
+            <button type="button" onclick="kirimQuickCalcWA()" class="w-full sm:w-auto px-5 sm:px-6 py-3 rounded-xl orange-gradient text-white font-black text-xs uppercase tracking-wider shadow-md shadow-orange-500/30 flex items-center justify-center gap-2 text-center hover:shadow-orange-500/50 transition">
                 <span>Dapatkan Estimasi via WhatsApp →</span>
             </button>
         </div>
@@ -549,7 +573,7 @@ function kirimQuickCalcWA() {
                     <p class="text-xs text-slate-500 mt-0.5">Kirimkan link contoh website impian Anda ke WhatsApp kami, tim NazwaGraha siap membuatkan persis sesuai kebutuhan bisnis Anda!</p>
                 </div>
             </div>
-            <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20punya%20referensi%20desain%20website%20sendiri%20dan%20ingin%20konsultasi" target="_blank" class="px-6 py-3.5 rounded-xl orange-gradient text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-orange-500/30 transition whitespace-nowrap">
+            <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20punya%20referensi%20desain%20website%20sendiri%20dan%20ingin%20konsultasi" target="_blank" class="w-full sm:w-auto text-center px-6 py-3.5 rounded-xl orange-gradient text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-orange-500/30 transition">
                 Kirim Referensi Desain →
             </a>
         </div>
@@ -609,7 +633,7 @@ function kirimQuickCalcWA() {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <!-- Paket 1: Web Starter / UMKM -->
-            <div class="rounded-3xl p-8 bg-[#FAFAFA] border border-slate-200 card-shadow flex flex-col justify-between">
+            <div class="rounded-3xl p-6 sm:p-8 bg-[#FAFAFA] border border-slate-200 card-shadow flex flex-col justify-between">
                 <div>
                     <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 font-heading">Paling Terjangkau</span>
                     <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">Web Starter / UMKM</h3>
@@ -640,8 +664,8 @@ function kirimQuickCalcWA() {
             </div>
 
             <!-- Paket 2: Web Bisnis Pro & SEO Booster (BEST SELLER) -->
-            <div class="rounded-3xl p-8 bg-white border-2 border-[#F58220] card-shadow flex flex-col justify-between relative transform md:-translate-y-2 shadow-xl">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 orange-gradient text-white text-[11px] font-black uppercase px-4 py-1.5 rounded-full shadow-md tracking-wider whitespace-nowrap font-heading">
+            <div class="rounded-3xl p-6 sm:p-8 bg-white border-2 border-[#F58220] card-shadow flex flex-col justify-between relative transform md:-translate-y-2 shadow-xl">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 orange-gradient text-white text-[10px] sm:text-[11px] font-black uppercase px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-md tracking-wider max-w-[92%] sm:max-w-none text-center truncate font-heading">
                     ★ PALING POPULER &amp; REKOMENDASI UTAMA
                 </div>
 
@@ -675,7 +699,7 @@ function kirimQuickCalcWA() {
             </div>
 
             <!-- Paket 3: Enterprise & Retainer IT Konsultan -->
-            <div class="rounded-3xl p-8 bg-[#FAFAFA] border border-slate-200 card-shadow flex flex-col justify-between">
+            <div class="rounded-3xl p-6 sm:p-8 bg-[#FAFAFA] border border-slate-200 card-shadow flex flex-col justify-between">
                 <div>
                     <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 font-heading">Skala Korporat</span>
                     <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">Enterprise &amp; Retainer IT</h3>
@@ -787,7 +811,7 @@ function kirimQuickCalcWA() {
                 <!-- Category Choice -->
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">1. Pilih Kategori Solusi:</label>
-                    <div class="grid grid-cols-2 gap-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                         <button type="button" onclick="setKalkulatorTab('web')" id="calc-tab-web" class="p-4 rounded-xl border-2 border-orange-500 bg-orange-50 text-orange-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition">
                             <span>🌐 Website & SEO Growth</span>
                         </button>
