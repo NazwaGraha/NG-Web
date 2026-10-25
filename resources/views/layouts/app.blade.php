@@ -307,7 +307,6 @@
                         <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-[#F58220] group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
                         </svg>
-                        <span class="bg-orange-100 text-[#F58220] text-[9px] px-1.5 py-0.5 rounded font-black">6 PILAR</span>
                     </button>
 
                     <!-- Dropdown Menu Box (2 Columns) -->
@@ -382,12 +381,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Harga Paket -->
-                <a href="{{ route('home') }}#harga" class="hover:text-[#F58220] transition flex items-center gap-1">
-                    <span>Harga Paket</span>
-                    <span class="bg-emerald-100 text-emerald-700 text-[9px] px-1.5 py-0.5 rounded font-black">HEMAT</span>
-                </a>
 
                 <!-- Portofolio -->
                 <a href="{{ route('gallery.index') }}" class="{{ request()->routeIs('gallery.*') ? 'text-[#F58220] font-extrabold border-b-2 border-[#F58220] pb-1' : 'hover:text-[#F58220]' }} transition">
@@ -484,10 +477,6 @@
                 </div>
 
                 <!-- Navigasi Tambahan -->
-                <a href="{{ route('home') }}#harga" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm text-slate-800 hover:bg-orange-50 hover:text-[#F58220] transition">
-                    <span class="flex items-center gap-2.5"><span>🏷️</span><span>Harga Paket Website &amp; IT</span></span>
-                    <span class="text-xs text-[#F58220] font-black">PROMO</span>
-                </a>
                 <a href="{{ route('gallery.index') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('gallery.*') ? 'bg-orange-50 text-[#F58220]' : 'text-slate-800 hover:bg-slate-50' }} transition">
                     <span class="flex items-center gap-2.5"><span>🖼️</span><span>Portofolio Hasil Proyek</span></span>
                     <span class="text-xs text-slate-400">→</span>

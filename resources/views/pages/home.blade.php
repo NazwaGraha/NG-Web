@@ -276,7 +276,7 @@ function kirimQuickCalcWA() {
         
         <div class="text-center max-w-3xl mx-auto mb-14">
             <span class="text-[#F58220] font-black text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full font-heading">
-                6 Pilar Layanan Unggulan
+                Layanan IT Unggulan
             </span>
             <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 font-heading">
                 Solusi IT Menyeluruh untuk Pertumbuhan Bisnis Anda
