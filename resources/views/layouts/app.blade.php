@@ -271,27 +271,13 @@
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo & Brand Identity (Matching Mockup V4) -->
-            <a href="{{ route('home') }}" class="flex items-center gap-3 shrink-0 group">
-                <!-- Visual Icon NG Box -->
-                <div class="w-10 h-10 rounded-xl orange-gradient flex items-center justify-center text-white font-black text-xl shadow-md shadow-orange-500/30 shrink-0 group-hover:scale-105 transition-transform font-heading">
-                    NG
-                </div>
-                <div>
-                    <div class="flex items-center gap-1.5">
-                        <span class="text-base sm:text-lg font-black tracking-tight text-slate-900 group-hover:text-orange-600 transition font-heading">
-                            PT NAZWA GRAHA PRATAMA
-                        </span>
-                    </div>
-                    <div class="flex items-center gap-1.5">
-                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span class="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-wider">
-                            Official IT Consultant &amp; Web Agency Bogor
-                        </span>
-                    </div>
-                </div>
-                <!-- Hidden img for test assertion compatibility -->
-                <img src="{{ asset('images/ngp-logo.webp') }}" alt="Logo NazwaGraha Pratama" width="211" height="80" class="sr-only">
+            <!-- Official NGP Brand Logo (Matching Image 1) -->
+            <a href="{{ route('home') }}" class="flex items-center shrink-0 group py-1" aria-label="Beranda NazwaGraha Pratama">
+                <img src="{{ asset('images/ngp-logo.webp') }}" 
+                     alt="NazwaGraha Pratama" 
+                     width="211" 
+                     height="80" 
+                     class="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-200">
             </a>
 
             <!-- Desktop Navigation Menu (Concise 5 Items with 2-Column Mega Dropdown) -->
