@@ -21,18 +21,18 @@
             <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
                 
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-extrabold">
-                    <span class="w-2.5 h-2.5 rounded-full bg-orange-600 animate-pulse"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#F58220] animate-pulse"></span>
                     <span>Jasa Website Bogor No. 1 &amp; Solusi IT Kantor</span>
-                    <span class="bg-white/80 px-2 py-0.5 rounded text-[10px] text-slate-700 font-black">⭐ Rating 4.9/5</span>
+                    <span class="bg-white/90 px-2 py-0.5 rounded text-[10px] text-slate-800 font-black">⭐ Rating 5.0 (250+ Ulasan)</span>
                 </div>
 
-                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.14]">
-                    Jasa Pembuatan Website di Bogor <br class="hidden sm:inline">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">Desain Mewah, Cepat &amp; Banjir Orderan</span>
+                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black text-slate-950 tracking-tight leading-[1.14] font-heading">
+                    Jasa Pembuatan Website Murah, Profesional &amp; <br class="hidden sm:inline">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F58220] to-amber-600">IT Konsultan Terpercaya di Bogor</span>
                 </h1>
 
                 <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-                    Ubah pengunjung Google menjadi pembeli setia! Kami rancang website bisnis eksklusif yang loading di bawah 1 detik, siap rangking 1 Google &amp; AI Search (ChatGPT), plus dukungan teknisi jaringan IT kantor langsung ke lokasi Anda.
+                    Tingkatkan omzet bisnis Anda dengan website berkecepatan tinggi, ranking 1 Google, dan infrastruktur IT jaringan kantor yang stabil tanpa kendala bersama PT Nazwa Graha Pratama.
                 </p>
 
                 <!-- Value Props Checks -->
@@ -43,32 +43,31 @@
                     </div>
                     <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-800">
                         <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-                        <span>Aman: Bisa Bayar Bertahap (DP 50%)</span>
+                        <span>Garansi Maintenance &amp; Support 1 Tahun</span>
                     </div>
                     <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-800">
                         <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-                        <span>Optimasi SEO Google &amp; GEO AI Search</span>
+                        <span>Optimasi SEO Google &amp; GEO AI Overviews</span>
                     </div>
                     <div class="flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-slate-800">
                         <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs shrink-0">✓</span>
-                        <span>Garansi Penuh Maintenance 1 Tahun</span>
+                        <span>Aman: Bisa Bayar Bertahap (DP Fleksibel)</span>
                     </div>
                 </div>
 
-                <!-- Dual CTA Buttons (Matching Mockup V2) -->
+                <!-- Dual CTA Buttons (Matching Mockup V4) -->
                 <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                     <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl orange-gradient text-white font-black text-base shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
-                        <span>💬 Konsultasi Gratis via WhatsApp</span>
-                        <span class="bg-white/20 px-2 py-0.5 rounded text-xs font-bold">Fast Respon</span>
+                        <span>💬 Mulai Konsultasi Projek (Fast Response)</span>
                     </a>
                     
-                    <a href="#portofolio" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-bold text-base transition flex items-center justify-center gap-2 shadow-xs">
-                        <span>Lihat Hasil Desain</span>
-                        <span class="text-orange-500">↓</span>
+                    <a href="#harga" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-base transition flex items-center justify-center gap-2 shadow-md">
+                        <span>Lihat Portofolio &amp; Harga Paket</span>
+                        <span class="text-[#F58220]">↓</span>
                     </a>
                 </div>
 
-                <!-- Micro Social Proof (Avatars PT, CV, UD & Rating Kepuasan - Persis Mockup V2) -->
+                <!-- Trust Badges & Social Proof -->
                 <div class="pt-3 flex items-center justify-center lg:justify-start gap-4 text-xs text-slate-500 border-t border-slate-200">
                     <div class="flex -space-x-2 shrink-0">
                         <div class="w-7 h-7 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-800">PT</div>
@@ -78,7 +77,7 @@
                     <div class="flex items-center gap-2">
                         <div class="flex text-amber-500 text-xs">★★★★★</div>
                         <span class="text-slate-400">•</span>
-                        <span><strong class="text-slate-900 font-extrabold">250+ Klien Terdaftar</strong> di Bogor, Ciawi &amp; Jabodetabek</span>
+                        <span><strong class="text-slate-900 font-extrabold">250+ Klien Terbantu</strong> di Bogor, Ciawi &amp; Jabodetabek</span>
                     </div>
                 </div>
 
@@ -204,90 +203,251 @@ function kirimQuickCalcWA() {
 }
 </script>
 
-<!-- SECTION: DUA PILAR LAYANAN LENGKAP -->
-<section class="py-16 bg-white" id="layanan">
+<!-- SECTION 3: VALUE PROPOSITION & PROFIL BISNIS (LOCAL SEO & GEO ALIGNMENT) -->
+<section class="py-14 bg-white border-b border-slate-200" id="keunggulan">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-gradient-to-r from-slate-900 to-[#1E2124] rounded-3xl p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden mb-12">
+            <!-- Background Glow Decor -->
+            <div class="absolute -right-16 -top-16 w-64 h-64 bg-orange-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div class="lg:col-span-8 space-y-3">
+                    <div class="inline-flex items-center gap-2 bg-orange-500/20 text-[#F58220] px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider border border-orange-500/30">
+                        📍 Profil Bisnis Resmi Google
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black font-heading tracking-tight leading-snug">
+                        NazwaGraha - Jasa Pembuatan Website Bogor &amp; Solusi IT
+                    </h2>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-3xl">
+                        PT Nazwa Graha Pratama merupakan partner resmi rekayasa website dan infrastruktur IT yang berbasis di Banjarwangi, Ciawi, Bogor. Kami memadukan website kencang, strategi SEO lokal, Generative Engine Optimization (GEO AI Overviews), dan instalasi hardware jaringan kantor on-site.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/15 text-center space-y-2">
+                    <div class="text-3xl font-black text-amber-400 font-heading">5.0 / 5.0</div>
+                    <div class="flex justify-center text-amber-400 text-sm">★★★★★</div>
+                    <p class="text-xs font-bold text-white">Google Bisnis Profile Verified</p>
+                    <p class="text-[11px] text-slate-300">250+ Ulasan Positif Pemilik Bisnis &amp; Korporat</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Poin Keunggulan Utama (Why Choose Us) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="p-6 rounded-2xl bg-[#FAFAFA] border border-slate-200 card-shadow space-y-3 hover:border-orange-300 transition">
+                <div class="w-12 h-12 rounded-xl bg-orange-100 text-[#F58220] flex items-center justify-center text-2xl font-black">
+                    💰
+                </div>
+                <h3 class="text-lg font-black text-slate-900 font-heading">Harga Transparan &amp; Terjangkau</h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Solusi ramah untuk UMKM mulai Rp 1.250.000 hingga sistem korporat. Tanpa biaya tersembunyi, sudah termasuk hosting SSD cepat dan domain resmi.
+                </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-[#FAFAFA] border border-slate-200 card-shadow space-y-3 hover:border-orange-300 transition">
+                <div class="w-12 h-12 rounded-xl bg-orange-100 text-[#F58220] flex items-center justify-center text-2xl font-black">
+                    📈
+                </div>
+                <h3 class="text-lg font-black text-slate-900 font-heading">Terbukti Naik ke Halaman 1 Google &amp; GEO</h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Struktur kode dirancang agar mendominasi Google Search Bogor serta direkomendasikan oleh mesin AI (ChatGPT &amp; Google AI Overviews).
+                </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-[#FAFAFA] border border-slate-200 card-shadow space-y-3 hover:border-orange-300 transition">
+                <div class="w-12 h-12 rounded-xl bg-orange-100 text-[#F58220] flex items-center justify-center text-2xl font-black">
+                    ⚡
+                </div>
+                <h3 class="text-lg font-black text-slate-900 font-heading">Full-Stack Hardware &amp; Software</h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Bukan cuma bikin web, kami menguasai setting Mikrotik, instalasi kabel LAN rapi, dan pengadaan PC/server kantor langsung ke lokasi Anda.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 4: 6 PILAR LAYANAN UNGGULAN (SERVICES GRID) -->
+<section class="py-16 bg-[#FAFAFA] border-b border-slate-200" id="layanan">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="text-orange-600 font-bold text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">One-Stop Solution</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Solusi Menyeluruh untuk Pertumbuhan Bisnis Anda</h2>
+            <span class="text-[#F58220] font-black text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full font-heading">
+                6 Pilar Layanan Unggulan
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 font-heading">
+                Solusi IT Menyeluruh untuk Pertumbuhan Bisnis Anda
+            </h2>
             <p class="text-slate-600 text-sm sm:text-base mt-2">
-                Tidak perlu pusing mencari banyak vendor terpisah. NazwaGraha Pratama menangani dari pembuatan website penjualan sampai urusan kabel jaringan kantor Anda.
+                Tidak perlu mencari vendor terpisah. Dari rekayasa website penjualan, SEO, hingga penataan jaringan kantor ditangani dalam satu atap profesional.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Pilar 1: Digital & Web -->
-            <div class="rounded-3xl p-8 bg-slate-50 border border-slate-200 card-shadow">
-                <div class="flex items-center gap-3 mb-5">
-                    <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-xl">
+            <!-- Card 1: Jasa Pembuatan Website Murah & Berkelas -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 hover:border-orange-300 card-shadow flex flex-col justify-between group transition">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl orange-gradient text-white flex items-center justify-center text-2xl shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
                         🌐
                     </div>
                     <div>
-                        <h3 class="text-xl font-black text-slate-900">Rekayasa Website, SEO & AI Search</h3>
+                        <h3 class="text-lg font-black text-slate-900 font-heading group-hover:text-[#F58220] transition">
+                            Jasa Pembuatan Website Murah &amp; Berkelas
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                            Landing page, Company Profile perusahaan, Web E-Commerce, dan Toko Online terintegrasi checkout WhatsApp.
+                        </p>
                     </div>
+                    <ul class="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Desain Mewah &amp; Responsif Mobile-First</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Gratis Domain .COM &amp; Cloud Server SSD</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Kecepatan Loading di Bawah 1 Detik</li>
+                    </ul>
                 </div>
-                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                    Membangun aset digital yang memikat calon pelanggan, loading kilat di bawah 1 detik, dan terindeks kuat di Google serta mesin AI.
-                </p>
-                <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700 mb-8">
-                    <li class="flex items-start gap-3">
-                        <span class="text-orange-600 font-bold">✔</span>
-                        <div><strong>Website Company Profile & Bisnis:</strong> Desain mewah, meningkatkan wibawa perusahaan.</div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-orange-600 font-bold">✔</span>
-                        <div><strong>Toko Online (E-Commerce) & Katalog:</strong> Checkout otomatis WhatsApp, hitung ongkir kurir.</div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-orange-600 font-bold">✔</span>
-                        <div><strong>Optimasi SEO & GEO:</strong> Target ranking 1 Google dan direferensikan oleh AI Search (ChatGPT, Gemini).</div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-orange-600 font-bold">✔</span>
-                        <div><strong>Maintenance & Keamanan Web:</strong> Pemeliharaan berkala, backup rutin, dan proteksi server.</div>
-                    </li>
-                </ul>
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha,%20saya%20tertarik%20dengan%20Jasa%20Pembuatan%20Website" target="_blank" class="block w-full py-3.5 text-center rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm transition">
-                    Konsultasi Layanan Website →
-                </a>
+                <div class="pt-6">
+                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20tertarik%20dengan%20Jasa%20Pembuatan%20Website" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition shadow-sm">
+                        <span>Pesan Layanan Website →</span>
+                    </a>
+                </div>
             </div>
 
-            <!-- Pilar 2: IT Infrastructure & Support -->
-            <div class="rounded-3xl p-8 bg-slate-50 border border-slate-200 card-shadow">
-                <div class="flex items-center gap-3 mb-5">
-                    <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-xl">
+            <!-- Card 2: IT Konsultan & Solusi Bisnis -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 hover:border-orange-300 card-shadow flex flex-col justify-between group transition">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-2xl shadow-md group-hover:scale-105 transition-transform">
+                        💼
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-slate-900 font-heading group-hover:text-[#F58220] transition">
+                            IT Konsultan &amp; Solusi Bisnis
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                            Audit sistem, arsitektur aplikasi, efisiensi operasional IT, dan transformasi digital menyeluruh.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Analisis Alur Kerja &amp; Efisiensi Biaya</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Arsitektur Database &amp; Cloud Scalable</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Pendampingan Implementasi Sistem</li>
+                    </ul>
+                </div>
+                <div class="pt-6">
+                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20butuh%20layanan%20IT%20Konsultan" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition shadow-sm">
+                        <span>Pesan Layanan Konsultasi →</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: Jasa Pengadaan Komputer & Perangkat Kantor -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 hover:border-orange-300 card-shadow flex flex-col justify-between group transition">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100 text-[#F58220] flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">
+                        💻
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-slate-900 font-heading group-hover:text-[#F58220] transition">
+                            Jasa Pengadaan Komputer &amp; Perangkat Kantor
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                            Penyediaan PC Kantor, Workstation, Server, Laptop bisnis, printer, dan aksesoris bergaransi resmi.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Unit Baru Bergaransi Distributor Resmi</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Siap Rakit &amp; Install Software Siap Pakai</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Pengiriman &amp; Setup On-site di Lokasi</li>
+                    </ul>
+                </div>
+                <div class="pt-6">
+                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20butuh%20Pengadaan%20Komputer%20Kantor" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition shadow-sm">
+                        <span>Pesan Pengadaan PC →</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: Instalasi Jaringan & Network Security -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 hover:border-orange-300 card-shadow flex flex-col justify-between group transition">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-800 flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">
+                        🔌
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-slate-900 font-heading group-hover:text-[#F58220] transition">
+                            Instalasi Jaringan &amp; Network Security
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                            Setting Mikrotik, Switch, Router, File Server, NAS Synology/OMV, serta penataan kabel LAN &amp; WiFi kantor.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Manajemen Bandwidth Bebas Lemot</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Penataan Rack Server Rapi &amp; Standar Industri</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Proteksi Firewall &amp; Keamanan Data</li>
+                    </ul>
+                </div>
+                <div class="pt-6">
+                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20butuh%20Instalasi%20Jaringan%20LAN%20Mikrotik" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition shadow-sm">
+                        <span>Pesan Pemasangan LAN →</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5: Instalasi & Troubleshooting Hardware/Software -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 hover:border-orange-300 card-shadow flex flex-col justify-between group transition">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100 text-[#F58220] flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">
                         🛠️
                     </div>
                     <div>
-                        <h3 class="text-xl font-black text-slate-900">Infrastruktur LAN & IT Support Kantor</h3>
+                        <h3 class="text-lg font-black text-slate-900 font-heading group-hover:text-[#F58220] transition">
+                            Instalasi &amp; Troubleshooting Hardware/Software
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                            Maintenance rutin, perbaikan PC/laptop, instalasi OS resmi, dan sistem backup data anti-hilang.
+                        </p>
                     </div>
+                    <ul class="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Penanganan Cepat Komputer Lemot &amp; Virus</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Kontrak Pemeliharaan Rutin Bulanan (SLA)</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Backup Otomatis &amp; Pemulihan Data</li>
+                    </ul>
                 </div>
-                <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                    Menghilangkan kendala teknis kantor: Jaringan internet tanpa kabel berantakan, komputer kerja siap pakai, dan teknisi siap panggilan.
-                </p>
-                <ul class="space-y-3.5 text-xs sm:text-sm text-slate-700 mb-8">
-                    <li class="flex items-start gap-3">
-                        <span class="text-orange-600 font-bold">✔</span>
-                        <div><strong>Instalasi Jaringan LAN & Wi-Fi Kantor:</strong> Kabel Cat6 rapi, router Mikrotik, switch, server rack.</div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-orange-600 font-bold">✔</span>
-                        <div><strong>Pengadaan Perangkat IT:</strong> Komputer rakitan/built-up, laptop kantor, printer, UPS bergaransi.</div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-orange-600 font-bold">✔</span>
-                        <div><strong>Computer Troubleshooting:</strong> Penanganan cepat PC lemot, bluescreen, virus, & data recovery.</div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-orange-600 font-bold">✔</span>
-                        <div><strong>Kontrak Maintenance Bulanan (SLA):</strong> Pemeliharaan rutin kantor tanpa perlu gaji staf IT sendiri.</div>
-                    </li>
-                </ul>
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha,%20saya%20butuh%20Instalasi%20Jaringan%20LAN%20atau%20IT%20Support" target="_blank" class="block w-full py-3.5 text-center rounded-xl orange-gradient text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-orange-500/30 transition">
-                    Panggil Teknisi / Survey Jaringan →
-                </a>
+                <div class="pt-6">
+                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20butuh%20Maintenance%20dan%20Servis%20IT" target="_blank" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition shadow-sm">
+                        <span>Pesan Servis &amp; Maintenance →</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: Jasa SEO & GEO -->
+            <div class="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 hover:border-orange-300 card-shadow flex flex-col justify-between group transition">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 rounded-2xl orange-gradient text-white flex items-center justify-center text-2xl shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
+                        🚀
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-black text-slate-900 font-heading group-hover:text-[#F58220] transition">
+                            Jasa SEO &amp; GEO (Generative Engine Optimization)
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                            Optimasi mesin pencari generasi baru agar direkomendasikan ChatGPT &amp; Google AI Overviews.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-600 pt-2 border-t border-slate-100">
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Riset Keyword Komersial Berkonversi Tinggi</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Schema.org JSON-LD &amp; GEO AI Citation</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> Banjir Orderan Organik Berkelanjutan</li>
+                    </ul>
+                </div>
+                <div class="pt-6">
+                    <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20tertarik%20dengan%20Jasa%20SEO%20dan%20GEO" target="_blank" class="w-full py-2.5 rounded-xl orange-gradient text-white font-bold text-xs flex items-center justify-center gap-1.5 transition shadow-md shadow-orange-500/20">
+                        <span>Pesan Optimasi SEO &amp; GEO →</span>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -435,107 +595,112 @@ function kirimQuickCalcWA() {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-14">
-            <span class="text-orange-600 font-bold text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full">Paket Harga Transparan</span>
-            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Investasi Terbaik untuk Melejitkan Bisnis Anda</h2>
+            <span class="text-[#F58220] font-black text-xs uppercase tracking-widest bg-orange-100 px-3 py-1 rounded-full font-heading">
+                Paket Harga Transparan
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 font-heading">
+                Investasi Terbaik untuk Melejitkan Omzet Bisnis Anda
+            </h2>
             <p class="text-slate-600 text-sm sm:text-base mt-2">
-                Tanpa biaya tersembunyi. Semua paket sudah termasuk domain .COM, Cloud Hosting cepat, dan garansi pemeliharaan 1 tahun.
+                Tanpa biaya tersembunyi. Semua paket sudah termasuk domain .COM, Cloud Server SSD super kencang, dan garansi maintenance penuh.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <!-- Paket 1: Starter Company Profile -->
-            <div class="rounded-3xl p-8 bg-slate-50 border border-slate-200 card-shadow flex flex-col justify-between">
+            <!-- Paket 1: Web Starter / UMKM -->
+            <div class="rounded-3xl p-8 bg-[#FAFAFA] border border-slate-200 card-shadow flex flex-col justify-between">
                 <div>
-                    <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Paling Hemat</span>
-                    <h3 class="text-2xl font-black text-slate-900 mt-1">Company Profile Pro</h3>
-                    <p class="text-xs text-slate-500 mt-1">Cocok untuk UMKM, Kantor Jasa, & Bisnis Baru</p>
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 font-heading">Paling Terjangkau</span>
+                    <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">Web Starter / UMKM</h3>
+                    <p class="text-xs text-slate-500 mt-1">Solusi Jasa Pembuatan Website Murah &amp; Kilat</p>
 
                     <div class="my-6">
-                        <span class="text-xs text-slate-400 line-through">Rp 3.500.000</span>
+                        <span class="text-xs text-slate-400 line-through">Rp 2.500.000</span>
                         <div class="flex items-baseline gap-1 mt-1">
                             <span class="text-sm font-bold text-slate-700">Mulai</span>
-                            <span class="text-3xl sm:text-4xl font-black text-slate-900">Rp 1.950.000</span>
+                            <span class="text-3xl sm:text-4xl font-black text-slate-900 font-heading">Rp 1.250.000</span>
                         </div>
-                        <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">Hemat 45% Bulan Ini</span>
+                        <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">Hemat 50% Bulan Ini</span>
                     </div>
 
                     <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Desain Eksklusif (1-5 Halaman)</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span><strong>Gratis Domain .COM</strong> 1 Tahun</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span><strong>Gratis Cloud Hosting Cepat</strong></span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Tombol WhatsApp Otomatis</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Lolos Skor Google 90+</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Garansi Maintenance 1 Tahun</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Desain Modern Mobile-First (1 Halaman Landing Page)</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span><strong>Gratis Domain .COM / .ID</strong> 1 Tahun</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span><strong>Cloud Hosting SSD Cepat &amp; SSL HTTPS</strong></span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Integrasi Tombol WhatsApp Otomatis</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Setup Google Bisnis Profile (Maps)</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Garansi Penuh Maintenance</span></li>
                     </ul>
                 </div>
 
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha,%20saya%20mau%20order%20Paket%20Company%20Profile%20Pro" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition">
-                    Pilih Paket Company Profile →
+                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20mau%20order%20Paket%20Web%20Starter%20UMKM" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs sm:text-sm text-center transition shadow-md">
+                    Pilih Paket Starter UMKM →
                 </a>
             </div>
 
-            <!-- Paket 2: E-Commerce (BEST SELLER) -->
-            <div class="rounded-3xl p-8 bg-white border-2 border-orange-500 card-shadow flex flex-col justify-between relative transform md:-translate-y-2 shadow-xl glow-orange">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-600 text-white text-[11px] font-black uppercase px-4 py-1.5 rounded-full shadow-md tracking-wider whitespace-nowrap">
-                    ★ BEST SELLER &amp; REKOMENDASI UTAMA
+            <!-- Paket 2: Web Bisnis Pro & SEO Booster (BEST SELLER) -->
+            <div class="rounded-3xl p-8 bg-white border-2 border-[#F58220] card-shadow flex flex-col justify-between relative transform md:-translate-y-2 shadow-xl">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 orange-gradient text-white text-[11px] font-black uppercase px-4 py-1.5 rounded-full shadow-md tracking-wider whitespace-nowrap font-heading">
+                    ★ PALING POPULER &amp; REKOMENDASI UTAMA
                 </div>
 
                 <div>
-                    <span class="text-xs font-extrabold uppercase tracking-wider text-orange-600">Solusi Penjualan</span>
-                    <h3 class="text-2xl font-black text-slate-900 mt-1">E-Commerce &amp; Katalog</h3>
-                    <p class="text-xs text-slate-500 mt-1">Untuk Toko Online, Distributor, &amp; Brand Produk</p>
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-[#F58220] font-heading">Mesin Penjualan</span>
+                    <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">Web Bisnis Pro &amp; SEO Booster</h3>
+                    <p class="text-xs text-slate-500 mt-1">Untuk Toko Online, Distributor, &amp; Company Profile</p>
 
                     <div class="my-6">
-                        <span class="text-xs text-slate-400 line-through">Rp 6.500.000</span>
+                        <span class="text-xs text-slate-400 line-through">Rp 5.500.000</span>
                         <div class="flex items-baseline gap-1 mt-1">
                             <span class="text-sm font-bold text-slate-700">Mulai</span>
-                            <span class="text-3xl sm:text-4xl font-black text-orange-600">Rp 3.850.000</span>
+                            <span class="text-3xl sm:text-4xl font-black text-[#F58220] font-heading">Rp 2.750.000</span>
                         </div>
-                        <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">Paket Komplit Siap Jualan</span>
+                        <span class="inline-block mt-1 text-[11px] font-bold text-emerald-600 bg-emerald-100 px-2.5 py-0.5 rounded-full">Paket Komplit Siap Banjir Order</span>
                     </div>
 
                     <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span><strong>Semua Fitur Company Profile Pro</strong></span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Manajemen Produk &amp; Kategori Tanpa Batas</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Keranjang Belanja &amp; Checkout WhatsApp</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Integrasi Hitung Ongkir Otomatis (JNE/J&amp;T)</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span>Optimasi SEO Google &amp; GEO AI Search</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-orange-600 font-bold">✔</span> <span><strong>BONUS: Setup Google Bisnisku (Maps)</strong></span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span><strong>Semua Fitur Paket Starter</strong></span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span>Multi-halaman Eksklusif (Hingga 5-10 Halaman)</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span>Katalog Produk &amp; Checkout Otomatis WhatsApp</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span><strong>Optimasi SEO On-Page Ranking 1 Google</strong></span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span><strong>Optimasi GEO AI Search (ChatGPT/Gemini)</strong></span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-[#F58220] font-bold">✔</span> <span>Prioritas Dukungan Teknis 24/7 (1 Tahun)</span></li>
                     </ul>
                 </div>
 
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha,%20saya%20mau%20order%20Paket%20E-Commerce%20dan%20Katalog" target="_blank" class="w-full py-4 rounded-xl orange-gradient text-white font-black text-xs sm:text-sm text-center shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition">
-                    Pesan Paket E-Commerce Sekarang →
+                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20mau%20order%20Paket%20Web%20Bisnis%20Pro" target="_blank" class="w-full py-4 rounded-xl orange-gradient text-white font-black text-xs sm:text-sm text-center shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition">
+                    Pesan Paket Bisnis Pro Sekarang →
                 </a>
             </div>
 
-            <!-- Paket 3: Custom Web App / Corporate IT -->
-            <div class="rounded-3xl p-8 bg-slate-50 border border-slate-200 card-shadow flex flex-col justify-between">
+            <!-- Paket 3: Enterprise & Retainer IT Konsultan -->
+            <div class="rounded-3xl p-8 bg-[#FAFAFA] border border-slate-200 card-shadow flex flex-col justify-between">
                 <div>
-                    <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Skala Perusahaan</span>
-                    <h3 class="text-2xl font-black text-slate-900 mt-1">Custom Web & IT Kantor</h3>
-                    <p class="text-xs text-slate-500 mt-1">Untuk Korporat, Sistem Custom & Kontrak IT</p>
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-slate-500 font-heading">Skala Korporat</span>
+                    <h3 class="text-2xl font-black text-slate-900 mt-1 font-heading">Enterprise &amp; Retainer IT</h3>
+                    <p class="text-xs text-slate-500 mt-1">Maintenance Jaringan, Hardware &amp; Sistem Bulanan</p>
 
                     <div class="my-6">
-                        <span class="text-xs text-slate-400">Investasi Fleksibel Sesuai Kebutuhan</span>
+                        <span class="text-xs text-slate-400">Kontrak Pemeliharaan Rutin Kantor (SLA)</span>
                         <div class="flex items-baseline gap-1 mt-1">
-                            <span class="text-2xl sm:text-3xl font-black text-slate-900">Custom / Nego</span>
+                            <span class="text-sm font-bold text-slate-700">Mulai</span>
+                            <span class="text-3xl sm:text-4xl font-black text-slate-900 font-heading">Rp 4.500.000</span>
                         </div>
-                        <span class="inline-block mt-1 text-[11px] font-bold text-blue-600 bg-blue-100 px-2.5 py-0.5 rounded-full">Survey & Proposal Gratis</span>
+                        <span class="inline-block mt-1 text-[11px] font-bold text-blue-600 bg-blue-100 px-2.5 py-0.5 rounded-full">Survey &amp; Proposal Gratis</span>
                     </div>
 
                     <ul class="space-y-3 text-xs sm:text-sm text-slate-700 mb-8">
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Aplikasi Web Kustom (ERP/Dashboard)</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Instalasi & Setting Jaringan LAN Kantor</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Pengadaan PC & Hardware Bergaransi</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Kontrak Maintenance Bulanan (SLA)</span></li>
-                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Dedicated Senior IT Engineer</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Aplikasi Web Kustom (ERP/Dashboard/Portal)</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Instalasi &amp; Setting Jaringan LAN/Mikrotik</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Pengadaan PC &amp; Servis Hardware On-Site</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Kontrak Maintenance Bulanan Resmi (SLA)</span></li>
+                        <li class="flex items-center gap-2.5"><span class="text-emerald-500 font-bold">✔</span> <span>Dedicated Senior IT Engineer Siap Panggilan</span></li>
                     </ul>
                 </div>
 
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha,%20saya%20ingin%20konsultasi%20Sistem%20Custom%20atau%20IT%20Kantor" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm text-center transition">
-                    Konsultasikan Kebutuhan Kantor →
+                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20Paket%20Enterprise%20dan%20Retainer%20IT" target="_blank" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-[#F58220] text-white font-bold text-xs sm:text-sm text-center transition shadow-md">
+                    Konsultasikan Kebutuhan Korporat →
                 </a>
             </div>
 

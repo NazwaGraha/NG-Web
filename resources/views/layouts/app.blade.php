@@ -47,6 +47,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="{{ asset('images/ngp-logo.webp') }}">
 
+    <!-- Google Fonts for Modern Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Fast Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -54,6 +59,16 @@
             theme: {
                 extend: {
                     colors: {
+                        ngp: {
+                            orange: '#F58220',
+                            orangeDark: '#DE6F12',
+                            orangeLight: '#FFF4EC',
+                            charcoal: '#1E2124',
+                            carbon: '#121416',
+                            cardDark: '#262A2E',
+                            surface: '#FAFAFA',
+                            whatsapp: '#25D366'
+                        },
                         brand: {
                             50: '#fff7ed',
                             100: '#ffedd5',
@@ -61,21 +76,34 @@
                             600: '#ea580c',
                             700: '#c2410c',
                         }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                        heading: ['"Outfit"', '"Plus Jakarta Sans"', 'sans-serif']
                     }
                 }
             }
         }
     </script>
     <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
         .orange-gradient {
-            background: linear-gradient(135deg, #FF6A00 0%, #EA580C 100%);
+            background: linear-gradient(135deg, #F58220 0%, #EA580C 100%);
+        }
+        .charcoal-gradient {
+            background: linear-gradient(135deg, #1E2124 0%, #121416 100%);
         }
         .card-shadow {
             box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 0 2px rgba(15, 23, 42, 0.05);
             transition: all 0.3s ease;
         }
         .card-shadow:hover {
-            box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.2);
+            box-shadow: 0 20px 40px -10px rgba(245, 130, 32, 0.2);
             transform: translateY(-3px);
         }
         @keyframes wa-pulse {
@@ -239,57 +267,166 @@
         </div>
     </div>
 
-    <!-- Main Navigation Header (Clean, Modern, Organized - Persis Mockup V2/V3) -->
+    <!-- Main Navigation Header (Clean, Modern, Organized - Header Ringkas & Mega Dropdown) -->
     <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo & Brand Identity (Persis Mockup V2/V3) -->
+            <!-- Logo & Brand Identity (Matching Mockup V4) -->
             <a href="{{ route('home') }}" class="flex items-center gap-3 shrink-0 group">
-                <!-- Visual Icon NG Box (Mockup V2/V3) -->
-                <div class="w-10 h-10 rounded-xl orange-gradient flex items-center justify-center text-white font-black text-xl shadow-md shadow-orange-500/30 shrink-0 group-hover:scale-105 transition-transform">
+                <!-- Visual Icon NG Box -->
+                <div class="w-10 h-10 rounded-xl orange-gradient flex items-center justify-center text-white font-black text-xl shadow-md shadow-orange-500/30 shrink-0 group-hover:scale-105 transition-transform font-heading">
                     NG
                 </div>
                 <div>
-                    <span class="text-lg font-black tracking-tight text-slate-900 block leading-tight group-hover:text-orange-600 transition">NazwaGraha<span class="text-orange-600">.</span></span>
-                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Web &amp; IT Solution</span>
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-base sm:text-lg font-black tracking-tight text-slate-900 group-hover:text-orange-600 transition font-heading">
+                            PT NAZWA GRAHA PRATAMA
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                            Official IT Consultant &amp; Web Agency Bogor
+                        </span>
+                    </div>
                 </div>
                 <!-- Hidden img for test assertion compatibility -->
                 <img src="{{ asset('images/ngp-logo.webp') }}" alt="Logo NazwaGraha Pratama" width="211" height="80" class="sr-only">
             </a>
 
-            <!-- Desktop Navigation Menu (Persis Mockup V2 & V3 - Centered & Spacious) -->
-            <nav class="hidden md:flex items-center gap-4 lg:gap-5 xl:gap-7 text-xs lg:text-[13px] xl:text-sm font-bold text-slate-600 mx-auto px-4">
-                <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-orange-600 font-extrabold border-b-2 border-orange-600 pb-1' : 'hover:text-orange-600' }} transition whitespace-nowrap">
+            <!-- Desktop Navigation Menu (Concise 5 Items with 2-Column Mega Dropdown) -->
+            <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-xs xl:text-sm font-bold text-slate-700">
+                <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-[#F58220] font-extrabold border-b-2 border-[#F58220] pb-1' : 'hover:text-[#F58220]' }} transition">
                     Beranda
                 </a>
-                <a href="{{ route('services.website') }}" class="{{ request()->routeIs('services.website') ? 'text-orange-600 font-extrabold border-b-2 border-orange-600 pb-1' : 'hover:text-orange-600' }} transition whitespace-nowrap">
-                    Jasa Pembuatan Website
+
+                <!-- Layanan IT Mega Dropdown (2 Kolom Mewah) -->
+                <div class="relative group py-2">
+                    <button type="button" class="flex items-center gap-1.5 hover:text-[#F58220] transition cursor-pointer font-bold focus:outline-none">
+                        <span>Layanan IT</span>
+                        <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-[#F58220] group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                        <span class="bg-orange-100 text-[#F58220] text-[9px] px-1.5 py-0.5 rounded font-black">6 PILAR</span>
+                    </button>
+
+                    <!-- Dropdown Menu Box (2 Columns) -->
+                    <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-1/2 -translate-x-1/2 w-[620px] bg-white rounded-2xl shadow-2xl border border-slate-200/80 p-5 z-50 mt-1">
+                        <div class="grid grid-cols-2 gap-4 text-left">
+                            <!-- Kolom 1: Digital, Web & Software -->
+                            <div class="space-y-2 border-r border-slate-100 pr-3">
+                                <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
+                                    <span class="text-xs font-black text-[#F58220] uppercase tracking-wider font-heading">Digital &amp; Web</span>
+                                    <span class="text-[9px] bg-orange-50 text-[#F58220] px-1.5 py-0.2 rounded font-bold">SEO #1</span>
+                                </div>
+                                <a href="{{ route('services.website') }}" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-orange-50/70 transition group/item">
+                                    <span class="text-lg">🌐</span>
+                                    <div>
+                                        <span class="text-xs font-bold text-slate-900 group-hover/item:text-[#F58220] block">Jasa Pembuatan Website Murah</span>
+                                        <span class="text-[10px] text-slate-500 font-normal leading-tight block">Landing Page, Compro &amp; Toko Online cepat</span>
+                                    </div>
+                                </a>
+                                <a href="{{ route('services.seo-geo') }}" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-orange-50/70 transition group/item">
+                                    <span class="text-lg">🚀</span>
+                                    <div>
+                                        <span class="text-xs font-bold text-slate-900 group-hover/item:text-[#F58220] block">Jasa SEO &amp; GEO AI Overviews</span>
+                                        <span class="text-[10px] text-slate-500 font-normal leading-tight block">Tembus ranking 1 Google &amp; ChatGPT Search</span>
+                                    </div>
+                                </a>
+                                <a href="{{ route('services.website') }}#it-konsultan" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-orange-50/70 transition group/item">
+                                    <span class="text-lg">💼</span>
+                                    <div>
+                                        <span class="text-xs font-bold text-slate-900 group-hover/item:text-[#F58220] block">IT Konsultan &amp; Solusi Bisnis</span>
+                                        <span class="text-[10px] text-slate-500 font-normal leading-tight block">Audit sistem, transformasi digital &amp; software</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Kolom 2: Infrastruktur, Jaringan & Hardware -->
+                            <div class="space-y-2 pl-1">
+                                <div class="flex items-center gap-2 pb-2 border-b border-slate-100">
+                                    <span class="text-xs font-black text-slate-800 uppercase tracking-wider font-heading">Hardware &amp; LAN</span>
+                                    <span class="text-[9px] bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded font-bold">Teknisi Ready</span>
+                                </div>
+                                <a href="{{ route('services.jaringan-lan') }}" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-orange-50/70 transition group/item">
+                                    <span class="text-lg">🔌</span>
+                                    <div>
+                                        <span class="text-xs font-bold text-slate-900 group-hover/item:text-[#F58220] block">Instalasi Jaringan LAN &amp; Mikrotik</span>
+                                        <span class="text-[10px] text-slate-500 font-normal leading-tight block">Setting router, switch, rack server, &amp; WiFi</span>
+                                    </div>
+                                </a>
+                                <a href="{{ route('services.hardware') }}" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-orange-50/70 transition group/item">
+                                    <span class="text-lg">💻</span>
+                                    <div>
+                                        <span class="text-xs font-bold text-slate-900 group-hover/item:text-[#F58220] block">Pengadaan Komputer Kantor</span>
+                                        <span class="text-[10px] text-slate-500 font-normal leading-tight block">PC workstation, laptop, server &amp; aksesoris</span>
+                                    </div>
+                                </a>
+                                <a href="{{ route('services.servis') }}" class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-orange-50/70 transition group/item">
+                                    <span class="text-lg">🛠️</span>
+                                    <div>
+                                        <span class="text-xs font-bold text-slate-900 group-hover/item:text-[#F58220] block">Maintenance &amp; Troubleshooting IT</span>
+                                        <span class="text-[10px] text-slate-500 font-normal leading-tight block">Perawatan rutin kantor, backup &amp; garansi SLA</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Mega Dropdown Strip -->
+                        <div class="mt-3 pt-3 border-t border-slate-100 bg-slate-50/80 -mx-5 -mb-5 px-5 py-2.5 rounded-b-2xl flex items-center justify-between text-[11px]">
+                            <span class="text-slate-500">Butuh solusi terpadu atau kunjungan teknisi kantor?</span>
+                            <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20butuh%20solusi%20kustom" target="_blank" class="font-bold text-[#F58220] hover:underline flex items-center gap-1">
+                                <span>Konsultasi Khusus via WA</span>
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harga Paket -->
+                <a href="{{ route('home') }}#harga" class="hover:text-[#F58220] transition flex items-center gap-1">
+                    <span>Harga Paket</span>
+                    <span class="bg-emerald-100 text-emerald-700 text-[9px] px-1.5 py-0.5 rounded font-black">HEMAT</span>
                 </a>
-                <a href="{{ route('services.jaringan-lan') }}" class="{{ request()->routeIs('services.jaringan-lan') ? 'text-orange-600 font-extrabold border-b-2 border-orange-600 pb-1' : 'hover:text-orange-600' }} transition whitespace-nowrap">
-                    Jaringan LAN &amp; IT
-                </a>
-                <a href="{{ route('home') }}#harga" class="hover:text-orange-600 transition whitespace-nowrap">
-                    Harga Paket
-                </a>
-                <a href="{{ route('gallery.index') }}" class="{{ request()->routeIs('gallery.*') ? 'text-orange-600 font-extrabold border-b-2 border-orange-600 pb-1' : 'hover:text-orange-600' }} transition whitespace-nowrap">
+
+                <!-- Portofolio -->
+                <a href="{{ route('gallery.index') }}" class="{{ request()->routeIs('gallery.*') ? 'text-[#F58220] font-extrabold border-b-2 border-[#F58220] pb-1' : 'hover:text-[#F58220]' }} transition">
                     Portofolio
                 </a>
-                <a href="{{ route('contact.index') }}" class="{{ request()->routeIs('contact.*') ? 'text-orange-600 font-extrabold border-b-2 border-orange-600 pb-1' : 'hover:text-orange-600' }} transition whitespace-nowrap">
-                    Kontak
-                </a>
+
+                <!-- Dropdown Tentang Kami -->
+                <div class="relative group py-2">
+                    <button type="button" class="flex items-center gap-1 hover:text-[#F58220] transition cursor-pointer font-bold focus:outline-none">
+                        <span>Tentang Kami</span>
+                        <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-[#F58220] group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full right-0 w-52 bg-white rounded-2xl shadow-xl border border-slate-200/80 py-2 z-50 mt-1">
+                        <a href="{{ route('articles.index') }}" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-orange-50 hover:text-[#F58220] transition font-bold">
+                            <span>📰</span><span>News &amp; Article (Blog)</span>
+                        </a>
+                        <a href="{{ route('about') }}" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-orange-50 hover:text-[#F58220] transition font-bold">
+                            <span>🏢</span><span>Profil PT NGP</span>
+                        </a>
+                        <a href="{{ route('contact.index') }}" class="flex items-center gap-2.5 px-4 py-2.5 text-xs text-slate-700 hover:bg-orange-50 hover:text-[#F58220] transition font-bold">
+                            <span>📍</span><span>Kontak &amp; Lokasi Kantor</span>
+                        </a>
+                    </div>
+                </div>
             </nav>
 
-            <!-- CTA Actions (Persis Mockup V2/V3) -->
+            <!-- CTA Actions (Consistent with Mockup V4) -->
             <div class="flex items-center gap-3 shrink-0">
                 <div class="text-right hidden xl:block leading-tight pr-1">
-                    <span class="text-[9px] text-slate-400 block font-bold uppercase tracking-wider">Konsultasi Cepat (Fast Respon)</span>
-                    <a href="tel:081298506111" class="text-xs font-black text-slate-800 hover:text-orange-600 transition tracking-tight mt-0.5 block">0812-9850-6111</a>
+                    <span class="text-[9px] text-slate-400 block font-bold uppercase tracking-wider">Respon Cepat 5 Menit</span>
+                    <a href="tel:081298506111" class="text-xs font-black text-slate-900 hover:text-[#F58220] transition tracking-tight mt-0.5 block">0812-9850-6111</a>
                 </div>
                 <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="hidden sm:inline-flex px-4 sm:px-5 py-2.5 rounded-xl orange-gradient text-white text-xs sm:text-sm font-extrabold shadow-md shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 items-center gap-2 whitespace-nowrap">
                     <span>💬 Chat WhatsApp</span>
                 </a>
                 <!-- Mobile Hamburger Button -->
-                <button type="button" id="mobileMenuBtn" aria-label="Buka Menu Navigasi" aria-expanded="false" class="md:hidden flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-orange-50 hover:text-orange-600 text-slate-800 border border-slate-200/80 shadow-sm transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-500/20">
+                <button type="button" id="mobileMenuBtn" aria-label="Buka Menu Navigasi" aria-expanded="false" class="lg:hidden flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-orange-50 hover:text-orange-600 text-slate-800 border border-slate-200/80 shadow-sm transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-500/20">
                     <svg id="hamburgerIcon" class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -302,50 +439,67 @@
 
         </div>
 
-        <!-- Mobile Drawer Menu (Hidden on desktop, shown on mobile when opened) -->
-        <div id="mobileDrawer" class="hidden md:hidden border-t border-slate-200 bg-white/98 backdrop-blur-xl transition-all shadow-2xl px-4 py-5 space-y-4 max-h-[85vh] overflow-y-auto">
+        <!-- Mobile Drawer Menu (Organized Matching Concise Structure) -->
+        <div id="mobileDrawer" class="hidden lg:hidden border-t border-slate-200 bg-white/98 backdrop-blur-xl transition-all shadow-2xl px-4 py-5 space-y-4 max-h-[85vh] overflow-y-auto">
             <div class="space-y-2">
-                <a href="{{ route('home') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('home') ? 'bg-orange-50 text-orange-600' : 'text-slate-800 hover:bg-slate-50' }} transition">
+                <a href="{{ route('home') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('home') ? 'bg-orange-50 text-[#F58220]' : 'text-slate-800 hover:bg-slate-50' }} transition">
                     <span class="flex items-center gap-2.5"><span>🏠</span><span>Beranda</span></span>
                     <span class="text-xs text-slate-400">→</span>
                 </a>
-                <a href="{{ route('services.website') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('services.website') ? 'bg-orange-50 text-orange-600' : 'text-slate-800 hover:bg-slate-50' }} transition">
-                    <span class="flex items-center gap-2.5"><span>🌐</span><span>Jasa Pembuatan Website</span></span>
-                    <span class="text-xs text-orange-500 font-black">UTAMA</span>
-                </a>
-                <a href="{{ route('services.jaringan-lan') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('services.jaringan-lan') ? 'bg-orange-50 text-orange-600' : 'text-slate-800 hover:bg-slate-50' }} transition">
-                    <span class="flex items-center gap-2.5"><span>🔌</span><span>Jaringan LAN &amp; IT Kantor</span></span>
-                    <span class="text-xs text-slate-400">→</span>
-                </a>
-                <a href="{{ route('home') }}#harga" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm text-slate-800 hover:bg-orange-50 hover:text-orange-600 transition">
+
+                <!-- Kategori 1: Digital & Web -->
+                <div class="rounded-2xl border border-orange-100 bg-orange-50/40 p-3 space-y-1.5">
+                    <div class="flex items-center justify-between px-1 mb-1">
+                        <span class="text-[10px] font-black uppercase tracking-wider text-[#F58220]">Digital, Web &amp; SEO</span>
+                        <span class="text-[9px] bg-[#F58220] text-white px-1.5 py-0.2 rounded font-black">POPULER</span>
+                    </div>
+                    <a href="{{ route('services.website') }}" class="flex items-center justify-between p-2 rounded-lg text-xs font-bold {{ request()->routeIs('services.website') ? 'text-[#F58220] bg-white shadow-xs' : 'text-slate-800 hover:text-[#F58220] hover:bg-white' }} transition">
+                        <span class="flex items-center gap-2"><span>🌐</span><span>Jasa Pembuatan Website Murah</span></span>
+                        <span class="text-[10px] text-emerald-600 font-extrabold">Mulai 1,25 Jt</span>
+                    </a>
+                    <a href="{{ route('services.seo-geo') }}" class="flex items-center justify-between p-2 rounded-lg text-xs font-bold {{ request()->routeIs('services.seo-geo') ? 'text-[#F58220] bg-white shadow-xs' : 'text-slate-800 hover:text-[#F58220] hover:bg-white' }} transition">
+                        <span class="flex items-center gap-2"><span>🚀</span><span>Jasa SEO &amp; GEO AI Overviews</span></span>
+                        <span class="text-[10px] text-slate-400">Google #1</span>
+                    </a>
+                </div>
+
+                <!-- Kategori 2: Hardware & LAN -->
+                <div class="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-3 space-y-1.5">
+                    <div class="flex items-center justify-between px-1 mb-1">
+                        <span class="text-[10px] font-black uppercase tracking-wider text-slate-500">Infrastruktur &amp; Hardware IT</span>
+                        <span class="text-[9px] bg-slate-200 text-slate-700 px-1.5 py-0.2 rounded font-bold">ON-SITE</span>
+                    </div>
+                    <a href="{{ route('services.jaringan-lan') }}" class="flex items-center justify-between p-2 rounded-lg text-xs font-bold {{ request()->routeIs('services.jaringan-lan') ? 'text-[#F58220] bg-white shadow-xs' : 'text-slate-800 hover:text-[#F58220] hover:bg-white' }} transition">
+                        <span class="flex items-center gap-2"><span>🔌</span><span>Jaringan LAN &amp; IT Kantor</span></span>
+                        <span class="text-xs text-slate-400">→</span>
+                    </a>
+                    <a href="{{ route('services.hardware') }}" class="flex items-center justify-between p-2 rounded-lg text-xs font-bold {{ request()->routeIs('services.hardware') ? 'text-[#F58220] bg-white shadow-xs' : 'text-slate-800 hover:text-[#F58220] hover:bg-white' }} transition">
+                        <span class="flex items-center gap-2"><span>💻</span><span>Pengadaan Hardware IT</span></span>
+                        <span class="text-xs text-slate-400">→</span>
+                    </a>
+                    <a href="{{ route('services.servis') }}" class="flex items-center justify-between p-2 rounded-lg text-xs font-bold {{ request()->routeIs('services.servis') ? 'text-[#F58220] bg-white shadow-xs' : 'text-slate-800 hover:text-[#F58220] hover:bg-white' }} transition">
+                        <span class="flex items-center gap-2"><span>🛠️</span><span>Maintenance &amp; Troubleshooting</span></span>
+                        <span class="text-xs text-slate-400">→</span>
+                    </a>
+                </div>
+
+                <!-- Navigasi Tambahan -->
+                <a href="{{ route('home') }}#harga" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm text-slate-800 hover:bg-orange-50 hover:text-[#F58220] transition">
                     <span class="flex items-center gap-2.5"><span>🏷️</span><span>Harga Paket Website &amp; IT</span></span>
-                    <span class="text-xs text-orange-500 font-black">PROMO</span>
+                    <span class="text-xs text-[#F58220] font-black">PROMO</span>
                 </a>
-                <a href="{{ route('gallery.index') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('gallery.*') ? 'bg-orange-50 text-orange-600' : 'text-slate-800 hover:bg-slate-50' }} transition">
+                <a href="{{ route('gallery.index') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('gallery.*') ? 'bg-orange-50 text-[#F58220]' : 'text-slate-800 hover:bg-slate-50' }} transition">
                     <span class="flex items-center gap-2.5"><span>🖼️</span><span>Portofolio Hasil Proyek</span></span>
                     <span class="text-xs text-slate-400">→</span>
                 </a>
-                <a href="{{ route('contact.index') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('contact.*') ? 'bg-orange-50 text-orange-600' : 'text-slate-800 hover:bg-slate-50' }} transition">
+                <a href="{{ route('articles.index') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('articles.*') ? 'bg-orange-50 text-[#F58220]' : 'text-slate-800 hover:bg-slate-50' }} transition">
+                    <span class="flex items-center gap-2.5"><span>📰</span><span>News &amp; Article (Blog SEO)</span></span>
+                    <span class="text-xs text-slate-400">→</span>
+                </a>
+                <a href="{{ route('contact.index') }}" class="flex items-center justify-between p-3 rounded-xl font-bold text-sm {{ request()->routeIs('contact.*') ? 'bg-orange-50 text-[#F58220]' : 'text-slate-800 hover:bg-slate-50' }} transition">
                     <span class="flex items-center gap-2.5"><span>📍</span><span>Kontak &amp; Lokasi Kantor</span></span>
                     <span class="text-xs text-slate-400">→</span>
                 </a>
-
-                <!-- Layanan Solusi IT Tambahan -->
-                <div class="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-3 space-y-2 mt-2">
-                    <span class="text-[11px] font-black uppercase tracking-wider text-slate-400 block px-1">Layanan Solusi IT Lainnya:</span>
-                    <a href="{{ route('services.seo-geo') }}" class="flex items-center gap-2.5 p-2 rounded-lg text-xs font-bold {{ request()->routeIs('services.seo-geo') ? 'text-orange-600 bg-white shadow-xs' : 'text-slate-700 hover:text-orange-600 hover:bg-white' }} transition">
-                        <span>🚀</span><span>Optimasi SEO &amp; GEO (AI)</span>
-                    </a>
-                    <a href="{{ route('services.hardware') }}" class="flex items-center gap-2.5 p-2 rounded-lg text-xs font-bold {{ request()->routeIs('services.hardware') ? 'text-orange-600 bg-white shadow-xs' : 'text-slate-700 hover:text-orange-600 hover:bg-white' }} transition">
-                        <span>💻</span><span>Pengadaan Hardware IT</span>
-                    </a>
-                    <a href="{{ route('services.servis') }}" class="flex items-center gap-2.5 p-2 rounded-lg text-xs font-bold {{ request()->routeIs('services.servis') ? 'text-orange-600 bg-white shadow-xs' : 'text-slate-700 hover:text-orange-600 hover:bg-white' }} transition">
-                        <span>🛠️</span><span>Servis &amp; Troubleshooting</span>
-                    </a>
-                    <a href="{{ route('articles.index') }}" class="flex items-center gap-2.5 p-2 rounded-lg text-xs font-bold {{ request()->routeIs('articles.*') ? 'text-orange-600 bg-white shadow-xs' : 'text-slate-700 hover:text-orange-600 hover:bg-white' }} transition">
-                        <span>📰</span><span>Artikel IT</span>
-                    </a>
-                </div>
             </div>
 
             <!-- Mobile Contact Cards (INSIDE mobileDrawer ONLY) -->
