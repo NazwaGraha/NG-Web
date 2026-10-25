@@ -258,11 +258,6 @@
                     <span class="text-orange-400 font-bold">📞</span>
                     <span>0812-9850-6111</span>
                 </a>
-                <span class="hidden sm:inline text-slate-700">|</span>
-                <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20tertarik%20dengan%20layanan%20Anda" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-black flex items-center gap-1 transition">
-                    <span>Chat WhatsApp Admin</span>
-                    <span>→</span>
-                </a>
             </div>
         </div>
     </div>
@@ -398,7 +393,7 @@
             <!-- CTA Actions (Clean & Focused) -->
             <div class="flex items-center gap-3 shrink-0">
                 <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="hidden sm:inline-flex px-4 sm:px-5 py-2.5 rounded-xl orange-gradient text-white text-xs sm:text-sm font-extrabold shadow-md shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 items-center gap-2 whitespace-nowrap">
-                    <span>💬 Chat WhatsApp</span>
+                    <span>💬 Hubungi Kami</span>
                 </a>
                 <!-- Mobile Hamburger Button -->
                 <button type="button" id="mobileMenuBtn" aria-label="Buka Menu Navigasi" aria-expanded="false" class="lg:hidden flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-100 hover:bg-orange-50 hover:text-orange-600 text-slate-800 border border-slate-200/80 shadow-sm transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-orange-500/20">
