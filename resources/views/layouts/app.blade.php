@@ -395,12 +395,8 @@
                 </div>
             </nav>
 
-            <!-- CTA Actions (Consistent with Mockup V4) -->
+            <!-- CTA Actions (Clean & Focused) -->
             <div class="flex items-center gap-3 shrink-0">
-                <div class="text-right hidden xl:block leading-tight pr-1">
-                    <span class="text-[9px] text-slate-400 block font-bold uppercase tracking-wider">Respon Cepat 5 Menit</span>
-                    <a href="tel:081298506111" class="text-xs font-black text-slate-900 hover:text-[#F58220] transition tracking-tight mt-0.5 block">0812-9850-6111</a>
-                </div>
                 <a href="https://wa.me/6281298506111?text=Halo%20NazwaGraha%20Pratama,%20saya%20ingin%20konsultasi%20website%20dan%20solusi%20IT" target="_blank" class="hidden sm:inline-flex px-4 sm:px-5 py-2.5 rounded-xl orange-gradient text-white text-xs sm:text-sm font-extrabold shadow-md shadow-orange-500/30 hover:shadow-orange-500/50 transition transform hover:-translate-y-0.5 items-center gap-2 whitespace-nowrap">
                     <span>💬 Chat WhatsApp</span>
                 </a>
