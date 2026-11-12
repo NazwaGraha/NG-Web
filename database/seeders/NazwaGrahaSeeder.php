@@ -8,6 +8,7 @@ use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\SiteSetting;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class NazwaGrahaSeeder extends Seeder
 {
@@ -242,7 +243,19 @@ class NazwaGrahaSeeder extends Seeder
             ],
         ];
 
+        $defaultCategoryId = null;
+        if (Schema::hasTable('categories')) {
+            $cat = \App\Models\Category::firstOrCreate(
+                ['slug' => 'umum'],
+                ['name' => 'Umum', 'description' => 'Kategori Umum']
+            );
+            $defaultCategoryId = $cat->id;
+        }
+
         foreach ($articles as $article) {
+            if (Schema::hasColumn('articles', 'category_id') && $defaultCategoryId) {
+                $article['category_id'] = $defaultCategoryId;
+            }
             Article::updateOrCreate(['slug' => $article['slug']], $article);
         }
 
