@@ -13,14 +13,14 @@ class ContactInquiryMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public array $contactData;
+    public array $inquiryData;
 
     /**
      * Create a new message instance.
      */
-    public function __construct(array $contactData)
+    public function __construct(array $inquiryData)
     {
-        $this->contactData = $contactData;
+        $this->inquiryData = $inquiryData;
     }
 
     /**
@@ -28,16 +28,17 @@ class ContactInquiryMail extends Mailable
      */
     public function envelope(): Envelope
     {
-        $subject = "[Pesan Baru Website NGP] " . $this->contactData['name'] . " - " . $this->contactData['service'];
-
-        $replyTo = [];
-        if (!empty($this->contactData['email'])) {
-            $replyTo[] = new Address($this->contactData['email'], $this->contactData['name']);
-        }
+        $senderName = $this->inquiryData['name'] ?? 'Pengunjung NazwaGraha';
+        $senderEmail = $this->inquiryData['email'] ?? 'nazwagraha@gmail.com';
+        $subject = !empty($this->inquiryData['subject'])
+            ? '[Pertanyaan Web] ' . $this->inquiryData['subject']
+            : '[Pertanyaan Web] Pesan Baru dari ' . $senderName;
 
         return new Envelope(
             subject: $subject,
-            replyTo: $replyTo,
+            replyTo: [
+                new Address($senderEmail, $senderName),
+            ],
         );
     }
 
@@ -49,15 +50,13 @@ class ContactInquiryMail extends Mailable
         return new Content(
             view: 'emails.contact-inquiry',
             with: [
-                'data' => $this->contactData,
+                'data' => $this->inquiryData,
             ],
         );
     }
 
     /**
      * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
     public function attachments(): array
     {

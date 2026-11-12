@@ -1,112 +1,84 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\SeoController;
-use App\Http\Controllers\Admin\AuthController as AdminAuthController;
-use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
-use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
-use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
-use App\Http\Controllers\Admin\UserController as AdminUserController;
-use App\Http\Controllers\Admin\ContactMessageController as AdminContactMessageController;
-use App\Http\Controllers\Admin\PackageController as AdminPackageController;
+use App\Http\Controllers\Admin\AuthController as AdminAuthController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\InquiryController as AdminInquiryController;
+use App\Http\Controllers\Admin\PortfolioController as AdminPortfolioController;
+use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
+use App\Http\Controllers\Admin\ServicePageController as AdminServicePageController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InquiryController;
+use App\Http\Controllers\SitemapController;
+use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Public Routes (SEO & High Conversion)
-|--------------------------------------------------------------------------
-*/
+// Public Front-End Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/tentang-kami', [HomeController::class, 'about'])->name('about');
+Route::get('/jasa-pembuatan-website-murah', [HomeController::class, 'websiteService'])->name('services.website');
+Route::get('/jasa-seo-murah', [HomeController::class, 'seoService'])->name('services.seo');
+Route::get('/instalasi-jaringan-lan', [HomeController::class, 'networkService'])->name('services.network');
+Route::get('/pengadaan-komputer', [HomeController::class, 'hardwareService'])->name('services.hardware');
+Route::get('/konsultan-it-maintenance', [HomeController::class, 'maintenanceService'])->name('services.maintenance');
+Route::get('/berita', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/berita/{slug}', function (string $slug) {
+    return redirect('/' . $slug, 301);
+});
+Route::post('/inquiry', [InquiryController::class, 'store'])->name('inquiry.store');
 
-// Articles / Blog
-Route::get('/artikel', [ArticleController::class, 'index'])->name('articles.index');
-Route::get('/artikel/kategori/{slug}', [ArticleController::class, 'category'])->name('articles.category');
-Route::get('/artikel/{slug}', [ArticleController::class, 'show'])->name('articles.show');
-
-// Gallery / Portofolio
-Route::get('/galeri', [GalleryController::class, 'index'])->name('gallery.index');
-
-// Contact & Location
-Route::get('/kontak', [ContactController::class, 'index'])->name('contact.index');
-Route::post('/kontak/kirim', [ContactController::class, 'send'])->name('contact.send');
-
-// Dedicated IT Services Pages (High SEO & Conversion)
-Route::prefix('layanan')->name('services.')->group(function () {
-    Route::get('/pembuatan-website', [ServiceController::class, 'website'])->name('website');
-    Route::get('/optimasi-seo-geo', [ServiceController::class, 'seoGeo'])->name('seo-geo');
-    Route::get('/jaringan-lan-server', [ServiceController::class, 'jaringanLan'])->name('jaringan-lan');
-    Route::get('/pengadaan-hardware-it', [ServiceController::class, 'hardware'])->name('hardware');
-    Route::get('/servis-troubleshooting-komputer', [ServiceController::class, 'servis'])->name('servis');
+// Contact Us Routes
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact-us', [ContactController::class, 'send'])->name('contact.send');
+Route::get('/kontak', function () {
+    return redirect()->route('contact.index', [], 301);
+});
+Route::get('/hubungi-kami', function () {
+    return redirect()->route('contact.index', [], 301);
 });
 
-// Dynamic Sitemap, Robots.txt & LLMs.txt for Google & AI Search (GEO)
-Route::get('/sitemap.xml', [SeoController::class, 'sitemap'])->name('seo.sitemap');
-Route::get('/robots.txt', [SeoController::class, 'robots'])->name('seo.robots');
-Route::get('/llms.txt', [SeoController::class, 'llms'])->name('seo.llms');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
-// 301 Permanent Redirects for Legacy URLs (SEO Juice Transfer & 404 Elimination)
-Route::redirect('/produk', '/layanan/pengadaan-hardware-it', 301);
-Route::redirect('/produk/{any}', '/layanan/pengadaan-hardware-it', 301)->where('any', '.*');
-Route::redirect('/kategori-produk', '/layanan/pengadaan-hardware-it', 301);
-Route::redirect('/kategori-produk/{any}', '/layanan/pengadaan-hardware-it', 301)->where('any', '.*');
-Route::redirect('/katalog', '/galeri', 301);
-Route::redirect('/katalog/{any}', '/galeri', 301)->where('any', '.*');
-Route::redirect('/cart', '/kontak', 301);
-Route::redirect('/checkout', '/kontak', 301);
-Route::redirect('/keranjang', '/kontak', 301);
-Route::redirect('/store', '/', 301);
-Route::redirect('/store/{any}', '/', 301)->where('any', '.*');
-
-Route::redirect('/login', '/admin/login')->name('login');
-
-/*
-|--------------------------------------------------------------------------
-| Backoffice / Admin Routes
-|--------------------------------------------------------------------------
-*/
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('login');
-    Route::post('/login', [AdminAuthController::class, 'login'])->name('login.submit');
-    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
-
-    Route::middleware(['auth'])->group(function () {
-        Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
-
-        // Categories Management
-        Route::resource('categories', AdminCategoryController::class)->except(['create', 'show', 'destroy']);
-
-        // Packages Management (Pilihan Paket Pembuatan Website)
-        Route::resource('packages', AdminPackageController::class)->except(['show', 'destroy']);
-
-        // Articles Management
-        Route::post('articles/upload-image', [AdminArticleController::class, 'uploadImage'])->name('articles.upload-image');
-        Route::resource('articles', AdminArticleController::class)->except(['destroy']);
-
-        // Galleries Management
-        Route::resource('galleries', AdminGalleryController::class)->except(['show', 'destroy']);
-
-        // Contact Messages & Leads Management
-        Route::get('contact-messages', [AdminContactMessageController::class, 'index'])->name('contact-messages.index');
-        Route::get('contact-messages/{contactMessage}', [AdminContactMessageController::class, 'show'])->name('contact-messages.show');
-        Route::patch('contact-messages/{contactMessage}/toggle-read', [AdminContactMessageController::class, 'toggleRead'])->name('contact-messages.toggle-read');
-
-        // User Management
-        Route::resource('users', AdminUserController::class)->except(['show', 'destroy']);
-
-        // Data Deletion Protection: Only Super User & Supervisor are allowed to delete data
-        Route::middleware(['can.delete'])->group(function () {
-            Route::delete('packages/{package}', [AdminPackageController::class, 'destroy'])->name('packages.destroy');
-            Route::delete('categories/{category}', [AdminCategoryController::class, 'destroy'])->name('categories.destroy');
-            Route::delete('articles/{article}', [AdminArticleController::class, 'destroy'])->name('articles.destroy');
-            Route::delete('galleries/{gallery}', [AdminGalleryController::class, 'destroy'])->name('galleries.destroy');
-            Route::delete('users/{user}', [AdminUserController::class, 'destroy'])->name('users.destroy');
-            Route::delete('contact-messages/{contactMessage}', [AdminContactMessageController::class, 'destroy'])->name('contact-messages.destroy');
-        });
-    });
+// Admin Authentication Routes
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+    // Global fallback for auth middleware:
+    Route::get('/auth-login', [AdminAuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 });
+
+// Protected Admin Backoffice (Strict Auth Middleware)
+Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
+    Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+    // Categories Management
+    Route::resource('categories', AdminCategoryController::class)->except(['create', 'show', 'edit']);
+
+    // Articles Management
+    Route::resource('articles', AdminArticleController::class);
+
+    // Inquiries / Leads Management
+    Route::get('/inquiries', [AdminInquiryController::class, 'index'])->name('inquiries.index');
+    Route::patch('/inquiries/{inquiry}/status', [AdminInquiryController::class, 'updateStatus'])->name('inquiries.status');
+    Route::delete('/inquiries/{inquiry}', [AdminInquiryController::class, 'destroy'])->name('inquiries.destroy');
+
+    // Services Management (Layanan Unggulan Kami)
+    Route::resource('services', AdminServiceController::class)->except(['show']);
+    Route::patch('/services/{service}/toggle', [AdminServiceController::class, 'toggleStatus'])->name('services.toggle');
+
+    // Sub-Menu Service Pages Content Management
+    Route::get('/service-pages', [AdminServicePageController::class, 'index'])->name('service-pages.index');
+    Route::put('/service-pages/{servicePage}', [AdminServicePageController::class, 'update'])->name('service-pages.update');
+    Route::patch('/service-pages/{servicePage}/toggle', [AdminServicePageController::class, 'toggleStatus'])->name('service-pages.toggle');
+
+    // Portfolio Management (Portofolio & Proyek Nyata)
+    Route::resource('portfolios', AdminPortfolioController::class)->except(['show']);
+    Route::patch('/portfolios/{portfolio}/toggle', [AdminPortfolioController::class, 'toggleStatus'])->name('portfolios.toggle');
+});
+
+// Root-Level Article Detail Route (e.g. /{slug})
+// Placed at the end so all fixed system & admin routes take precedence
+Route::get('/{slug}', [ArticleController::class, 'show'])->name('articles.show');
+

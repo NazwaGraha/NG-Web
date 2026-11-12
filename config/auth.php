@@ -114,4 +114,19 @@ return [
 
     'password_timeout' => env('AUTH_PASSWORD_TIMEOUT', 10800),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Master Backoffice Administrator (Persistent & Database-Independent)
+    |--------------------------------------------------------------------------
+    |
+    | Enables secure, persistent login even if migrations are refreshed or
+    | database is truncated. Stores one-way Bcrypt cryptographic hash.
+    |
+    */
+    'master_admin' => [
+        'name' => 'NazwaGraha Administrator',
+        'email' => env('ADMIN_MASTER_EMAIL', 'nazwagraha@gmail.com'),
+        'password_hash' => env('ADMIN_MASTER_PASSWORD_HASH', '$2y$10$DdPmbCK70TK2IdxVaaENs.AbXOStbIsrIwDEYNICb2fuQti.Q7yUi'),
+    ],
+
 ];

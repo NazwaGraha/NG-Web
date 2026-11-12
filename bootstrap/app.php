@@ -12,10 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->redirectGuestsTo(fn () => route('admin.login'));
-        $middleware->alias([
-            'can.delete' => \App\Http\Middleware\EnsureCanDelete::class,
-        ]);
+        $middleware->redirectTo(
+            guests: '/admin/login',
+            users: '/admin'
+        );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

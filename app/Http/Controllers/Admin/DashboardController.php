@@ -3,44 +3,72 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
 use App\Models\Article;
 use App\Models\Category;
-use App\Models\ContactMessage;
-use App\Models\Gallery;
-use App\Models\Package;
+use App\Models\Inquiry;
+use App\Models\Portfolio;
+use App\Models\Service;
+use Illuminate\Support\Facades\Schema;
 
 class DashboardController extends Controller
 {
+    /**
+     * Display the admin dashboard with overview statistics.
+     */
     public function index()
     {
-        $totalArticles = Article::count();
-        $publishedArticles = Article::where('is_published', true)->count();
-        $totalCategories = Category::count();
-        $totalGalleries = Gallery::count();
-        $totalPackages = Package::count();
-        $totalViews = Article::sum('views');
+        $totalArticles = 0;
+        $publishedArticles = 0;
+        $totalCategories = 0;
+        $totalInquiries = 0;
+        $newInquiries = 0;
+        $totalServices = 0;
+        $totalPortfolios = 0;
 
-        $totalMessages = ContactMessage::count();
-        $unreadMessages = ContactMessage::where('is_read', false)->count();
-        $recentMessages = ContactMessage::latest()->take(5)->get();
+        if (Schema::hasTable('articles')) {
+            $totalArticles = Article::count();
+            $publishedArticles = Article::where('is_published', true)->count();
+        }
 
-        $recentArticles = Article::with('category')->latest()->take(5)->get();
-        $recentGalleries = Gallery::latest()->take(6)->get();
+        if (Schema::hasTable('categories')) {
+            $totalCategories = Category::count();
+        }
+
+        if (Schema::hasTable('inquiries')) {
+            $totalInquiries = Inquiry::count();
+            $newInquiries = Inquiry::where('status', 'baru')->count();
+        }
+
+        if (Schema::hasTable('services')) {
+            $totalServices = Service::count();
+        }
+
+        if (Schema::hasTable('portfolios')) {
+            $totalPortfolios = Portfolio::count();
+        }
+
+        // Recent articles
+        $recentArticles = collect();
+        if (Schema::hasTable('articles')) {
+            $recentArticles = Article::orderByDesc('created_at')->take(5)->get();
+        }
+
+        // Recent inquiries
+        $recentInquiries = collect();
+        if (Schema::hasTable('inquiries')) {
+            $recentInquiries = Inquiry::orderByDesc('created_at')->take(5)->get();
+        }
 
         return view('admin.dashboard', compact(
             'totalArticles',
             'publishedArticles',
             'totalCategories',
-            'totalGalleries',
-            'totalPackages',
-            'totalViews',
-            'totalMessages',
-            'unreadMessages',
-            'recentMessages',
+            'totalInquiries',
+            'newInquiries',
+            'totalServices',
+            'totalPortfolios',
             'recentArticles',
-            'recentGalleries'
+            'recentInquiries'
         ));
     }
 }
