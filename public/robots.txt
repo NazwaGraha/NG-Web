@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 Disallow: /inquiry
 
 Sitemap: https://nazwagraha.com/sitemap.xml
