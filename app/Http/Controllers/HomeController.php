@@ -223,67 +223,14 @@ class HomeController extends Controller
             ]);
         }
 
-        // 3. Load Portfolios
+        // 3. Load Portfolios (Strictly fetched from MySQL database)
         $portfolios = collect();
         try {
             if (Schema::hasTable('portfolios')) {
                 $portfolios = Portfolio::where('is_active', true)->orderBy('sort_order')->get();
             }
         } catch (\Throwable $e) {
-            // fallback
-        }
-
-        if ($portfolios->isEmpty()) {
-            $portfolios = collect([
-                (object) [
-                    'title' => 'PT Samudera Logistik Prima',
-                    'category' => 'Website Company Profile Korporat',
-                    'client' => 'PT Samudera Logistik Prima (Bogor)',
-                    'image' => 'assets/images/portfolio-1.webp',
-                    'description' => 'Website profil perusahaan logistik modern dengan fitur pelacakan armada cepat, katalog rute, dan kecepatan akses di bawah 1 detik.',
-                    'badge' => 'Loading 0.8 Detik',
-                ],
-                (object) [
-                    'title' => 'Klinik Pratama Sehat Medika',
-                    'category' => 'Website Layanan Medis & SEO Lokal Ciawi',
-                    'client' => 'Klinik Sehat Medika (Ciawi - Bogor)',
-                    'image' => 'assets/images/portfolio-2.webp',
-                    'description' => 'Website profil klinik, jadwal praktik dokter, pendaftaran antrean via WhatsApp, dan optimasi Google Maps lokal hingga ranking 1.',
-                    'badge' => 'Rank #1 Google Ciawi',
-                ],
-                (object) [
-                    'title' => 'CV Anugerah Teknik Mandiri',
-                    'category' => 'Website Katalog Mesin & SEO Ranking 1',
-                    'client' => 'CV Anugerah Teknik Mandiri (Depok & Bogor)',
-                    'image' => 'assets/images/portfolio-3.webp',
-                    'description' => 'Katalog digital mesin dan suku cadang industri dengan sistem Request for Quotation (RFQ) instan dan integrasi WhatsApp.',
-                    'badge' => 'Order Naik 300%',
-                ],
-                (object) [
-                    'title' => 'Sentra Niaga & Coworking Hub',
-                    'category' => 'Instalasi Jaringan LAN 36 Titik & Wi-Fi',
-                    'client' => 'Sentra Niaga Hub (Bogor Kota)',
-                    'image' => 'assets/images/portfolio-4.webp',
-                    'description' => 'Penarikan kabel UTP Cat6 berlabel, konfigurasi Router Mikrotik dual ISP load-balancing, access point roaming, dan server rack 15U.',
-                    'badge' => 'Zero Downtime',
-                ],
-                (object) [
-                    'title' => 'Firma Hukum & Konsultan Pajak Artha',
-                    'category' => 'Pengadaan 12 PC Kantor All-in-One',
-                    'client' => 'Artha & Partners (Jakarta & Bogor)',
-                    'image' => 'assets/images/portfolio-1.webp',
-                    'description' => 'Pengadaan 12 unit PC All-in-One Core i5 SSD, 4 laptop bisnis slim, printer network, dan setup software kantor legal.',
-                    'badge' => 'Hemat Biaya 25%',
-                ],
-                (object) [
-                    'title' => 'PT Berkah Pangan Nusantara',
-                    'category' => 'Konsultan IT & Maintenance Rutin',
-                    'client' => 'PT Berkah Pangan Nusantara (Cibinong, Bogor)',
-                    'image' => 'assets/images/portfolio-2.webp',
-                    'description' => 'Kontrak pemeliharaan rutin infrastruktur IT, proteksi antivirus server, backup otomatis NAS Synology, dan on-call emergency.',
-                    'badge' => 'Standby Support',
-                ],
-            ]);
+            $portfolios = collect();
         }
 
         // Testimoni Klien Nyata NazwaGraha

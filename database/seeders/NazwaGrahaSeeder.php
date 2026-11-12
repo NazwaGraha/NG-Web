@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Faq;
-use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\SiteSetting;
 use Illuminate\Database\Seeder;
@@ -136,81 +135,7 @@ class NazwaGrahaSeeder extends Seeder
             Service::updateOrCreate(['slug' => $service['slug']], $service);
         }
 
-        // 3. Portfolios
-        $portfolios = [
-            [
-                'title' => 'PT Samudera Logistik Prima',
-                'slug' => 'pt-samudera-logistik-prima',
-                'category' => 'Website Company Profile Korporat',
-                'client' => 'Klien NazwaGraha',
-                'image' => 'assets/images/portfolio-1.webp',
-                'description' => 'Website profil perusahaan logistik modern dengan fitur pelacakan armada cepat, katalog rute, dan kecepatan akses di bawah 1 detik.',
-                'project_url' => 'https://nazwagraha.com/jasa-pembuatan-website-murah',
-                'sort_order' => 1,
-                'is_active' => true,
-            ],
-            [
-                'title' => 'Klinik Pratama Sehat Medika',
-                'slug' => 'klinik-pratama-sehat-medika',
-                'category' => 'Website Layanan Medis & SEO Lokal Ciawi',
-                'client' => 'Klien NazwaGraha',
-                'image' => 'assets/images/portfolio-2.webp',
-                'description' => 'Website profil klinik, jadwal praktik dokter, pendaftaran antrean via WhatsApp, dan optimasi Google Maps lokal hingga ranking 1.',
-                'project_url' => 'https://nazwagraha.com/jasa-seo-murah',
-                'sort_order' => 2,
-                'is_active' => true,
-            ],
-            [
-                'title' => 'CV Anugerah Teknik Mandiri',
-                'slug' => 'cv-anugerah-teknik-mandiri',
-                'category' => 'Website Katalog Mesin & SEO Ranking 1',
-                'client' => 'Klien NazwaGraha',
-                'image' => 'assets/images/portfolio-3.webp',
-                'description' => 'Katalog digital mesin dan suku cadang industri dengan sistem Request for Quotation (RFQ) instan dan integrasi WhatsApp.',
-                'project_url' => 'https://nazwagraha.com/jasa-pembuatan-website-murah',
-                'sort_order' => 3,
-                'is_active' => true,
-            ],
-            [
-                'title' => 'Sentra Niaga & Coworking Hub',
-                'slug' => 'sentra-niaga-coworking-hub',
-                'category' => 'Instalasi Jaringan LAN 36 Titik & Wi-Fi',
-                'client' => 'Klien NazwaGraha',
-                'image' => 'assets/images/portfolio-4.webp',
-                'description' => 'Penarikan kabel UTP Cat6 berlabel, konfigurasi Router Mikrotik dual ISP load-balancing, access point roaming, dan server rack 15U.',
-                'project_url' => 'https://nazwagraha.com/instalasi-jaringan-lan',
-                'sort_order' => 4,
-                'is_active' => true,
-            ],
-            [
-                'title' => 'Firma Hukum & Konsultan Pajak Artha',
-                'slug' => 'firma-hukum-konsultan-artha',
-                'category' => 'Pengadaan 12 PC Kantor All-in-One',
-                'client' => 'Klien NazwaGraha',
-                'image' => 'assets/images/portfolio-1.webp',
-                'description' => 'Pengadaan 12 unit PC All-in-One Core i5 SSD, 4 laptop bisnis slim, printer network, dan setup software kantor legal.',
-                'project_url' => 'https://nazwagraha.com/pengadaan-komputer',
-                'sort_order' => 5,
-                'is_active' => true,
-            ],
-            [
-                'title' => 'PT Berkah Pangan Nusantara',
-                'slug' => 'pt-berkah-pangan-nusantara',
-                'category' => 'Konsultan IT & Maintenance Rutin',
-                'client' => 'Klien NazwaGraha',
-                'image' => 'assets/images/portfolio-2.webp',
-                'description' => 'Kontrak pemeliharaan rutin infrastruktur IT, proteksi antivirus server, backup otomatis NAS Synology, dan on-call emergency.',
-                'project_url' => 'https://nazwagraha.com/konsultan-it-maintenance',
-                'sort_order' => 6,
-                'is_active' => true,
-            ],
-        ];
-
-        foreach ($portfolios as $portfolio) {
-            Portfolio::updateOrCreate(['slug' => $portfolio['slug']], $portfolio);
-        }
-
-        // 4. FAQs
+        // 3. FAQs
         $faqs = [
             [
                 'question' => 'Berapa biaya jasa pembuatan website murah di NazwaGraha?',

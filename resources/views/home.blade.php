@@ -449,7 +449,8 @@
       </div>
     </section>
 
-    {{-- Portfolio Section --}}
+    {{-- Portfolio Section (Only rendered if portfolios exist in MySQL database) --}}
+    @if(isset($portfolios) && $portfolios->isNotEmpty())
     <section class="section portfolio-section" id="portfolio">
       <div class="container">
         <div class="section-heading section-heading-row">
@@ -464,7 +465,7 @@
           @foreach($portfolios as $item)
             <article class="portfolio-card">
               <div class="portfolio-thumb">
-                <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" loading="lazy" decoding="async" width="680" height="360">
+                <img src="{{ asset($item->image ?? 'assets/images/portfolio-1.webp') }}" alt="{{ $item->title }}" loading="lazy" decoding="async" width="680" height="360">
                 @if(!empty($item->badge))
                   <span class="portfolio-badge">{{ $item->badge }}</span>
                 @endif
@@ -485,6 +486,7 @@
         </div>
       </div>
     </section>
+    @endif
 
     {{-- Testimonials Section (Social Proof & Review Snippets) --}}
     <section class="section testimonial-section" id="testimoni">
