@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::table('portfolios', function (Blueprint $table) {
             if (!Schema::hasColumn('portfolios', 'client')) {
-                $table->string('client')->nullable()->default('Klien NazwaGraha')->after('category');
+                $table->string('client')->nullable()->default('Klien NazwaGraha');
             }
             if (!Schema::hasColumn('portfolios', 'badge')) {
-                $table->string('badge')->nullable()->after('client');
+                $table->string('badge')->nullable();
             }
         });
     }
