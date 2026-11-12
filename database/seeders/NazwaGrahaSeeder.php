@@ -2,13 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Article;
 use App\Models\Faq;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\SiteSetting;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Schema;
 
 class NazwaGrahaSeeder extends Seeder
 {
@@ -212,54 +210,7 @@ class NazwaGrahaSeeder extends Seeder
             Portfolio::updateOrCreate(['slug' => $portfolio['slug']], $portfolio);
         }
 
-        // 4. Articles
-        $articles = [
-            [
-                'title' => 'Hal yang Perlu Disiapkan Sebelum Membuat Website Bisnis Murah tapi Berkualitas',
-                'slug' => 'hal-yang-perlu-disiapkan-sebelum-membuat-website-bisnis',
-                'category' => 'WEBSITE',
-                'excerpt' => 'Kenali tujuan bisnis, target pengunjung, dan materi penting agar pembuatan website murah Anda tetap menghasilkan tampilan premium dan mendatangkan pelanggan.',
-                'content' => 'Memiliki website saat ini bukan lagi sekadar pelengkap, melainkan aset utama bisnis. Sebelum memulai pengerjaan website, pastikan Anda telah menyiapkan profil usaha, keunggulan produk, target pembeli, dan kontak pemesanan cepat seperti WhatsApp.',
-                'image' => 'assets/images/article-1.webp',
-                'published_at' => now()->subDays(5),
-            ],
-            [
-                'title' => 'Mengapa SEO Penting untuk Visibilitas Bisnis dan Menembus Ranking 1 Google?',
-                'slug' => 'mengapa-seo-penting-untuk-visibilitas-bisnis-online',
-                'category' => 'SEO',
-                'excerpt' => 'Memahami fondasi SEO on-page, GEO targeting lokal, dan bagaimana konten relevan membantu calon pelanggan menemukan jasa Anda tanpa biaya iklan terus-menerus.',
-                'content' => 'SEO (Search Engine Optimization) adalah strategi jangka panjang terbaik untuk mendapatkan orderan secara konsisten. Dengan optimasi kata kunci seperti jasa pembuatan website murah dan konsultan IT murah, website Anda akan tampil di posisi atas saat calon konsumen membutuhkan solusi segera.',
-                'image' => 'assets/images/article-2.webp',
-                'published_at' => now()->subDays(12),
-            ],
-            [
-                'title' => 'Tips Menjaga Jaringan Kantor (LAN) & Perangkat IT Tetap Stabil Bebas Kendala',
-                'slug' => 'tips-menjaga-jaringan-kantor-tetap-stabil',
-                'category' => 'INFRASTRUKTUR IT',
-                'excerpt' => 'Langkah praktis mengelola router, penataan kabel LAN rapi, dan perawatan berkala komputer kantor agar operasional tim tidak terganggu.',
-                'content' => 'Konektivitas internet yang lambat atau sering putus dapat merugikan produktivitas kerja. Penataan kabel LAN yang rapi, pemilihan access point yang tepat, serta maintenance hardware secara berkala adalah kunci stabilitas infrastruktur kantor Anda.',
-                'image' => 'assets/images/article-3.webp',
-                'published_at' => now()->subDays(20),
-            ],
-        ];
-
-        $defaultCategoryId = null;
-        if (Schema::hasTable('categories')) {
-            $cat = \App\Models\Category::firstOrCreate(
-                ['slug' => 'umum'],
-                ['name' => 'Umum', 'description' => 'Kategori Umum']
-            );
-            $defaultCategoryId = $cat->id;
-        }
-
-        foreach ($articles as $article) {
-            if (Schema::hasColumn('articles', 'category_id') && $defaultCategoryId) {
-                $article['category_id'] = $defaultCategoryId;
-            }
-            Article::updateOrCreate(['slug' => $article['slug']], $article);
-        }
-
-        // 5. FAQs
+        // 4. FAQs
         $faqs = [
             [
                 'question' => 'Berapa biaya jasa pembuatan website murah di NazwaGraha?',

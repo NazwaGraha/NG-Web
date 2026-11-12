@@ -526,7 +526,8 @@
       </div>
     </section>
 
-    {{-- News & SEO Articles --}}
+    {{-- News & SEO Articles (Only rendered if articles exist in MySQL database) --}}
+    @if(isset($articles) && $articles->isNotEmpty())
     <section class="section news-section" id="news">
       <div class="container">
         <div class="section-heading centered">
@@ -538,8 +539,8 @@
           @foreach($articles as $art)
             <article class="news-card">
               <a class="news-thumb-link" href="{{ !empty($art->slug) ? route('articles.show', $art->slug) : '#order' }}" aria-label="{{ $art->title }}">
-                <img src="{{ asset($art->image) }}" alt="{{ $art->image_alt ?? $art->title }}" loading="lazy" decoding="async" width="600" height="360">
-                <span class="news-category-badge">{{ $art->category }}</span>
+                <img src="{{ asset($art->image ?? 'assets/images/article-1.webp') }}" alt="{{ $art->image_alt ?? $art->title }}" loading="lazy" decoding="async" width="600" height="360">
+                <span class="news-category-badge">{{ $art->category ?? 'Umum' }}</span>
               </a>
               <div class="news-content">
                 <div class="news-meta">
@@ -572,6 +573,7 @@
         </div>
       </div>
     </section>
+    @endif
 
     {{-- FAQ Section (Rich Snippets Eligible) --}}
     <section class="section faq-section" id="faq">

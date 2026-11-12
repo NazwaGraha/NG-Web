@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use App\Models\Article;
-use Database\Seeders\ArticleSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -14,7 +13,36 @@ class LandingPageTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->seed(ArticleSeeder::class);
+
+        Article::create([
+            'title' => 'Berapa Biaya Jasa Pembuatan Website di Bogor Tahun 2026?',
+            'slug' => 'biaya-jasa-pembuatan-website-bogor-2026',
+            'category' => 'WEBSITE',
+            'focus_keyword' => 'biaya jasa pembuatan website bogor',
+            'geo_target' => 'Bogor, Ciawi, Jabodetabek',
+            'meta_title' => 'Berapa Biaya Jasa Pembuatan Website di Bogor? Panduan 2026 | NazwaGraha',
+            'meta_description' => 'Cari tahu rincian biaya jasa pembuatan website murah di Bogor.',
+            'reading_time' => '6 Menit Baca',
+            'author' => 'Affandi - Tim IT NazwaGraha',
+            'image' => 'assets/images/article-1.webp',
+            'excerpt' => 'Panduan transparan estimasi biaya pembuatan website murah di Bogor tahun 2026.',
+            'content' => '<p>Konten artikel lengkap biaya website...</p>',
+            'published_at' => now(),
+            'is_published' => true,
+        ]);
+
+        for ($i = 2; $i <= 15; $i++) {
+            Article::create([
+                'title' => "Artikel Tes Ke-{$i} NazwaGraha",
+                'slug' => "artikel-tes-ke-{$i}-nazwagraha",
+                'category' => $i % 2 === 0 ? 'WEBSITE' : 'SEO & DIGITAL',
+                'excerpt' => "Ringkasan artikel tes ke-{$i} untuk pengujian.",
+                'content' => "<p>Isi konten lengkap dari artikel ke-{$i}.</p>",
+                'image' => 'assets/images/article-1.webp',
+                'published_at' => now()->subDays($i),
+                'is_published' => true,
+            ]);
+        }
     }
     /**
      * Test homepage loads with 200 OK and contains essential SEO & GEO elements.
@@ -304,9 +332,8 @@ class LandingPageTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('/berita', false);
         $response->assertSee('/biaya-jasa-pembuatan-website-bogor-2026', false);
-        $response->assertSee('/strategi-seo-lokal-bogor-ranking-1-google-maps', false);
-        $response->assertSee('/panduan-instalasi-jaringan-lan-kantor-bogor', false);
-        $response->assertSee('/tips-spesifikasi-komputer-kantor-maintenance-it', false);
+        $response->assertSee('/artikel-tes-ke-2-nazwagraha', false);
+        $response->assertSee('/artikel-tes-ke-3-nazwagraha', false);
     }
 
     /**

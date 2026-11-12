@@ -330,7 +330,7 @@ class HomeController extends Controller
             ],
         ]);
 
-        // 4. Load Articles (Always fetch the 3 latest published articles)
+        // 4. Load Articles (Always fetch the 3 latest published articles directly from MySQL database)
         $articles = collect();
         $totalArticlesCount = 0;
         try {
@@ -343,33 +343,7 @@ class HomeController extends Controller
                 $totalArticlesCount = Article::published()->count();
             }
         } catch (\Throwable $e) {
-            // fallback
-        }
-
-        if ($articles->isEmpty()) {
-            $articles = collect([
-                (object) [
-                    'title' => 'Hal yang Perlu Disiapkan Sebelum Membuat Website Bisnis Murah tapi Berkualitas',
-                    'category' => 'WEBSITE',
-                    'excerpt' => 'Kenali tujuan bisnis, target pengunjung, dan materi penting agar pembuatan website murah Anda tetap menghasilkan tampilan premium dan mendatangkan pelanggan.',
-                    'image' => 'assets/images/article-1.webp',
-                    'image_alt' => 'Hal yang Perlu Disiapkan Sebelum Membuat Website Bisnis Murah',
-                ],
-                (object) [
-                    'title' => 'Mengapa SEO Penting untuk Visibilitas Bisnis dan Menembus Ranking 1 Google?',
-                    'category' => 'SEO',
-                    'excerpt' => 'Memahami fondasi SEO on-page, GEO targeting lokal, dan bagaimana konten relevan membantu calon pelanggan menemukan jasa Anda tanpa henti.',
-                    'image' => 'assets/images/article-2.webp',
-                    'image_alt' => 'Mengapa SEO Penting untuk Visibilitas Bisnis dan Ranking 1 Google',
-                ],
-                (object) [
-                    'title' => 'Tips Menjaga Jaringan Kantor (LAN) & Perangkat IT Tetap Stabil Bebas Kendala',
-                    'category' => 'INFRASTRUKTUR IT',
-                    'excerpt' => 'Langkah praktis mengelola router, penataan kabel LAN rapi, dan perawatan berkala komputer kantor agar operasional tim tidak terganggu.',
-                    'image' => 'assets/images/article-3.webp',
-                    'image_alt' => 'Tips Menjaga Jaringan Kantor LAN dan Perangkat IT',
-                ],
-            ]);
+            $articles = collect();
         }
 
         // 5. Load FAQs
