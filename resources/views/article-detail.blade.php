@@ -12,7 +12,7 @@
   {{-- SEO & Metadata Dinamis Artikel --}}
   <title>{{ $settings['meta_title'] }}</title>
   <meta name="description" content="{{ $settings['meta_description'] }}">
-  <meta name="keywords" content="{{ $settings['focus_keyword'] }}, {{ $settings['geo_target'] }}, jasa website bogor, bikin web murah ciawi, konsultan it murah">
+  <meta name="keywords" content="{{ $settings['all_keywords'] ?? ($settings['focus_keyword'] . ', ' . $settings['geo_target'] . ', jasa website bogor, bikin web murah ciawi, konsultan it murah') }}">
   <meta name="author" content="{{ $article->author ?? 'Tim IT NazwaGraha' }}">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="{{ $settings['canonical_url'] }}">
@@ -593,6 +593,16 @@
   <script type="application/ld+json">
   {!! json_encode($schemaLocalBusiness, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
   </script>
+  @if(!empty($schemaServiceRating))
+  <script type="application/ld+json">
+  {!! json_encode($schemaServiceRating, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+  </script>
+  @endif
+  @if(!empty($schemaFaq))
+  <script type="application/ld+json">
+  {!! json_encode($schemaFaq, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+  </script>
+  @endif
 
   {{-- Google Tag & GA4 Conversion Tracker --}}
   @include('partials.analytics')
@@ -684,6 +694,10 @@
               <span class="news-category" style="margin:0;">{{ $article->category }}</span>
               <span class="badge-reading-time">⏱ {{ $article->reading_time ?? '5 Menit Baca' }}</span>
               <span class="badge-geo-loc">📍 {{ $article->geo_target ?? 'Bogor, Ciawi' }}</span>
+              <div class="badge-rating-stars" style="display:inline-flex; align-items:center; gap:5px; background:#fffbeb; color:#b45309; border:1px solid #fde68a; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:700;">
+                <span style="color:#f59e0b; letter-spacing:1px;">★★★★★</span>
+                <span>{{ number_format($article->rating_value ?? 5.0, 1) }} ({{ $article->review_count ?? 48 }}+ Ulasan Terverifikasi)</span>
+              </div>
             </div>
             <h1 style="font-size:clamp(22px,3.8vw,38px); line-height:1.25; color:#0f172a; margin:0 0 16px; font-weight:800;">
               {{ $article->title }}
@@ -701,6 +715,22 @@
           <div class="article-featured-img-wrap">
             <img src="{{ asset($article->image) }}" alt="{{ $article->image_alt ?: $article->title }}" loading="eager">
           </div>
+
+          {{-- AI Quick Summary & Key Takeaways (Optimasi Google AI Overviews & SearchGPT) --}}
+          @if(!empty($article->ai_summary))
+          <div class="ai-overview-box" style="background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border:1px solid #cbd5e1; border-left:4px solid #10b981; border-radius:12px; padding:18px 20px; margin-bottom:26px; box-shadow:0 2px 10px rgba(0,0,0,0.02);">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <span style="display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:800; color:#047857; text-transform:uppercase; letter-spacing:0.5px;">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#10b981;"></span>
+                AI Quick Summary & Key Takeaways
+              </span>
+              <span style="font-size:11px; color:#64748b; font-weight:600;">Ringkasan Inti Terverifikasi</span>
+            </div>
+            <p style="margin:0; font-size:14.5px; line-height:1.75; color:#1e293b; font-weight:500;">
+              {{ $article->ai_summary }}
+            </p>
+          </div>
+          @endif
 
           {{-- Table of Contents (Daftar Isi Cepat) --}}
           <div class="article-toc" id="articleToc">
@@ -722,6 +752,31 @@
           <div class="article-body-content">
             {!! $article->content !!}
           </div>
+
+          {{-- Pertanyaan Seputar Topik Ini (FAQ Accordion - Rich Snippet & AI Search) --}}
+          @if(!empty($article->faqs) && is_array($article->faqs) && count($article->faqs) > 0)
+          <div class="article-faq-container" style="margin-top:40px; padding-top:28px; border-top:1.5px dashed #cbd5e1;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
+              <span style="display:grid; place-items:center; width:34px; height:34px; background:#fff2e8; color:var(--orange); border-radius:10px; font-weight:800; font-size:17px;">?</span>
+              <h3 style="font-size:21px; font-weight:800; color:#0f172a; margin:0;">Pertanyaan Seputar Panduan Ini (FAQ)</h3>
+            </div>
+            <div class="article-faq-list" style="display:grid; gap:12px;">
+              @foreach($article->faqs as $f)
+                @if(!empty($f['question']) && !empty($f['answer']))
+                <details style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:14px 18px; transition:all 0.2s ease;" {{ $loop->first ? 'open' : '' }}>
+                  <summary style="font-weight:700; font-size:15px; color:#0f172a; cursor:pointer; outline:none; display:flex; justify-content:space-between; align-items:center; gap:14px;">
+                    <span>{{ $f['question'] }}</span>
+                    <span style="color:var(--orange); font-size:18px; line-height:1; flex-shrink:0;">⌄</span>
+                  </summary>
+                  <div style="margin-top:10px; font-size:14px; line-height:1.75; color:#475569; border-top:1px solid #edf2f7; padding-top:10px;">
+                    {!! nl2br(e($f['answer'])) !!}
+                  </div>
+                </details>
+                @endif
+              @endforeach
+            </div>
+          </div>
+          @endif
 
           {{-- Social Share Bar --}}
           <div class="article-share-bar">

@@ -8,6 +8,7 @@ use App\Models\Inquiry;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Tests\TestCase;
@@ -296,7 +297,7 @@ class AdminBackofficeTest extends TestCase
         $publicIndex->assertDontSee('Strategi Rahasia SEO 2027 untuk UMKM Bogor');
 
         // 4. Guest visits public show -> should return 404
-        $publicShow = $this->get('/' . $article->slug);
+        $publicShow = $this->get('/'.$article->slug);
         $publicShow->assertStatus(404);
     }
 
@@ -309,7 +310,7 @@ class AdminBackofficeTest extends TestCase
 
         Category::create(['name' => 'Hardware PC', 'slug' => 'hardware-pc']);
 
-        $fakeWebpFile = \Illuminate\Http\UploadedFile::fake()->create('custom-thumbnail.webp', 300, 'image/webp');
+        $fakeWebpFile = UploadedFile::fake()->create('custom-thumbnail.webp', 300, 'image/webp');
 
         $response = $this->post('/admin/articles', [
             'title' => 'Panduan Upgrade Hardware PC Kantor di Ciawi',
@@ -326,6 +327,70 @@ class AdminBackofficeTest extends TestCase
         $this->assertNotNull($article);
         $this->assertStringContainsString('assets/images/articles/', $article->image);
         $this->assertStringEndsWith('.webp', $article->image);
+    }
+
+    /**
+     * Test admin can create article with LSI keywords, AI summary, 5-star rating, and dynamic FAQs.
+     */
+    public function test_admin_can_create_article_with_lsi_ai_rating_and_faqs(): void
+    {
+        $this->actingAs($this->adminUser);
+
+        Category::firstOrCreate(['name' => 'SEO & Digital'], ['slug' => 'seo-digital']);
+
+        $storeResponse = $this->post('/admin/articles', [
+            'title' => 'Panduan Lengkap SEO & AI Search 2027 di Bogor',
+            'slug' => 'panduan-lengkap-seo-ai-search-2027-bogor',
+            'category' => 'SEO & Digital',
+            'excerpt' => 'Kupas tuntas strategi optimasi SEO, kata kunci LSI, dan cara tembus Google AI Overviews.',
+            'content' => '<h2>Mengenal AI Search</h2><p>Pencarian AI mengutamakan jawaban langsung dan data terstruktur.</p>',
+            'focus_keyword' => 'jasa seo bogor',
+            'secondary_keywords' => 'biaya seo murah bogor, konsultan seo ciawi',
+            'lsi_keywords' => 'backlink berkualitas, technical seo, core web vitals, schema faq',
+            'geo_target' => 'Bogor, Ciawi, Jawa Barat',
+            'meta_title' => 'Jasa SEO Bogor & AI Search Ready 2027',
+            'meta_description' => 'Tingkatkan peringkat website Anda di Google Search dan Google AI Overviews bersama NazwaGraha.',
+            'ai_summary' => 'NazwaGraha menghadirkan optimasi SEO berbasis AI dan entitas semantik untuk menjamin visibilitas bisnis lokal di Bogor.',
+            'rating_value' => '5.0',
+            'review_count' => 48,
+            'faq_questions' => [
+                'Berapa lama proses optimasi SEO?',
+                'Apakah NazwaGraha memberikan garansi ranking?',
+            ],
+            'faq_answers' => [
+                'Rata-rata hasil kenaikan ranking mulai terlihat dalam 30 hingga 90 hari.',
+                'Ya, kami memberikan garansi evaluasi dan pendampingan hingga target kata kunci tercapai.',
+            ],
+            'is_published' => 1,
+        ]);
+
+        $storeResponse->assertRedirect(route('admin.articles.index'));
+
+        $this->assertDatabaseHas('articles', [
+            'slug' => 'panduan-lengkap-seo-ai-search-2027-bogor',
+            'focus_keyword' => 'jasa seo bogor',
+            'secondary_keywords' => 'biaya seo murah bogor, konsultan seo ciawi',
+            'lsi_keywords' => 'backlink berkualitas, technical seo, core web vitals, schema faq',
+            'rating_value' => 5.0,
+            'review_count' => 48,
+        ]);
+
+        $article = Article::where('slug', 'panduan-lengkap-seo-ai-search-2027-bogor')->first();
+        $this->assertNotNull($article->faqs);
+        $this->assertCount(2, $article->faqs);
+        $this->assertEquals('Berapa lama proses optimasi SEO?', $article->faqs[0]['question']);
+
+        // Check public article detail page renders visual 5-star rating, AI summary, FAQ, and Schemas
+        $publicResponse = $this->get('/panduan-lengkap-seo-ai-search-2027-bogor');
+        $publicResponse->assertStatus(200);
+        $publicResponse->assertSee('5.0 (48+ Ulasan Terverifikasi)', false);
+        $publicResponse->assertSee('AI Quick Summary & Key Takeaways', false);
+        $publicResponse->assertSee('NazwaGraha menghadirkan optimasi SEO berbasis AI');
+        $publicResponse->assertSee('Pertanyaan Seputar Panduan Ini (FAQ)');
+        $publicResponse->assertSee('Berapa lama proses optimasi SEO?');
+        $publicResponse->assertSee('FAQPage', false);
+        $publicResponse->assertSee('AggregateRating', false);
+        $publicResponse->assertSee('ratingValue', false);
     }
 
     /**

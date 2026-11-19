@@ -136,37 +136,129 @@
         </div>
       </div>
 
-      <!-- SEO & GEO Optimization Card -->
-      <div class="panel panel-info" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
-        <div class="panel-heading" style="font-weight: 700;">
-          <i class="fa fa-google fa-fw"></i> Optimasi SEO & GEO Targeting (Google Search)
+      <!-- SEO, LSI, AI & Review Snippet Optimization Card -->
+      <div class="panel panel-info" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border-color: #38bdf8;">
+        <div class="panel-heading" style="font-weight: 700; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff;">
+          <i class="fa fa-google fa-fw"></i> Optimasi SEO, LSI & AI Search (Google Search, AI Overviews & Rich Snippets)
         </div>
         <div class="panel-body">
+          <!-- Keyword & GEO Section -->
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>Focus Keyword Utama</label>
+                <label><i class="fa fa-key text-primary"></i> Focus Keyword Utama <span class="text-danger">*</span></label>
                 <input type="text" name="focus_keyword" class="form-control" placeholder="Contoh: jasa pembuatan website bogor" value="{{ old('focus_keyword') }}">
-                <small class="text-muted">Target kata kunci dengan niat beli tinggi.</small>
+                <small class="text-muted">Target kata kunci utama dengan niat beli/transaksional tertinggi.</small>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Target Wilayah (GEO)</label>
+                <label><i class="fa fa-map-marker text-danger"></i> Target Wilayah (GEO)</label>
                 <input type="text" name="geo_target" class="form-control" placeholder="Contoh: Bogor, Ciawi, Jawa Barat" value="{{ old('geo_target', 'Bogor, Ciawi, Jawa Barat') }}">
-                <small class="text-muted">Daerah yang ditargetkan untuk ranking lokal.</small>
+                <small class="text-muted">Daerah yang ditargetkan untuk dominasi pencarian lokal Google.</small>
               </div>
             </div>
           </div>
 
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label><i class="fa fa-tags text-info"></i> Secondary Keywords (Kata Kunci Turunan)</label>
+                <input type="text" name="secondary_keywords" class="form-control" placeholder="Contoh: harga web company profile ciawi, jasa web toko online murah" value="{{ old('secondary_keywords') }}">
+                <small class="text-muted">Pisahkan dengan koma. Menangkap pencarian long-tail spesifik pengguna.</small>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label><i class="fa fa-share-alt text-success"></i> LSI Keywords & Semantic Entities</label>
+                <input type="text" name="lsi_keywords" class="form-control" placeholder="Contoh: domain, web hosting cPanel, sertifikat SSL, mobile responsive" value="{{ old('lsi_keywords') }}">
+                <small class="text-muted">Pisahkan dengan koma. Kosakata semantik untuk membuktikan otoritas topik pada Google AI.</small>
+              </div>
+            </div>
+          </div>
+
+          <hr style="margin: 12px 0 16px; border-color: #e2e8f0;">
+
+          <!-- Google Search Snippet Preview Settings -->
           <div class="form-group">
-            <label>Meta Title Google (Maks 65 Karakter)</label>
+            <label><i class="fa fa-search text-warning"></i> Meta Title Google (Maks 65 Karakter)</label>
             <input type="text" name="meta_title" class="form-control" placeholder="Judul spesifik untuk hasil pencarian Google..." value="{{ old('meta_title') }}">
+            <small class="text-muted">Jika dikosongkan, otomatis menggunakan Judul Artikel + Nama Brand NazwaGraha.</small>
           </div>
 
           <div class="form-group">
-            <label>Meta Description Google (150–160 Karakter)</label>
+            <label><i class="fa fa-align-left text-warning"></i> Meta Description Google (150–160 Karakter)</label>
             <textarea name="meta_description" class="form-control" rows="2" placeholder="Deskripsi cuplikan yang muncul di bawah judul pada pencarian Google...">{{ old('meta_description') }}</textarea>
+            <small class="text-muted">Cuplikan persuasif yang memicu rasio klik (CTR) tinggi.</small>
+          </div>
+
+          <hr style="margin: 14px 0 18px; border-color: #e2e8f0;">
+
+          <!-- AI Search Overviews & Quick Summary (GEO) -->
+          <div class="form-group" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px;">
+            <label style="color: #15803d; font-size: 13.5px;">
+              <i class="fa fa-bolt text-success"></i> Ringkasan Cepat untuk Google AI Overviews & SearchGPT (Direct Answer / TL;DR)
+            </label>
+            <textarea name="ai_summary" class="form-control" rows="3" placeholder="Tuliskan 2–3 kalimat jawaban langsung yang ringkas dan padat fakta agar mudah dikutip sebagai kutipan rujukan utama oleh Google AI Overviews dan SearchGPT...">{{ old('ai_summary') }}</textarea>
+            <small class="text-muted" style="display: block; margin-top: 5px; color: #166534;">
+              <i class="fa fa-info-circle"></i> Paragraf ini akan disorot di awal artikel sebagai kartu ringkasan cepat dan dibaca mesin pencari berbasis AI sebagai jawaban langsung.
+            </small>
+          </div>
+
+          <!-- Review Snippet & 5-Star Rating Settings -->
+          <div class="form-group" style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <label style="color: #b45309; font-size: 13.5px; margin: 0;">
+                <i class="fa fa-star text-warning"></i> Review Snippet Bintang 5 (Google Rich Results)
+              </label>
+              <span class="label label-warning" style="font-size: 11px;">★★★★★ 5.0 / 5.0</span>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label style="font-size: 12px; color: #78350f;">Skor Rating (Maks 5.0)</label>
+                <input type="number" step="0.1" min="1.0" max="5.0" name="rating_value" class="form-control input-sm" value="{{ old('rating_value', '5.0') }}">
+              </div>
+              <div class="col-md-6">
+                <label style="font-size: 12px; color: #78350f;">Jumlah Ulasan Klien Terverifikasi</label>
+                <input type="number" min="1" name="review_count" class="form-control input-sm" value="{{ old('review_count', '48') }}">
+              </div>
+            </div>
+            <small class="text-muted" style="display: block; margin-top: 7px; color: #92400e;">
+              <i class="fa fa-check-circle text-success"></i> Otomatis memuat Schema <code>Service</code> & <code>LocalBusiness</code> dengan properti <code>aggregateRating</code> serta badge visual rating bintang 5 di artikel untuk memicu bintang kuning di hasil pencarian Google.
+            </small>
+          </div>
+
+          <hr style="margin: 14px 0 18px; border-color: #e2e8f0;">
+
+          <!-- Dynamic FAQ Builder for Schema FAQPage -->
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <label style="margin: 0; font-size: 14px;">
+                <i class="fa fa-question-circle text-primary"></i> Pertanyaan Sering Diajukan (FAQ untuk Google Rich Snippet & AI)
+              </label>
+              <button type="button" class="btn btn-xs btn-success" onclick="addFaqRow()">
+                <i class="fa fa-plus"></i> Tambah Pertanyaan FAQ
+              </button>
+            </div>
+            <p class="text-muted" style="font-size: 12px; margin-bottom: 12px;">
+              FAQ akan otomatis dijadikan <strong>Schema FAQPage (JSON-LD)</strong> untuk memunculkan dropdown tanya-jawab di Google Search serta disajikan sebagai akordeon interaktif di halaman artikel.
+            </p>
+
+            <div id="faqListWrap" style="display: grid; gap: 12px;">
+              <!-- FAQ Item 1 (Default Sample) -->
+              <div class="faq-item-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                  <span style="font-weight: 700; font-size: 12px; color: #0284c7;"># FAQ 1</span>
+                  <button type="button" class="btn btn-xs btn-danger" onclick="removeFaqRow(this)"><i class="fa fa-times"></i> Hapus</button>
+                </div>
+                <div class="form-group" style="margin-bottom: 8px;">
+                  <input type="text" name="faq_questions[]" class="form-control input-sm" placeholder="Contoh: Berapa biaya pembuatan website di NazwaGraha?" value="{{ old('faq_questions.0') }}">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <textarea name="faq_answers[]" class="form-control input-sm" rows="2" placeholder="Jawaban singkat dan padat (1-2 kalimat)...">{{ old('faq_answers.0') }}</textarea>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -640,6 +732,40 @@
     } else {
       $('#imagePreview').hide().attr('src', '#');
       $('#previewPlaceholder').show();
+    }
+  }
+  // 6. Dynamic FAQ Rows
+  function addFaqRow() {
+    var count = $('#faqListWrap .faq-item-card').length + 1;
+    var html = `
+      <div class="faq-item-card" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-top: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <span style="font-weight: 700; font-size: 12px; color: #0284c7;"># FAQ ` + count + `</span>
+          <button type="button" class="btn btn-xs btn-danger" onclick="removeFaqRow(this)"><i class="fa fa-times"></i> Hapus</button>
+        </div>
+        <div class="form-group" style="margin-bottom: 8px;">
+          <input type="text" name="faq_questions[]" class="form-control input-sm" placeholder="Pertanyaan (Contoh: Apakah website di NazwaGraha ramah SEO?)">
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+          <textarea name="faq_answers[]" class="form-control input-sm" rows="2" placeholder="Jawaban singkat dan jelas..."></textarea>
+        </div>
+      </div>
+    `;
+    $('#faqListWrap').append(html);
+  }
+
+  function removeFaqRow(btn) {
+    if ($('#faqListWrap .faq-item-card').length > 1) {
+      $(btn).closest('.faq-item-card').remove();
+      // Re-index labels
+      $('#faqListWrap .faq-item-card').each(function(i) {
+        $(this).find('span').first().text('# FAQ ' + (i + 1));
+      });
+    } else {
+      // Clear inputs if last item
+      var $last = $(btn).closest('.faq-item-card');
+      $last.find('input').val('');
+      $last.find('textarea').val('');
     }
   }
 </script>

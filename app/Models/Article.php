@@ -12,15 +12,21 @@ class Article extends Model
         'slug',
         'meta_title',
         'focus_keyword',
+        'secondary_keywords',
+        'lsi_keywords',
         'geo_target',
         'category',
         'excerpt',
         'meta_description',
+        'ai_summary',
         'content',
+        'faqs',
         'image',
         'image_alt',
         'author',
         'reading_time',
+        'rating_value',
+        'review_count',
         'published_at',
         'is_published',
     ];
@@ -28,6 +34,9 @@ class Article extends Model
     protected $casts = [
         'published_at' => 'datetime',
         'is_published' => 'boolean',
+        'rating_value' => 'float',
+        'review_count' => 'integer',
+        'faqs' => 'array',
     ];
 
     /**
@@ -39,7 +48,7 @@ class Article extends Model
         return $query->where('is_published', true)
             ->where(function ($q) {
                 $q->whereNull('published_at')
-                  ->orWhere('published_at', '<=', now());
+                    ->orWhere('published_at', '<=', now());
             });
     }
 
@@ -66,7 +75,7 @@ class Article extends Model
      */
     public function isLive(): bool
     {
-        return $this->is_published && (!$this->published_at || $this->published_at->isPast());
+        return $this->is_published && (! $this->published_at || $this->published_at->isPast());
     }
 
     /**
@@ -74,7 +83,7 @@ class Article extends Model
      */
     public function getStatusLabelAttribute(): string
     {
-        if (!$this->is_published) {
+        if (! $this->is_published) {
             return 'Draft';
         }
 

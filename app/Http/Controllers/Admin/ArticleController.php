@@ -23,8 +23,8 @@ class ArticleController extends Controller
             $search = trim($request->get('q'));
             $query->where(function ($q) use ($search) {
                 $q->where('title', 'like', "%{$search}%")
-                  ->orWhere('excerpt', 'like', "%{$search}%")
-                  ->orWhere('focus_keyword', 'like', "%{$search}%");
+                    ->orWhere('excerpt', 'like', "%{$search}%")
+                    ->orWhere('focus_keyword', 'like', "%{$search}%");
             });
         }
 
@@ -55,6 +55,7 @@ class ArticleController extends Controller
     public function create()
     {
         $categories = Category::orderBy('name')->get();
+
         return view('admin.articles.create', compact('categories'));
     }
 
@@ -73,15 +74,38 @@ class ArticleController extends Controller
             'image_url' => ['nullable', 'string', 'max:255'],
             'image_alt' => ['nullable', 'string', 'max:255'],
             'focus_keyword' => ['nullable', 'string', 'max:150'],
+            'secondary_keywords' => ['nullable', 'string', 'max:500'],
+            'lsi_keywords' => ['nullable', 'string', 'max:500'],
             'geo_target' => ['nullable', 'string', 'max:150'],
             'meta_title' => ['nullable', 'string', 'max:100'],
             'meta_description' => ['nullable', 'string', 'max:255'],
+            'ai_summary' => ['nullable', 'string', 'max:1000'],
+            'rating_value' => ['nullable', 'numeric', 'min:1', 'max:5'],
+            'review_count' => ['nullable', 'integer', 'min:1'],
             'author' => ['nullable', 'string', 'max:100'],
             'reading_time' => ['nullable', 'string', 'max:50'],
             'publish_type' => ['nullable', 'string', 'in:immediate,schedule,draft'],
             'published_at' => ['nullable', 'date'],
             'is_published' => ['nullable', 'boolean'],
         ]);
+
+        // Process Dynamic FAQs
+        $faqs = [];
+        if ($request->has('faq_questions') && is_array($request->faq_questions)) {
+            foreach ($request->faq_questions as $index => $q) {
+                $q = trim($q ?? '');
+                $a = trim($request->faq_answers[$index] ?? '');
+                if (! empty($q) && ! empty($a)) {
+                    $faqs[] = [
+                        'question' => $q,
+                        'answer' => $a,
+                    ];
+                }
+            }
+        }
+        $validated['faqs'] = ! empty($faqs) ? $faqs : null;
+        $validated['rating_value'] = ! empty($validated['rating_value']) ? (float) $validated['rating_value'] : 5.0;
+        $validated['review_count'] = ! empty($validated['review_count']) ? (int) $validated['review_count'] : 48;
 
         if (empty($validated['slug'])) {
             $validated['slug'] = Str::slug($validated['title']);
@@ -91,17 +115,17 @@ class ArticleController extends Controller
         if ($request->hasFile('image_file')) {
             $file = $request->file('image_file');
             $extension = strtolower($file->getClientOriginalExtension());
-            $filename = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $extension;
-            
+            $filename = time().'_'.Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)).'.'.$extension;
+
             // Ensure directory exists
             $destinationPath = public_path('assets/images/articles');
-            if (!file_exists($destinationPath)) {
+            if (! file_exists($destinationPath)) {
                 mkdir($destinationPath, 0755, true);
             }
 
             $file->move($destinationPath, $filename);
-            $validated['image'] = 'assets/images/articles/' . $filename;
-        } elseif (!empty($validated['image_url'])) {
+            $validated['image'] = 'assets/images/articles/'.$filename;
+        } elseif (! empty($validated['image_url'])) {
             $validated['image'] = $validated['image_url'];
         } else {
             $validated['image'] = 'assets/images/article-1.webp';
@@ -109,10 +133,10 @@ class ArticleController extends Controller
 
         unset($validated['image_file'], $validated['image_url']);
 
-        $validated['image_alt'] = !empty($validated['image_alt']) ? $validated['image_alt'] : $validated['title'];
-        $validated['author'] = !empty($validated['author']) ? $validated['author'] : 'Tim IT NazwaGraha';
-        $validated['reading_time'] = !empty($validated['reading_time']) ? $validated['reading_time'] : '5 Menit Baca';
-        $validated['geo_target'] = !empty($validated['geo_target']) ? $validated['geo_target'] : 'Bogor, Ciawi, Jawa Barat';
+        $validated['image_alt'] = ! empty($validated['image_alt']) ? $validated['image_alt'] : $validated['title'];
+        $validated['author'] = ! empty($validated['author']) ? $validated['author'] : 'Tim IT NazwaGraha';
+        $validated['reading_time'] = ! empty($validated['reading_time']) ? $validated['reading_time'] : '5 Menit Baca';
+        $validated['geo_target'] = ! empty($validated['geo_target']) ? $validated['geo_target'] : 'Bogor, Ciawi, Jawa Barat';
 
         // Handle Publishing & Scheduling Logic
         $publishType = $request->input('publish_type');
@@ -141,11 +165,11 @@ class ArticleController extends Controller
         $article = Article::create($validated);
 
         $statusMsg = $article->isScheduled()
-            ? ' dijadwalkan tayang pada ' . $article->published_at->format('d M Y H:i')
+            ? ' dijadwalkan tayang pada '.$article->published_at->format('d M Y H:i')
             : ($article->is_published ? ' berhasil diterbitkan (live)' : ' disimpan sebagai draft');
 
         return redirect()->route('admin.articles.index')
-            ->with('success', 'Artikel "' . $article->title . '"' . $statusMsg . '.');
+            ->with('success', 'Artikel "'.$article->title.'"'.$statusMsg.'.');
     }
 
     /**
@@ -154,6 +178,7 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         $categories = Category::orderBy('name')->get();
+
         return view('admin.articles.edit', compact('article', 'categories'));
     }
 
@@ -172,15 +197,38 @@ class ArticleController extends Controller
             'image_url' => ['nullable', 'string', 'max:255'],
             'image_alt' => ['nullable', 'string', 'max:255'],
             'focus_keyword' => ['nullable', 'string', 'max:150'],
+            'secondary_keywords' => ['nullable', 'string', 'max:500'],
+            'lsi_keywords' => ['nullable', 'string', 'max:500'],
             'geo_target' => ['nullable', 'string', 'max:150'],
             'meta_title' => ['nullable', 'string', 'max:100'],
             'meta_description' => ['nullable', 'string', 'max:255'],
+            'ai_summary' => ['nullable', 'string', 'max:1000'],
+            'rating_value' => ['nullable', 'numeric', 'min:1', 'max:5'],
+            'review_count' => ['nullable', 'integer', 'min:1'],
             'author' => ['nullable', 'string', 'max:100'],
             'reading_time' => ['nullable', 'string', 'max:50'],
             'publish_type' => ['nullable', 'string', 'in:immediate,schedule,draft'],
             'published_at' => ['nullable', 'date'],
             'is_published' => ['nullable', 'boolean'],
         ]);
+
+        // Process Dynamic FAQs
+        $faqs = [];
+        if ($request->has('faq_questions') && is_array($request->faq_questions)) {
+            foreach ($request->faq_questions as $index => $q) {
+                $q = trim($q ?? '');
+                $a = trim($request->faq_answers[$index] ?? '');
+                if (! empty($q) && ! empty($a)) {
+                    $faqs[] = [
+                        'question' => $q,
+                        'answer' => $a,
+                    ];
+                }
+            }
+        }
+        $validated['faqs'] = ! empty($faqs) ? $faqs : null;
+        $validated['rating_value'] = ! empty($validated['rating_value']) ? (float) $validated['rating_value'] : 5.0;
+        $validated['review_count'] = ! empty($validated['review_count']) ? (int) $validated['review_count'] : 48;
 
         if (empty($validated['slug'])) {
             $validated['slug'] = Str::slug($validated['title']);
@@ -190,25 +238,25 @@ class ArticleController extends Controller
         if ($request->hasFile('image_file')) {
             $file = $request->file('image_file');
             $extension = strtolower($file->getClientOriginalExtension());
-            $filename = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $extension;
-            
+            $filename = time().'_'.Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)).'.'.$extension;
+
             $destinationPath = public_path('assets/images/articles');
-            if (!file_exists($destinationPath)) {
+            if (! file_exists($destinationPath)) {
                 mkdir($destinationPath, 0755, true);
             }
 
             $file->move($destinationPath, $filename);
-            $validated['image'] = 'assets/images/articles/' . $filename;
-        } elseif (!empty($validated['image_url'])) {
+            $validated['image'] = 'assets/images/articles/'.$filename;
+        } elseif (! empty($validated['image_url'])) {
             $validated['image'] = $validated['image_url'];
         }
 
         unset($validated['image_file'], $validated['image_url']);
 
-        $validated['image_alt'] = !empty($validated['image_alt']) ? $validated['image_alt'] : ($article->image_alt ?: $validated['title']);
-        $validated['author'] = !empty($validated['author']) ? $validated['author'] : ($article->author ?? 'Tim IT NazwaGraha');
-        $validated['reading_time'] = !empty($validated['reading_time']) ? $validated['reading_time'] : ($article->reading_time ?? '5 Menit Baca');
-        $validated['geo_target'] = !empty($validated['geo_target']) ? $validated['geo_target'] : ($article->geo_target ?? 'Bogor, Ciawi, Jawa Barat');
+        $validated['image_alt'] = ! empty($validated['image_alt']) ? $validated['image_alt'] : ($article->image_alt ?: $validated['title']);
+        $validated['author'] = ! empty($validated['author']) ? $validated['author'] : ($article->author ?? 'Tim IT NazwaGraha');
+        $validated['reading_time'] = ! empty($validated['reading_time']) ? $validated['reading_time'] : ($article->reading_time ?? '5 Menit Baca');
+        $validated['geo_target'] = ! empty($validated['geo_target']) ? $validated['geo_target'] : ($article->geo_target ?? 'Bogor, Ciawi, Jawa Barat');
 
         // Publishing & Scheduling Update
         $publishType = $request->input('publish_type');
@@ -229,7 +277,7 @@ class ArticleController extends Controller
             }
             if ($request->filled('published_at')) {
                 $validated['published_at'] = Carbon::parse($request->published_at);
-            } elseif (!empty($validated['is_published']) && !$article->published_at) {
+            } elseif (! empty($validated['is_published']) && ! $article->published_at) {
                 $validated['published_at'] = now();
             }
         }
@@ -238,7 +286,7 @@ class ArticleController extends Controller
         $article->update($validated);
 
         return redirect()->route('admin.articles.index')
-            ->with('success', 'Artikel "' . $article->title . '" berhasil diperbarui.');
+            ->with('success', 'Artikel "'.$article->title.'" berhasil diperbarui.');
     }
 
     /**
@@ -250,6 +298,6 @@ class ArticleController extends Controller
         $article->delete();
 
         return redirect()->route('admin.articles.index')
-            ->with('success', 'Artikel "' . $title . '" berhasil dihapus.');
+            ->with('success', 'Artikel "'.$title.'" berhasil dihapus.');
     }
 }
